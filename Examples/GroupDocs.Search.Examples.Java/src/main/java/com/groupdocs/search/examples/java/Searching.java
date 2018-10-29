@@ -1,18 +1,23 @@
 package com.groupdocs.search.examples.java;
+
 import com.groupdocs.search.*;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Searching {
-    // Creates index, adds documents to index and search string in index
-    public static void simpleSearch(String searchString) {
+    /**
+     * performs simple search
+     */
+    public static void simpleSearch() {
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Search in index
-        SearchResults searchResults = index.search(searchString);
+        SearchResults searchResults = index.search("one");
 
         // Print results in the console
         for (DocumentResultInfo result : searchResults) {
@@ -20,17 +25,19 @@ public class Searching {
         }
     }
 
-    // Creates index, adds documents to index and do boolean search
-    public static void booleanSearch(String firstTerm, String secondTerm) {
+    /**
+     * performs boolean search
+     */
+    public static void booleanSearch() {
 
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Search in index
-        SearchResults searchResults = index.search(firstTerm + "OR" + secondTerm);
+        SearchResults searchResults = index.search("(Pause AND Return)" + "OR" + "(hydra NOT omega)");
 
         // Print results in the console
         for (DocumentResultInfo result : searchResults) {
@@ -39,13 +46,15 @@ public class Searching {
 
     }
 
-    // Creates index, adds documents to index and do regex search
+    /**
+     * Performs regex search
+     */
     public static void regexSearch() {
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Search for documents where at least one word contains 'DEF'
         SearchResults searchResults1 = index.search("^.*DEF.*$");
@@ -57,13 +66,15 @@ public class Searching {
 
     }
 
-    //Search results from misspelled search query
+    /**
+     * Performs fuzzy search
+     */
     public static void fuzzySearch() {
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         SearchParameters parameters = new SearchParameters();
         // Turn on fuzzy search feature
@@ -79,13 +90,15 @@ public class Searching {
         }
     }
 
-    //Show results based on similarity
+    /**
+     * Performs fuzzy search based on similarity
+     */
     public static void fuzzySearchSimilarity() {
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         SearchParameters parameters = new SearchParameters();
         // Turn on fuzzy search feature
@@ -103,13 +116,15 @@ public class Searching {
         }
     }
 
-    //Fuzzy search that uses table of word length values mapped to max mistake count values
+    /**
+     * Performs fuzzy search and gets only best results
+     */
     public static void fuzzySearchOnlyBestResultsRange() {
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         SearchParameters searchParameters = new SearchParameters();
         // Enable fuzzy search
@@ -130,13 +145,15 @@ public class Searching {
         }
     }
 
-    //Fuzzy search that uses table of word length values mapped to max mistake count values
+    /**
+     * Performs fuzzy search using table discrete
+     */
     public static void fuzzySearchTableDiscrete() {
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         TableDiscreteFunction adaptiveDiscreteFunction = new TableDiscreteFunction(0, new Step(4, 1), new Step(5, 2), new Step(6, 3));
         // Function returns 0 mistakes for words of less than 4 characters,
@@ -158,13 +175,15 @@ public class Searching {
         SearchResults constantResults = index.search("user search query", constantSearchParameters);
     }
 
-    //Search for specific fields of document
+    /**
+     * Performs faceted search
+     */
     public static void facetedSearch() {
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         String searchString = "query";
         // Search for documents in index that contain word 'query' in file content
@@ -176,13 +195,16 @@ public class Searching {
         }
     }
 
+    /**
+     * Performs faceted search with boolean search
+     */
     public static void facetedSearchWithBooleanSearch() {
 
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         String firstTerm = "term1";
         String secondTerm = "term2";
@@ -195,14 +217,16 @@ public class Searching {
         }
     }
 
-    //Search for documents with Synonyms
+    /**
+     * Performs synonym search
+     */
     public static void synonymSearch() {
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
         // Import synonyms from file. Existing synonyms are staying.
-        index.getDictionaries().getSynonymDictionary().importDictionary(Utilities.synonymFilePath);
+        index.getDictionaries().getSynonymDictionary().importDictionary(Utilities.SYNONYM_FILE_PATH);
         // Add documents to the index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Turn on synonym search feature
         SearchParameters parameters = new SearchParameters();
@@ -218,13 +242,15 @@ public class Searching {
         }
     }
 
-    //Manages Synonyms search
+    /**
+     * Manages synonym search
+     */
     public static void manageSynonyms() {
         // Create or load index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to the index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Clear synonym dictionary
         index.getDictionaries().getSynonymDictionary().clear();
@@ -239,9 +265,9 @@ public class Searching {
         index.getDictionaries().getSynonymDictionary().addRange(synonymGroups);
 
         // Import synonyms from file. Existing synonyms are staying.
-        index.getDictionaries().getSynonymDictionary().importDictionary(Utilities.synonymFilePath);
+        index.getDictionaries().getSynonymDictionary().importDictionary(Utilities.SYNONYM_FILE_PATH);
         // Export synonyms to file
-        index.getDictionaries().getSynonymDictionary().importDictionary(Utilities.synonymNewFilePath);
+        index.getDictionaries().getSynonymDictionary().exportDictionary(Utilities.SYNONYM_NEW_FILE_PATH);
 
         // Enable synonym search in parameters
         SearchParameters parameters = new SearchParameters();
@@ -252,10 +278,12 @@ public class Searching {
         SearchResults results = index.search(searchQuery, parameters);
     }
 
-    //Perform numeric range search
+    /**
+     * Performs numeric range search
+     */
     public static void numericRangeSearch() {
-        Index index = new Index(Utilities.indexPath);
-        index.addToIndex(Utilities.documentsPath);
+        Index index = new Index(Utilities.INDEX_PATH);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Search for numbers
         String searchQuery = "150~~300";
@@ -271,13 +299,15 @@ public class Searching {
         }
     }
 
-    //Perform date range search
+    /**
+     * Performs data range search
+     */
     public static void dateRangeSearch() {
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to the index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Search for dates between 1 Jan 2015 and 31 Dec 2018
         SearchResults searchResults = index.search("daterange(2015-01-01~~2018-12-31)");
@@ -288,13 +318,15 @@ public class Searching {
         }
     }
 
-    //Manage date range formats
+    /**
+     * Manages date range format
+     */
     public static void manageDateRangeFormats() {
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to the index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Create search parameters object
         SearchParameters searchParameters = new SearchParameters();
@@ -340,12 +372,14 @@ public class Searching {
         }
     }
 
-    //Search using Spelling Corrector
+    /**
+     * Performs search using spelling corrector
+     */
     public static void spellingCorrectorUsage() {
         // Create or load index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
         // Add documents to the index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         SearchParameters parameters = new SearchParameters();
         // Enable spelling corrector
@@ -358,16 +392,18 @@ public class Searching {
         SearchResults results = index.search(searchQuery, parameters);
     }
 
-    //Manage spelling corrector
+    /**
+     * Manages spelling corrector
+     */
     public static void spellingCorrectorManagement() {
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
         // Add documents to index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Remove all words from spelling corrector dictionary
         index.getDictionaries().getSpellingCorrector().clear();
         // Import spelling dictionary from file. Existing words are staying.
-        index.getDictionaries().getSpellingCorrector().importDictionary(Utilities.spellingDictionaryFilePath);
+        index.getDictionaries().getSpellingCorrector().importDictionary(Utilities.SPELLING_DICTIONARY_FILE_PATH);
         ArrayList<String> words = new ArrayList<>();
         words.add("structure");
         words.add("building");
@@ -377,7 +413,7 @@ public class Searching {
         // Add word array to the dictionary. Words are case insensitive.
         index.getDictionaries().getSpellingCorrector().addRange(words);
         // Export spelling dictionary to file.
-        index.getDictionaries().getSpellingCorrector().exportDictionary(Utilities.exportedSpellingDictionaryFilePath);
+        index.getDictionaries().getSpellingCorrector().exportDictionary(Utilities.EXPORTED_SPELLING_DICTIONARY_FILE_PATH);
 
         SearchParameters parameters = new SearchParameters();
         // Enable spelling corrector
@@ -390,13 +426,15 @@ public class Searching {
         SearchResults results = index.search(searchQuery, parameters);
     }
 
-    //Search only best results
+    /**
+     * performs search with only best matched spellings
+     */
     public static void spellingCorrectorBestResults() {
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to the index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         SearchParameters searchParameters = new SearchParameters();
         // Enable spelling correction
@@ -411,14 +449,16 @@ public class Searching {
         SearchResults searchResults = index.search(searchQuery, searchParameters);
     }
 
-    //Search using Keyboard Layout Corrector
+    /**
+     * Performs search using a different keyboard layout
+     */
     public static void keyboardLayoutCorrectorUsage() {
         String searchQuery = "\u03c0\u03b1\u03b8\u03c3\u03b5";
         // Word 'pause' typed on Greek keyboard layout ('παθσε')
         // Characters are presented as their Unicode numbers because during compilation process on different computers String literals may be transformed to some other characters
 
-        Index index = new Index(Utilities.indexPath);
-        index.addToIndex(Utilities.documentsPath);
+        Index index = new Index(Utilities.INDEX_PATH);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Enable keyboard layout correction in parameters
         SearchParameters parameters = new SearchParameters();
@@ -428,10 +468,12 @@ public class Searching {
         SearchResults results = index.search(searchQuery, parameters);
     }
 
-    //Search documents wih exact phrase
+    /**
+     * Performs search using exact phrase
+     */
     public static void exactPhraseSearch() {
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         SearchResults results = index.search("\"exact phrase\"");
         for (DocumentResultInfo result : results) {
@@ -439,27 +481,31 @@ public class Searching {
         }
     }
 
-    //Specify number of thread for searching
+    /**
+     * Performs search by specifying number of searching thread
+     */
     public static void specifyNumberOfThreads() {
 
         IndexingSettings settings = new IndexingSettings();
         // Specify number of threads for searching
         settings.setSearchingThreads(NumberOfThreads.Four);
 
-        Index index = new Index(Utilities.indexPath, true, settings);
-        index.addToIndex(Utilities.documentsPath);
+        Index index = new Index(Utilities.INDEX_PATH, true, settings);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Search with the specified number of threads
         SearchResults result = index.search("query");
     }
 
-    //Cancel Search Operation
+    /**
+     * Cancels search operation
+     */
     public static void cancelSearchOperation() {
         // Creating index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Indexing
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Creating cancellation object
         final Cancellation cancellation = new Cancellation();
@@ -486,13 +532,15 @@ public class Searching {
         SearchResults result = index.search("\"information technology\"", searchParameters, cancellation);
     }
 
-    //Cancel Search Operation with time limitation
+    /**
+     * Cancels search operation with time limitation
+     */
     public static void cancelSearchOperationWithTimeLimitation() {
         // Creating index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Indexing
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Creating cancellation object
         Cancellation cancellation = new Cancellation();
@@ -508,15 +556,17 @@ public class Searching {
         SearchResults result = index.search("\"information technology\"", searchParameters, cancellation);
     }
 
-    //Searching by parts(Chunks)
+    /**
+     * Performs searching by parts or chunks
+     */
     public static void searchingByParts() {
         // Create index
-        Index index = new Index(Utilities.indexPath, true);
+        Index index = new Index(Utilities.INDEX_PATH, true);
 
         // Add documents to the index
-        index.addToIndex(Utilities.documentsPath);
-        index.addToIndex(Utilities.documentsPath2);
-        index.addToIndex(Utilities.documentsPath3);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
+        index.addToIndex(Utilities.DOCUMENTS_PATH_2);
+        index.addToIndex(Utilities.DOCUMENTS_PATH_3);
         int chankCount = 1;
         SearchParameters sp = new SearchParameters();
         // Turn on search by parts
@@ -538,11 +588,13 @@ public class Searching {
         }
     }
 
-    //Get search report
+    /**
+     * Generates searching report
+     */
     public static void getSearchReport() {
 
-        Index index = new Index(Utilities.indexPath);
-        index.addToIndex(Utilities.documentsPath);
+        Index index = new Index(Utilities.INDEX_PATH);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
         String query1 = "sample";
         SearchParameters param1 = new SearchParameters();
         String query2 = "pause";
@@ -563,15 +615,17 @@ public class Searching {
         }
     }
 
-    //Limit Search Report
+    /**
+     * Limits search reports
+     */
     public static void limitSearchReport() {
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Setting the maximum count of search reports
         index.getIndexingSettings().setMaxSearchingReportCount(3);
 
         // Indexing
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Running 100 of searches
         for (int i = 0; i < 100; i++) {
@@ -587,13 +641,15 @@ public class Searching {
         }
     }
 
-    //Highlight search results
+    /**
+     * Highlights search results
+     */
     public static void generateHighlightedTextSearchResults() {
         // Creating index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Indexing
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Searching
         SearchResults results = index.search("some");
@@ -602,42 +658,49 @@ public class Searching {
         String text = index.highlightInText(results.get_Item(0));
     }
 
+    /**
+     * Saves highlighted text results to a file
+     */
     public static void generateHighlightedTextResultsToFile() {
         // Creating index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Indexing
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Searching
         SearchResults results = index.search("some");
 
         // Generating HTML-formatted text for the first document directly to the file 'HighlightedResults.html'
-        index.highlightInText("HighlightedResults.html", results.get_Item(0));
+        index.highlightInText(Utilities.DOCUMENT_TEXT_PATH, results.get_Item(0));
     }
 
-    //Highlight search results to HTML File
+    /**
+     * Saves highlighted text to HTML file
+     */
     public static void generateHighlightedTextResultsToHTMLFile() {
         // Creating index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Indexing documents
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Searching for phrase 'cumulative distribution function'
         SearchResults results = index.search("\"cumulative distribution function\"");
 
         // Generating HTML-formatted text for the first document directly to the file 'HighlightedResults.html'
-        index.highlightInText("HighlightedResults.html", results.get_Item(0));
+        index.highlightInText(Utilities.DOCUMENT_TEXT_PATH, results.get_Item(0));
     }
 
-    //Search with Query as a parameter
+    /**
+     * Performs search using a query
+     */
     public static void searchWithQuery() {
         // Creating index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Indexing
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Creating subquery 1
         SearchQuery subquery1 = SearchQuery.createWordQuery("is");
@@ -663,34 +726,40 @@ public class Searching {
         SearchResults searchResults = index.search(query, searchParameters);
     }
 
-    //Search for any document in index
+    /**
+     * Performs file name search
+     */
     public static void searchFileName() {
         // Create index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Add documents to index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Searching for any document in index that contain search string in file name
         SearchResults searchResults = index.search("FileName:" + "getting");
     }
 
-    // Shows how to implement own custom extractor for outlook document for the extension .ost and .pst files
+    /**
+     * Shows how to implement own custom extractor for outlook document for the extension .ost and .pst files
+     */
     public static void ownExtractorOst() {
         // Create or load index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         index.getCustomExtractors().addItem(new CustomOstPstExtractor()); // Adding new custom extractor for container document
 
-        index.addToIndex(Utilities.documentsPath); // Documents with "ost" and "pst" extension will be indexed using MyCustomContainerExtractor
+        index.addToIndex(Utilities.DOCUMENTS_PATH); // Documents with "ost" and "pst" extension will be indexed using MyCustomContainerExtractor
 
         SearchResults searchResults = index.search("pause");
     }
 
-    //Generate HTML formatted text with highlighted found words
+    /**
+     * Generates HTML formatted text with highlighted found words
+     */
     public static void savingEncodingAutomatically() {
         // Creating index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
         // Subscribing to file indexing event
         index.FileIndexing.add(new EventHandler<FileIndexingEventArgs>() {
@@ -701,7 +770,7 @@ public class Searching {
         });
 
         // Adding text documents encoded in windows-1251 to index
-        index.addToIndex(Utilities.documentsPath);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Searching for word 'человеческий'
         SearchResults results = index.search("человеческий");
@@ -711,10 +780,12 @@ public class Searching {
         String htmlText = index.highlightInText(results.get_Item(0));
     }
 
-    //Searching using morphological word forms
+    /**
+     * Performs search using morphological word forms
+     */
     public static void searchUsingMorphologicalWordForm() {
-        Index index = new Index(Utilities.indexPath); // Creating index in c:\MyIndex\ folder
-        index.addToIndex(Utilities.documentsPath); // Indexing folder with documents
+        Index index = new Index(Utilities.INDEX_PATH); // Creating index in c:\MyIndex\ folder
+        index.addToIndex(Utilities.DOCUMENTS_PATH); // Indexing folder with documents
 
         SearchParameters parameters = new SearchParameters();
         parameters.setUseWordFormsSearch(true); // Enabling word forms search
@@ -723,22 +794,26 @@ public class Searching {
         SearchResults results2 = index.search("swimming", parameters); // Searching for words "swim", "swims", "swimming", "swam", "swum"
     }
 
-    //Get searching time
+    /**
+     * Gets searching time
+     */
     public static void getSearchingTime() {
-        Index index = new Index(Utilities.indexPath, true);
-        index.addToIndex(Utilities.documentsPath);
+        Index index = new Index(Utilities.INDEX_PATH, true);
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
         SearchResults result = index.search("pause");
 
         System.out.println("Searching starts: " + result.getStartTime() + "Searching Ends: " + result.getEndTime() + "Searching Total Time: " + result.getSearchingTime());
     }
 
-    //Search with wildcards using query
+    /**
+     * Performs search with wildcards using query
+     */
     public static void wildCardSearch() {
         // Creating index
-        Index index = new Index(Utilities.indexPath);
+        Index index = new Index(Utilities.INDEX_PATH);
 
-        // Indexing
-        index.addToIndex(Utilities.documentsPath);
+
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
 
         // Searching for 'First law of thermodynamics'
         // Note that wildcard is used instead of 'of' because it is not indexed as a stop word
@@ -746,5 +821,216 @@ public class Searching {
 
         // Searching for 'Frodo spoke to Pippin' and 'Frodo stripped the blankets from Pippin'
         SearchResults result2 = index.search("\"Frodo *1~~5 Pippin\"");
+    }
+
+    /**
+     * Performs search in password protected document
+     */
+    public static void searchPasswordProtectedDocument() {
+        // Creating index
+        Index index = new Index(Utilities.INDEX_PATH);
+        // Sets passwords for documents
+        index.getDictionaries().getDocumentPasswords().add(Utilities.PASSWORD_PROTECTED_DOCUMENT, "test");
+        // Indexing
+        index.addToIndex(Utilities.DOCUMENTS_PATH, true);
+        //Searching
+        SearchResults results = index.search("sample");
+        // Print results in the console
+        for (DocumentResultInfo result : results) {
+            System.out.println(result.getHitCount() + " hits are in " + result.getFileName());
+        }
+    }
+
+    /**
+     * Performs search operation in outlook email message
+     */
+    public static void outlookEmailMessageResultInfo() {
+        // Create or load index
+        Index index = new Index(Utilities.INDEX_PATH);
+        index.addToIndex(Utilities.DOCUMENTS_PATH, true);
+        //Query
+        String searchString = "pause";
+
+        SearchResults results = index.search(searchString);
+        for (DocumentResultInfo resultInfo : results) {
+            if (resultInfo.getDocumentType() == DocumentType.OutlookEmailMessage) {
+                // for email message result info user should cast resultInfo as OutlookEmailMessageResultInfo for acessing EntryIdString property
+                OutlookEmailMessageResultInfo emailResultInfo = (OutlookEmailMessageResultInfo) resultInfo;
+
+                System.out.println("Query " + searchString + " has " + emailResultInfo.getHitCount() + " hit count in message " + emailResultInfo.getEntryIdString() + " in file " + emailResultInfo.getFileName() + "");
+            }
+        }
+    }
+
+    /**
+     * Shows how to implement own custom extractor for outlook document for the extension .ost and .pst files
+     */
+    public static void customOstExtractor() {
+        Index index = new Index(Utilities.INDEX_PATH);
+
+        index.getCustomExtractors().addItem(new CustomOstPstExtractor()); // Adding new custom extractor for container document
+
+        index.addToIndex(Utilities.DOCUMENTS_PATH); // Documents with "ost" and "pst" extension will be indexed using MyCustomContainerExtractor
+
+        SearchResults searchResults = index.search("pause");
+    }
+
+    /**
+     * Performs a case sensitive search
+     */
+    public static void caseSensitiveSearch() {
+        IndexingSettings settings = new IndexingSettings();
+
+        // Create or load index
+        Index index = new Index(Utilities.INDEX_PATH, settings);
+
+        index.addToIndex(Utilities.DOCUMENTS_PATH, true);
+
+        SearchParameters parameters = new SearchParameters();
+        parameters.setUseCaseSensitiveSearch(true);// using case sensitive search feature
+
+        SearchResults searchResults = index.search("SAMPLE", parameters);
+
+        // Print results in the console
+        for (DocumentResultInfo result : searchResults) {
+            System.out.println(result.getHitCount() + " hits are in " + result.getFileName());
+        }
+    }
+
+    /**
+     * Manages stop words
+     */
+    public static void manageStopWords() {
+        //create or load index
+        Index index = new Index(Utilities.INDEX_PATH);
+        int stopWordsCount = index.getDictionaries().getStopWordDictionary().getCount(); //  Get count of stop words
+        index.getDictionaries().getStopWordDictionary().clear(); // Clear dictionary of stop words
+
+
+        index.getDictionaries().getStopWordDictionary().addRange(Arrays.asList("one", "two", "three")); // Add several stop words to dictionary. Words are case insensitive.
+        index.getDictionaries().getStopWordDictionary().removeRange(Arrays.asList("one", "two")); //  Remove stop words from dictionary. Words which are absent will be ignored.
+
+        index.addToIndex(Utilities.DOCUMENTS_PATH, true);
+
+        index.getDictionaries().getStopWordDictionary().importDictionary(Utilities.STOP_WORDS_FILE_PATH); // Import stop words from file. Existing stop words are staying.
+        index.getDictionaries().getStopWordDictionary().exportDictionary(Utilities.EXPORTED_STOP_WORDS_FILE_PATH); // Export stop words to file
+
+        SearchResults results = index.search("three");
+
+        // Print results in the console
+        for (DocumentResultInfo result : results) {
+            System.out.println(result.getHitCount() + " hits are in " + result.getFileName());
+        }
+
+    }
+
+    /**
+     * Disables stop words
+     */
+    public static void disableStopWords() {
+        Index index = new Index(Utilities.INDEX_PATH);
+
+        index.getIndexingSettings().setUseStopWords(true); // This line disables using stop words and all of the words in documents will be indexed
+
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
+        SearchResults results = index.search("one");
+
+        // Print results in the console
+        for (DocumentResultInfo result : results) {
+            System.out.println(result.getHitCount() + " hits are in " + result.getFileName());
+        }
+
+    }
+
+    /**
+     * Clears, adds, removes, imports and exports alias to the dictionary
+     */
+    public static void usingAliasToDictionary() {
+        //Create or load index
+        Index index = new Index(Utilities.INDEX_PATH);
+        //Add documents to index
+        index.addToIndex(Utilities.DOCUMENTS_PATH, true);
+
+        // Add alias 's' to the dictionary
+        index.getDictionaries().getAliasDictionary().add("s", "structure");
+
+        // Clear dictionary of aliases
+        index.getDictionaries().getAliasDictionary().clear();
+        // Add alias 's' to the dictionary. Alias and aliased text are case insensitive.
+        index.getDictionaries().getAliasDictionary().add("s", "structure");
+        // Remove alias 'x' from the dictionary. Words which are absent will be ignored.
+        index.getDictionaries().getAliasDictionary().remove("x");
+        // Import aliases from file. Existing aliases are staying.
+        index.getDictionaries().getAliasDictionary().importDictionary(Utilities.ALIAS_FILE_PATH);
+        // Export aliases to file
+        index.getDictionaries().getAliasDictionary().exportDictionary(Utilities.EXPORTED_ALIAS_FILE_PATH);
+
+        // Search for term 'structure'
+        SearchResults results = index.search("@s");
+
+        // Print results in the console
+        for (DocumentResultInfo result : results) {
+            System.out.println(result.getHitCount() + " hits are in " + result.getFileName());
+        }
+    }
+
+    /**
+     * Performs homophone search
+     */
+    public static void useHomophoneSearch() {
+        //Create or load index
+        Index index = new Index(Utilities.INDEX_PATH);
+        //Add documents to index
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
+
+        SearchParameters parameters = new SearchParameters();
+        // Enable homophone search in parameters
+        parameters.setUseHomophoneSearch(true);
+
+        // Search for "pause", "paws", "pores", "pours"
+        SearchResults results = index.search("pause", parameters);
+
+        // Print results in the console
+        for (DocumentResultInfo result : results) {
+            System.out.println(result.getHitCount() + " hits are in " + result.getFileName());
+        }
+    }
+
+    /**
+     * Manages homophone dictionary
+     */
+    public static void manageHomophoneDictionary() {
+        //Create or load index
+        Index index = new Index(Utilities.INDEX_PATH);
+        //Add documents to index
+        index.addToIndex(Utilities.DOCUMENTS_PATH, true);
+
+        // Clearing homophone dictionary
+        index.getDictionaries().getHomophoneDictionary().clear();
+
+        // Adding homophones
+        String[] homophoneGroup1 = new String[]{"braise", "brays", "braze"};
+        String[] homophoneGroup2 = new String[]{"pause", "paws", "pores", "pours"};
+        ArrayList<String[]> homophoneGroups = new ArrayList<>();
+        homophoneGroups.add(homophoneGroup1);
+        homophoneGroups.add(homophoneGroup2);
+        index.getDictionaries().getHomophoneDictionary().addRange(homophoneGroups);
+
+        // Import homophones from file. Existing homophones are staying.
+        index.getDictionaries().getHomophoneDictionary().importDictionary(Utilities.HOMOPHONES_FILE_PATH);
+        // Export homophones to file
+        index.getDictionaries().getHomophoneDictionary().exportDictionary(Utilities.EXPORTED_HOMOPHONES_FILE_PATH);
+
+        SearchParameters parameters = new SearchParameters();
+        // Enable homophone search in parameters
+        parameters.setUseHomophoneSearch(true);
+
+        // Search for "pause", "paws", "pores", "pours"
+        SearchResults results = index.search("pause", parameters);
+
+        // Print results in the console
+        for (DocumentResultInfo result : results) {
+            System.out.println(result.getHitCount() + " hits are in " + result.getFileName());
+        }
     }
 }

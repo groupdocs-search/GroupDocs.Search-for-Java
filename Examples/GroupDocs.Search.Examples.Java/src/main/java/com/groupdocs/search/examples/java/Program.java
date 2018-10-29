@@ -1,21 +1,21 @@
 package com.groupdocs.search.examples.java;
 
-public class program {
+public class Program {
     public static void main(String[] args) throws Throwable {
 
         // Uncomment to apply license
-        Utilities.applyLicense();
+        // Utilities.applyLicense();
 
         //Use Dynabic.Metered account
         //Utilities.useDynabicMeteredAccount();
 
         //region Searching
 
-        // Simple search, search a word
-        //Searching.simpleSearch("pause");
+        //Simple search, search a word
+        //Searching.simpleSearch();
 
         // Search term1 and term2 or term3 but not term4
-        //Searching.booleanSearch("(Pause AND Return)", "(hydra NOT omega)");
+        //Searching.booleanSearch();
 
         //Search for documents that contain a relevant word and term1, an email address or term2
         //Searching.regexSearch();
@@ -113,6 +113,34 @@ public class program {
 
         //Generate HTML formatted text with highlighted found words
         //Searching.savingEncodingAutomatically();
+
+        //Search password protected document
+        //Searching.searchPasswordProtectedDocument();
+
+        //Search in Outlook Document
+        //Searching.outlookEmailMessageResultInfo();
+
+        //Custom Ost Extractor
+        //Searching.customOstExtractor();
+
+        //Perform a case sensitive search
+        //Searching.caseSensitiveSearch();
+
+        //Manages Stop Word dictionary
+        //Searching.manageStopWords();
+
+        //Searches while disabling use of stop words
+        //Searching.disableStopWords();
+
+        //use alias dictionary
+        //Searching.usingAliasToDictionary();
+
+        //Use homophone search
+        //Searching.useHomophoneSearch();
+
+        //Manage homephone dictionary
+        //Searching.manageHomophoneDictionary();
+
         //endregion
 
         //region Indexing
@@ -183,6 +211,9 @@ public class program {
         //Break Merging Manually
         //Indexing.breakMergingManually();
 
+        //Break indexing
+        //Indexing.breakIndexing();
+
         //Break indexing with cancellation object
         //Indexing.breakIndexingWithCancellationObject();
 
@@ -203,6 +234,31 @@ public class program {
 
         //Extract Document Text from Index to File
         //Indexing.extractDocumentTextToFileFromIndex();
+
+        //Merge Index with Delta Indexes
+        //Indexing.mergingIndexWithDeltaIndexes();
+
+        //Merge multiple Indexes
+        //Indexing.mergingMultipleIndexes();
+
+        //Merge current index with IndexRepository
+        //Indexing.mergingCurrentIndexWithIndexRepository();
+
+        //Merge Index with Delta Indexes Async
+        //Indexing.mergingIndexWithDeltaIndexesAsync();
+
+        //Merge multiple Indexes Async
+        //Indexing.mergingMultipleIndexesAsync();
+
+        //Merge current index with IndexRepository Async
+        //Indexing.mergingCurrentIndexWithIndexRepositoryAsync();
+
+        //Reload Index
+        //Indexing.reloadIndex();
+
+        //Cache Text of Indexed Documents
+        //Indexing.cacheTextOfIndexedDocuments();
+
         //endregion
     }
 }
