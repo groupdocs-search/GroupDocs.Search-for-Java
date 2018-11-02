@@ -1,4 +1,4 @@
-package com.groupdocs.search.examples.java;
+package com.groupdocs.search.examples;
 
 
 import com.groupdocs.search.License;
@@ -36,7 +36,7 @@ public class Utilities {
     public static final String DOCUMENT_TEXT_PATH = System.getProperty("user.dir") + "\\Data\\Output\\DocumentText.html";
     public static final String ALPHABET_FILE_PATH = System.getProperty("user.dir") + "\\Data\\Dictionaries\\MyAlphabet.txt";
     public static final String EXPORTED_ALPHABET_TXT = System.getProperty("user.dir") + "\\Data\\Dictionaries\\MyExportedAlphabet.txt";
-    public static String licensePath = "D:/GroupDocs.Total.lic";
+    public static String LICENSE_PATH = "D:/GroupDocs.Total.Java.lic";
 
     /**
      * This method applies license
@@ -44,9 +44,13 @@ public class Utilities {
      * @throws IOException
      */
     public static void applyLicense() throws IOException {
-        try (InputStream stream = new FileInputStream(licensePath)) {
+        try (InputStream stream = new FileInputStream(LICENSE_PATH)) {
             License lic = new License();
             lic.setLicense(stream);
+        }
+        catch(Exception ex)
+        {
+        	System.out.println(ex.getMessage());
         }
     }
 

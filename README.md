@@ -21,6 +21,9 @@ Directory | Description
 
 + **Website:** [www.groupdocs.com](https://www.groupdocs.com)
 + **Product Home:** [GroupDocs.Search for Java](https://products.groupdocs.com/search/java)
++ **Download:** [Download GroupDocs.Search for Java](https://artifact.groupdocs.com/repo/com/groupdocs/groupdocs-search/)
++ **API Reference:** [GroupDocs.Search for Java API Reference Guide](https://apireference.groupdocs.com/java/search)
++ **Documentation:** [GroupDocs.Search for Java Documentation](https://docs.groupdocs.com/display/searchjava/Home)
 + **Free Support:** [GroupDocs.Search for Java Free Support Forum](https://forum.groupdocs.com/c/search)
 + **Paid Support:** [GroupDocs.Search for Java Paid Support Helpdesk](https://helpdesk.groupdocs.com/)
 + **Blog:** [GroupDocs.Search for Java Blog](https://blog.groupdocs.com/category/groupdocs-search-product-family/)

@@ -1,4 +1,5 @@
 /target/
+/bin/
 /.idea/
 *.iml
 
@@ -6,7 +7,7 @@
 Thumbs.db
 
 /storage/[Tt]emp/
-/storage/GroupDocs.annotation*.xml
+/storage/GroupDocs.Search*.xml
 *.lic
 /.settings/
 *.classpath
