@@ -3,11 +3,13 @@ package com.groupdocs.search.examples;
 public class MainClass {
 	public static void main(String[] args) throws Throwable {
 
+		// region Licensing
 		// Uncomment to apply license
 		// Utilities.applyLicense();
 
 		// Use Dynabic.Metered account
 		// Utilities.useDynabicMeteredAccount();
+		// endregion
 
 		// region Searching
 
@@ -261,6 +263,27 @@ public class MainClass {
 
 		// Cache Text of Indexed Documents
 		// Indexing.cacheTextOfIndexedDocuments();
+
+		// endregion
+
+		// region Business Cases
+
+        // Create new books index, add documents and search
+		// BusinessCases.searchBooks();
+
+        // Search in existing books index
+		// BusinessCases.searchBooksInExistingIndex();
+
+        // Add documents in index
+		// BusinessCases.addDocumentsInBooksIndex();
+
+        // Update books index
+		// BusinessCases.updateBooksIndex();
+
+        // Search in several indexes
+        // BusinessCases.searchInSeveralIndexes();
+
+        // endregion
 
 		System.out.println("Operation completed...");
 	}
