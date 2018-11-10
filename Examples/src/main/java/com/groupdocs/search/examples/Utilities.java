@@ -10,6 +10,8 @@ import java.io.InputStream;
 
 
 public class Utilities {
+    public static final String BOOKS = (System.getProperty("user.dir") + "\\Data\\Books\\");
+    public static final String BOOKS_INDEX = System.getProperty("user.dir") + "\\Data\\Books Index\\";
     public static final String INDEX_PATH = (System.getProperty("user.dir") + "\\Data\\Documents Indexes\\");
     public static final String INDEX_PATH_2 = System.getProperty("user.dir") + "\\Data\\Documents Indexes2\\";
     public static final String MERGE_INDEX_PATH_1 = System.getProperty("user.dir") + "\\Data\\Index Merging\\Index1\\";
