@@ -13,14 +13,11 @@ public class BusinessCases {
         // Creating index folder
         Index index = new Index(Utilities.BOOKS_INDEX);
 
-
         // Indexing documents in folder
         index.addToIndex(Utilities.BOOKS);
 
-
         // When indexing is finished user can search in it
         SearchResults searchResults = index.search("Gregor Samsa");
-
 
         // List of found files
         for (DocumentResultInfo result : searchResults) {
