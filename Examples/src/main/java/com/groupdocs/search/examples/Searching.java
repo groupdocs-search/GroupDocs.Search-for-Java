@@ -837,7 +837,7 @@ public class Searching {
 	/**
 	 * Performs search with wildcards using query
 	 */
-	public static void wildCardSearch() {
+	public static void wildCardSearchInPhraseSearch() {
 		// Creating index
 		Index index = new Index(Utilities.INDEX_PATH);
 
@@ -1123,5 +1123,101 @@ public class Searching {
 		for (DocumentResultInfo result : results) {
 			System.out.println(result.getHitCount() + " hits are in " + result.getFileName());
 		}
+	}
+
+	/**
+	 * Performs blended characters search
+	 * This method is supported by version 18.12 or greater
+	 */
+	public static void searchBlendedCharacters() {
+
+		// Creating index
+		Index index = new Index(Utilities.INDEX_PATH,true);
+
+		// Marking hyphen as blended character
+		index.getDictionaries().getAlphabet().setRange(new char[] { '-' }, CharacterType.Blended);
+
+		// Adding documents to index
+		index.addToIndex(Utilities.DOCUMENTS_PATH,true);
+
+		// Searching for word 'silver-gray'
+		SearchResults results = index.search("silver-gray");
+		// Print results in the console
+		for (DocumentResultInfo result : results) {
+			System.out.println(result.getHitCount() + " hits are in " + result.getFileName());
+		}
+	}
+
+	/**
+	 * Performs wild card search
+	 * This method is supported by version 18.12 or greater
+	 */
+	public static void wildCardSearch() {
+		// Creating index
+		Index index = new Index(Utilities.INDEX_PATH,true);
+
+		// Adding documents to index
+		index.addToIndex(Utilities.DOCUMENTS_PATH,true);
+
+		// Searching for words 'affect' or 'effect' in a one document with 'principal', 'principle', 'principles', or 'principally'
+		SearchResults results1 = index.search("?ffect & princip?(2~4)");
+
+		// Searching with a single query for phrases 'assure equal opportunities', 'ensure equal opportunities', and 'sure equal opportunities'
+		SearchResults results2 = index.search("\"?(0~2)sure equal opportunities\"");
+	}
+
+	/**
+	 * Performs wild card search using object
+	 * This method is supported by version 18.12 or greater
+	 */
+	public static void wildCardSearchUsingObject() {
+		// Creating index
+		Index index = new Index(Utilities.INDEX_PATH,true);
+
+		// Adding documents to index
+		index.addToIndex(Utilities.DOCUMENTS_PATH, true);
+
+		// Constructing query 1
+		// Word 1 in the query is a pattern '?ffect' for wildcard search
+		WordPattern pattert11 = new WordPattern();
+		pattert11.appendOneCharacterWildcard();
+		pattert11.appendString("ffect");
+		SearchQuery subquery11 = SearchQuery.createWordPatternQuery(pattert11);
+
+		// Word 2 in the query is a pattern 'princip?(2~4)' for wildcard search
+		WordPattern pattert12 = new WordPattern();
+		pattert12.appendString("princip");
+		pattert12.appendWildcard(2, 4);
+		SearchQuery subquery12 = SearchQuery.createWordPatternQuery(pattert12);
+
+		// Creating boolean search query
+		SearchQuery query1 = SearchQuery.createAndQuery(subquery11, subquery12);
+
+		// Searching with query 1
+		SearchResults results1 = index.search(query1, new SearchParameters());
+
+		// Constructing query 2
+		// Word 1 in the phrase is a pattern '?(0~2)sure' for wildcard search
+		WordPattern pattert21 = new WordPattern();
+		pattert21.appendWildcard(0, 2);
+		pattert21.appendString("sure");
+		SearchQuery subquery21 = SearchQuery.createWordPatternQuery(pattert21);
+
+		// Word 2 in the phrase is searched with different word forms ('equal', 'equals', 'equally', etc.)
+		SearchQuery subquery22 = SearchQuery.createWordQuery("equal");
+		subquery22.setSearchParameters(new SearchParameters());
+		subquery22.getSearchParameters().setUseWordFormsSearch(true);
+
+		// Word 3 in the phrase is searched with maximum 2 differences of fuzzy search
+		SearchQuery subquery23 = SearchQuery.createWordQuery("opportunities");
+		subquery23.setSearchParameters(new SearchParameters());
+		subquery23.getSearchParameters().getFuzzySearch().setEnabled(true);
+		subquery23.getSearchParameters().getFuzzySearch().setFuzzyAlgorithm(new TableDiscreteFunction(2));
+
+		// Creating phrase search query
+		SearchQuery query2 = SearchQuery.createPhraseSearchQuery(subquery21, subquery22, subquery23);
+
+		// Searching with query 2
+		SearchResults results2 = index.search(query2, new SearchParameters());
 	}
 }

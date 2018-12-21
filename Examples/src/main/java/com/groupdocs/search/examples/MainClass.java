@@ -108,7 +108,7 @@ public class MainClass {
 		// Searching.ownExtractorOst();
 
 		// Search with wildcards using query
-		// Searching.wildCardSearch();
+		// Searching.wildCardSearchInPhraseSearch();
 
 		// Get searching time
 		// Searching.getSearchingTime();
@@ -145,6 +145,15 @@ public class MainClass {
 
 		// Manage homephone dictionary
 		// Searching.manageHomophoneDictionary();
+
+		// Perform blended characters search
+		// Searching.searchBlendedCharacters();
+
+		// Perform wild card search
+		// Searching.wildCardSearch();
+
+		// Perform wild card search with query in object form
+		// Searching.wildCardSearchUsingObject();
 
 		// endregion
 
