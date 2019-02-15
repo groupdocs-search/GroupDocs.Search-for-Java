@@ -1220,4 +1220,52 @@ public class Searching {
 		// Searching with query 2
 		SearchResults results2 = index.search(query2, new SearchParameters());
 	}
+	/**
+	 * Escaping special characters in search queries
+	 * Feature is supported in version 19.2 of the API
+	 */
+	public static void escapingSpecialCharacterInSearch()
+    {
+        //ExStart:EscapingSpecialCharacterInSearch
+        // Creating index
+        Index index = new Index(Utilities.INDEX_PATH);
+
+        // Marking character '&' as a valid letter, not a separator
+        index.getDictionaries().getAlphabet().setRange(new char[] { '&' }, CharacterType.Letter);
+
+        // Indexing
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
+        
+        // Searching for word 'R&B'
+        SearchResults results0 = index.search("R\\&B");
+
+        // Searching for word 'R&B'
+        SearchResults results1 = index.search("R\\u0026B");
+
+        //ExEnd:EscapingSpecialCharacterInSearch
+
+    }
+	/**
+	 * Escaping special characters in search queries
+	 * Feature is supported in version 19.2 of the API
+	 */
+	 public static void searchZipArchives()
+     {
+         //ExStart:SearchZipArchives
+         // Creating index
+         Index index = new Index(Utilities.INDEX_PATH);
+
+         // Before indexing, please make sure that Zip archives exist in the documents directory
+         index.addToIndex(Utilities.DOCUMENTS_PATH);
+
+         // Searching for Zips
+         SearchResults results = index.search("Zip");
+
+         // Display the counts of Zips
+         System.out.println("Zips Found: "+results.getCount());
+
+         //ExEnd:SearchZipArchives
+
+
+     }
 }

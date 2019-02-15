@@ -28,7 +28,7 @@
 		<dependency>
 			<groupId>com.groupdocs</groupId>
 			<artifactId>groupdocs-search</artifactId>
-			<version>18.12</version>
+			<version>19.2</version>
 		</dependency>
 		<dependency>
 			<groupId>de.learnlib.distribution</groupId>

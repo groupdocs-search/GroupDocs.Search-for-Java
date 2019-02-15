@@ -5,7 +5,7 @@ public class MainClass {
 
 		// region Licensing
 		// Uncomment to apply license
-		// Utilities.applyLicense();
+		 Utilities.applyLicense();
 
 		// Use Dynabic.Metered account
 		// Utilities.useDynabicMeteredAccount();
@@ -150,7 +150,7 @@ public class MainClass {
 		// Searching.searchBlendedCharacters();
 
 		// Perform wild card search
-		// Searching.wildCardSearch();
+		 Searching.wildCardSearch();
 
 		// Perform wild card search with query in object form
 		// Searching.wildCardSearchUsingObject();
