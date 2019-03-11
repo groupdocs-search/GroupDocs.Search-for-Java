@@ -119,6 +119,48 @@ public class Indexing {
 			}
 		});
 	}
+	/**
+	 * Event that notifies about search phase is finished and provides intermediate results.
+     * Feature is supported in version 19.3 of the API
+	 */
+	public static void finshedSearchNotificationEvent()
+    {
+        //ExStart:FinshedSearchNotification_19.3
+        // Creating index
+        Index index = new Index(Utilities.INDEX_PATH);
+
+        // Adding synonyms
+        index.getDictionaries().getSynonymDictionary().addRange(new String[][] { new String[] { "big", "large" } });
+         
+        // Adding documents to index
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
+         
+        // Subscribing to the event
+        index.SearchPhaseCompleted.add(new EventHandler<SearchPhaseEventArgs>() {
+            public void invoke(Object sender, SearchPhaseEventArgs args) {
+                System.out.println("Phase " + args.getSearchPhase() + ": " + args.getWords().length);
+            }
+        });
+         
+        // Creating search parameters
+        SearchParameters parameters = new SearchParameters();
+        parameters.setUseCaseSensitiveSearch(false);
+        parameters.getKeyboardLayoutCorrector().setEnabled(true);
+        parameters.getSpellingCorrector().setEnabled(true);
+        parameters.getSpellingCorrector().setMaxMistakeCount(1);
+        parameters.setUseHomophoneSearch(true);
+        parameters.setUseSynonymSearch(true);
+        parameters.setUseWordFormsSearch(true);
+        parameters.getFuzzySearch().setEnabled(true);
+        parameters.getFuzzySearch().setFuzzyAlgorithm(new TableDiscreteFunction(1));
+         
+        // Searching for word 'big'.
+        // Note that enabling many of search options at a time may give many results and take a long time.
+        SearchResults results = index.search("big", parameters);
+
+        //ExEnd:FinshedSearchNotification_19.3
+
+    }
 
 	/**
 	 * Updates Index

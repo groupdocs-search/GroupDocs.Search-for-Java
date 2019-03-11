@@ -1266,6 +1266,35 @@ public class Searching {
 
          //ExEnd:SearchZipArchives
 
+     }
+	 /**
+		 * Searching for a complete phrase with stop words
+		 * Feature is supported in version 19.3 of the API
+	 */
+		
+     public static void searchWithStopWords()
+     {
+         //ExStart:SearchwithStopWords_19.3
+         // Creating index
+         Index index = new Index(Utilities.INDEX_PATH);
+
+      // Adding stop words to dictionary
+      // Note that words 'in' and 'these' are stop words by default. This line of code is here for demonstration purposes only.
+      index.getDictionaries().getStopWordDictionary().addRange(new String[] { "in", "these" });
+       
+      // Adding documents to index
+      index.addToIndex(Utilities.DOCUMENTS_PATH);
+       
+      // Searching for phrase without stop words
+      SearchResults results1 = index.search("\"information contained *1 *1 materials\"");
+       
+      // Searching for phrase containing stop words
+      // This search gives the same results as the previous one
+      SearchResults results2 = index.search("\"information contained in these materials\"");
+
+             
+      //ExEnd:SearchwithStopWords_19.3
+
 
      }
 }

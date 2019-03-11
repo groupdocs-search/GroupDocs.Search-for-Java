@@ -136,6 +136,9 @@ public class MainClass {
 
 		// Searches while disabling use of stop words
 		// Searching.disableStopWords();
+		 
+		// Searches with stop words
+		// Searching.searchWithStopWords();
 
 		// use alias dictionary
 		// Searching.usingAliasToDictionary();
@@ -150,7 +153,7 @@ public class MainClass {
 		// Searching.searchBlendedCharacters();
 
 		// Perform wild card search
-		 Searching.wildCardSearch();
+		// Searching.wildCardSearch();
 
 		// Perform wild card search with query in object form
 		// Searching.wildCardSearchUsingObject();
@@ -188,6 +191,7 @@ public class MainClass {
 
 		// Subscribe to events
 		// Indexing.subscriptionToEvents();
+		// Indexing.finshedSearchNotificationEvent(); 
 
 		// Update Index
 		// Indexing.updateIndex();
