@@ -5,7 +5,7 @@ public class MainClass {
 
 		// region Licensing
 		// Uncomment to apply license
-		 Utilities.applyLicense();
+		 //Utilities.applyLicense();
 
 		// Use Dynabic.Metered account
 		// Utilities.useDynabicMeteredAccount();
@@ -14,7 +14,7 @@ public class MainClass {
 		// region Searching
 
 		// Simple search, search a word
-		// Searching.simpleSearch();
+		 //Searching.simpleSearch();
 
 		// Search term1 and term2 or term3 but not term4
 		// Searching.booleanSearch();
@@ -108,7 +108,7 @@ public class MainClass {
 		// Searching.ownExtractorOst();
 
 		// Search with wildcards using query
-		// Searching.wildCardSearchInPhraseSearch();
+		 //Searching.wildCardSearchInPhraseSearch();
 
 		// Get searching time
 		// Searching.getSearchingTime();
@@ -157,6 +157,12 @@ public class MainClass {
 
 		// Perform wild card search with query in object form
 		// Searching.wildCardSearchUsingObject();
+		
+		//Searching with filters
+        //Searching.searchwithFilters();
+		
+		// Get search hits count against each word.
+        //Searching.getSearchHits();
 
 		// endregion
 
@@ -276,6 +282,16 @@ public class MainClass {
 
 		// Cache Text of Indexed Documents
 		// Indexing.cacheTextOfIndexedDocuments();
+		
+		//Optimization of index storage format
+        //Indexing.optimizeIndex();
+
+        //Set log file path while indexing
+        //Indexing.setLogFileConfigs();
+
+        //Attach arbitrary additional fields to a document 
+        //Indexing.attachAbritraryFields();
+		
 
 		// endregion
 

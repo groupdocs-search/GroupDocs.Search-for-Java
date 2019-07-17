@@ -1,8 +1,10 @@
 package com.groupdocs.search.examples;
 
 
+import com.groupdocs.search.Index;
 import com.groupdocs.search.License;
 import com.groupdocs.search.Metered;
+import com.groupdocs.search.SearchResults;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,6 +15,8 @@ public class Utilities {
     public static final String BOOKS = (System.getProperty("user.dir") + "\\Data\\Books\\");
     public static final String BOOKS_INDEX = System.getProperty("user.dir") + "\\Data\\Books Index\\";
     public static final String INDEX_PATH = (System.getProperty("user.dir") + "\\Data\\Documents Indexes\\");
+    public static final String NEW_INDEX_PATH = (System.getProperty("user.dir") + "\\Data\\Documents Indexes\\");
+    public static final String OLD_INDEX_PATH = (System.getProperty("user.dir") + "\\Data\\Old Documents Indexes\\");
     public static final String INDEX_PATH_2 = System.getProperty("user.dir") + "\\Data\\Documents Indexes2\\";
     public static final String MERGE_INDEX_PATH_1 = System.getProperty("user.dir") + "\\Data\\Index Merging\\Index1\\";
     public static final String MERGE_INDEX_PATH_2 = System.getProperty("user.dir") + "\\Data\\Index Merging\\Index2\\";
@@ -64,5 +68,16 @@ public class Utilities {
     public static void useDynabicMeteredAccount() throws Exception {
         // initialize Metered API and set-up credentials
         new Metered().setMeteredKey(publicKey, privateKey);
+        // Creating index
+        Index index = new Index(Utilities.INDEX_PATH);
+         
+        // Adding documents to index
+        index.addToIndex(Utilities.DOCUMENTS_PATH);
+         
+        // Searching
+        SearchResults results = index.search("sample");
+         
+        // Getting consumption credit
+        double used = Metered.getConsumptionCredit();
     }
 }

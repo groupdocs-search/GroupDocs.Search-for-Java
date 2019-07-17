@@ -584,5 +584,84 @@ public class Indexing {
 		// Indexing
 		index.addToIndex(Utilities.DOCUMENTS_PATH);
 	}
+	/*
+    * Set log file path while indexing
+    * Feature is supported in version 19.5 of the API
+    */
+    public static void setLogFileConfigs()
+    {
+        //ExStart:SetLogFileConfigs_19.5
+    	
+    	// Creating index
+    	Index index = new Index(Utilities.INDEX_PATH);
+    	 
+    	// Setting the log file name. The log file name can be relative or absolute.
+    	index.getLogSettings().setFileName("Log\\Log.txt");
+    	 
+    	// Setting the maximum size of the log file in megabytes. This value must be in the range from 0.1 to 1000.
+    	index.getLogSettings().setMaxSize(2.0);
+    	 
+    	// Adding documents to index
+    	index.addToIndex(Utilities.DOCUMENTS_PATH);
+    	 
+    	// Searching
+    	SearchResults results = index.search("sample");
+
+        //ExEnd:SetLogFileConfigs_19.5
+    }
+    /*
+    * Optimization of index storage format
+    * Feature is supported in version 19.5 of the API
+    */
+    public static void optimizeIndex()
+    {
+        //ExStart:OptimizeIndex_19.5
+    	// Creating updater instance
+    	IndexVersionUpdater updater = new IndexVersionUpdater();
+    	 
+    	// Updating index version
+    	if (updater.canUpdate(Utilities.OLD_INDEX_PATH)) {
+    	    int updateResult = updater.update(Utilities.OLD_INDEX_PATH, Utilities.NEW_INDEX_PATH);
+    	    System.out.println("Updated: " + (updateResult == VersionUpdateResult.Updated));
+    	}
+    	 
+    	// Loading updated index
+    	Index index = new Index(Utilities.NEW_INDEX_PATH);
+    	 
+    	// Searching
+    	SearchResults results = index.search("hobbit");
+                 
+        //ExEnd:OptimizeIndex_19.5
+    }
+
+    /*
+    * Attach arbitrary additional fields to a document 
+    * Feature is supported in version 19.5 of the API
+    */
+    public static void attachAbritraryFields()
+    {
+        //ExStart:AttachAbritraryFields_19.5
+    	// Creating index
+    	Index index = new Index(Utilities.INDEX_PATH);
+    	 
+    	// Subscribing to event
+    	index.FileIndexing.add(new EventHandler<FileIndexingEventArgs>() {
+    	    @Override
+    	    public void invoke(Object sender, FileIndexingEventArgs args) {
+    	        com.groupdocs.search.FieldInfo[] additionalFields = new com.groupdocs.search.FieldInfo[] {
+    	            new com.groupdocs.search.FieldInfo("Tags", "arbitrary additional fields"),
+    	        };
+    	        args.setAdditionalFields(additionalFields);
+    	    }
+    	});
+    	 
+    	// Adding documents to index
+    	index.addToIndex(Utilities.DOCUMENTS_PATH);
+    	 
+    	// Searching
+    	SearchResults results = index.search("arbitrary");
+
+        //ExEnd:AttachAbritraryFields_19.5
+    }
 
 }

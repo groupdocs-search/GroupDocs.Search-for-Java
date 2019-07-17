@@ -1297,4 +1297,69 @@ public class Searching {
 
 
      }
+     /*
+     * Document filtering for searching
+     * Feature is supported in version 19.5 of the API
+     */
+     public static void searchwithFilters()
+     {
+         //ExStart:SearchwithFilters_19.5
+    	    	 
+    	 // Creating index
+    	 Index index = new Index(Utilities.INDEX_PATH);
+    	  
+    	 // Adding documents to index
+    	 index.addToIndex(Utilities.DOCUMENTS_PATH);
+    	  
+    	 // Configuring document filter
+    	 // Filter filter3 will only accept TXT and DOC documents with text 'Tolkien' in file names
+    	 SearchParameters parameters = new SearchParameters();
+    	 ISearchDocumentFilter filter1 = SearchDocumentFilter.createFileExtension(".txt", ".doc");
+    	 ISearchDocumentFilter filter2 = SearchDocumentFilter.createFileNameRegularExpression("Tolkien");
+    	 ISearchDocumentFilter filter3 = SearchDocumentFilter.createConjunction(filter1, filter2);
+    	 parameters.setSearchDocumentFilter(filter3);
+    	  
+    	 // Searching
+    	 SearchResults results = index.search("sample", parameters);
+
+         //ExEnd:SearchwithFilters_19.5
+
+     }
+     /*
+     * Get search hits count against each word.
+     * Feature is supported in version 19.5 of the API
+     */
+     public static void getSearchHits()
+     {
+         //ExStart:GetSearchHits_19.5
+        
+    	// Creating index
+    	 Index index = new Index(Utilities.INDEX_PATH);
+    	  
+    	 // Adding documents to index
+    	 index.addToIndex(Utilities.DOCUMENTS_PATH);
+    	  
+    	 // Configuring search parameters
+    	 SearchParameters parameters = new SearchParameters();
+    	 // Enabling maximum 2 misprints per word
+    	 parameters.getFuzzySearch().setFuzzyAlgorithm(new TableDiscreteFunction(2));
+    	 parameters.getFuzzySearch().setEnabled(true);
+    	  
+    	 // Searching
+    	 SearchResults results = index.search("hobbot", parameters);
+    	  
+    	 // Getting number of occurrences for each found word
+    	 for (DocumentResultInfo doc : results) {
+    	     for (DetailedResultInfo field : doc.getDetailedResults()) {
+    	         for (int i = 0; i < field.getTerms().length; i++) {
+    	             String word = field.getTerms()[i];
+    	             int hits = field.getTermsOccurrences()[i];
+    	             System.out.println(word + " - " + hits);
+    	         }
+    	     }
+    	 }	
+         //ExEnd:GetSearchHits_19.5
+
+
+     }
 }
