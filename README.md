@@ -13,15 +13,14 @@ GroupDocs.Search for Java API performs basic and advanced search operations agai
   </a>
 </p>
 
+Directory | Description
+--------- | -----------
+[Examples](https://github.com/groupdocs-search/GroupDocs.Search-for-Java/tree/master/Examples)  | Contains the package of all Java examples and sample files that will help you learn how to use product features. 
+
 ## How to Run the Examples
 Please see the following article that explains how to run the GroupDocs.Search for Java Console Examples.
 
 + [How to Run the Examples](https://docs.groupdocs.com/display/searchjava/How+to+Run+Examples)
-
-
-Directory | Description
---------- | -----------
-[Examples](https://github.com/groupdocs-search/GroupDocs.Search-for-Java/tree/master/Examples)  | Contains the package of all Java examples and sample files that will help you learn how to use product features. 
 
 ##  Resources
 
