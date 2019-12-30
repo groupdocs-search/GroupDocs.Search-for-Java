@@ -1,3 +1,5 @@
+/~/.m2/*
+/output/
 /target/
 /bin/
 /.idea/

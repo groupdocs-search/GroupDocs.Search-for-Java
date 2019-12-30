@@ -1,3 +1,0 @@
-2019-03-27 19:05:37.070	Error: Operation can be executed only for actual index version. Please run this method with updateIfNecessay as true or run Update() method.
-2019-03-27 19:06:15.264	Error: Operation can be executed only for actual index version. Please run this method with updateIfNecessay as true or run Update() method.
-2019-03-27 19:07:35.246	Error: Operation can be executed only for actual index version. Please run this method with updateIfNecessay as true or run Update() method.

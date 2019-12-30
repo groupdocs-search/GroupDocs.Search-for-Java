@@ -1,319 +1,185 @@
 package com.groupdocs.search.examples;
 
+import com.groupdocs.search.examples.advanced_usage.creating_an_index.*;
+import com.groupdocs.search.examples.advanced_usage.indexing.*;
+import com.groupdocs.search.examples.advanced_usage.managing_dictionaries.*;
+import com.groupdocs.search.examples.advanced_usage.searching.*;
+import com.groupdocs.search.examples.basic_usage.*;
+import com.groupdocs.search.examples.quick_start.*;
+
 public class MainClass {
-	public static void main(String[] args) throws Throwable {
+    public static void main(String[] args) throws Throwable {
+        System.out.println("Open MainClass.java. \nIn the main() method, uncomment the example that you want to run.");
+        System.out.println("=====================================================");
 
-		// region Licensing
-		// Uncomment to apply license
-		 //Utilities.applyLicense();
+        //NOTE: Please uncomment the example you want to try out
 
-		// Use Dynabic.Metered account
-		// Utilities.useDynabicMeteredAccount();
-		// endregion
+        // Getting Started ----------------------------------------------------------------------------------------------------
 
-		// region Searching
+        SetLicenseFromFile.run();
+        //SetLicenseFromStream.run();
+        //SetMeteredLicense.run();
+        HelloWorld.run();
 
-		// Simple search, search a word
-		 //Searching.simpleSearch();
+        // Basic Usage ----------------------------------------------------------------------------------------------------
 
-		// Search term1 and term2 or term3 but not term4
-		// Searching.booleanSearch();
+        //BuildYourFirstSearchSolution.runSynchronousIndexing();
+        //BuildYourFirstSearchSolution.runAsynchronousIndexing();
 
-		// Search for documents that contain a relevant word and term1, an email
-		// address or term2
-		// Searching.regexSearch();
+        //BuildSearchQuery.run();
 
-		// Search results from misspelled search query
-		// Searching.fuzzySearch();
+        //WorkWithSearchResults.obtainSearchResultInformation();
+        //WorkWithSearchResults.highlightSearchResults();
 
-		// Show results based on similarity
-		// Searching.fuzzySearchSimilarity();
+        //GetSupportedFileFormats.run();
 
-		// Show only best results range from a fuzzy search
-		// Searching.fuzzySearchOnlyBestResultsRange();
+        // Advanced Usage ----------------------------------------------------------------------------------------------------
 
-		// Fuzzy search that uses table of word length values mapped to max
-		// mistake count values
-		// Searching.fuzzySearchTableDiscrete();
+        // Creating an Index ----------------------------------------------------------------------------------------------------
 
-		// Search for specific fields of document
-		// Searching.facetedSearch();
+        //UsingEvents.operationFinishedEvent();
+        //UsingEvents.errorOccurredEvent();
+        //UsingEvents.operationProgressChangedEvent();
+        //UsingEvents.passwordRequiredEvent();
+        //UsingEvents.fileIndexingEvent();
+        //UsingEvents.statusChangedEvent();
+        //UsingEvents.searchPhaseCompletedEvent();
 
-		// Faceted search combine with boolean search
-		// Searching.facetedSearchWithBooleanSearch();
+        //UsingIndexRepository.run();
 
-		// Search for documents with Synonyms
-		// Searching.synonymSearch();
+        // Indexing ----------------------------------------------------------------------------------------------------
 
-		// Manages Synonyms search
-		// Searching.manageSynonyms();
+        //CharacterReplacementDuringIndexing.run();
 
-		// Perform numeric range search
-		// Searching.numericRangeSearch();
+        //CharacterTypes.regularCharacters();
+        //CharacterTypes.blendedCharacters();
 
-		// Perform date range search
-		// Searching.dateRangeSearch();
+        //CustomTextExtractors.run();
 
-		// Manage date range formats
-		// Searching.manageDateRangeFormats();
+        //DeleteIndexedPaths.run();
 
-		// Search using Spelling Corrector
-		// Searching.spellingCorrectorUsage();
-		// Manage spelling corrector
-		// Searching.spellingCorrectorManagement();
-		// Search only best results
-		// Searching.spellingCorrectorBestResults();
+        //DocumentFilteringDuringIndexing.settingAFilter();
+        //DocumentFilteringDuringIndexing.creationTimeFilters();
+        //DocumentFilteringDuringIndexing.modificationTimeFilters();
+        //DocumentFilteringDuringIndexing.filePathFilters();
+        //DocumentFilteringDuringIndexing.fileLengthFilters();
+        //DocumentFilteringDuringIndexing.fileExtensionFilter();
+        //DocumentFilteringDuringIndexing.logicalNotFilter();
+        //DocumentFilteringDuringIndexing.logicalAndFilter();
+        //DocumentFilteringDuringIndexing.logicalOrFilter();
 
-		// Search using Keyboard Layout Corrector
-		// Searching.keyboardLayoutCorrectorUsage();
+        //IndexingAdditionalFields.run();
 
-		// Search documents wih exact phrase
-		// Searching.exactPhraseSearch();
+        //IndexingMetadataOfDocuments.run();
 
-		// Specify number of thread for searching
-		// Searching.specifyNumberOfThreads();
+        //IndexingOptionsProperties.cancellationProperty();
+        //IndexingOptionsProperties.isAsyncProperty();
+        //IndexingOptionsProperties.threadsProperty();
 
-		// Cancel Search Operation
-		// Searching.cancelSearchOperation();
+        //IndexingPasswordProtectedDocuments.indexingUsingThePasswordDictionary();
+        //IndexingPasswordProtectedDocuments.indexingUsingThePasswordRequiredEvent();
 
-		// Cancel Search Operation with time limitation
-		// Searching.cancelSearchOperationWithTimeLimitation();
+        //IndexingReports.run();
 
-		// Searching by parts(Chunks)
-		// Searching.searchingByParts();
+        //IndexingWithStopWords.run();
 
-		// Get search report
-		// Searching.getSearchReport();
+        //Logging.useOfStandardFileLogger();
+        //Logging.implementingCustomLogger();
 
-		// Limit Search Report
-		// Searching.limitSearchReport();
+        //MergeIndexes.run();
 
-		// Highlight search results
-		// Searching.generateHighlightedTextSearchResults();
+        //OptimizeIndex.run();
 
-		// Highlight search results to file
-		// Searching.generateHighlightedTextResultsToFile();
+        //StoringTextOfIndexedDocuments.run();
 
-		// Highlight search results to HTML File
-		// Searching.generateHighlightedTextResultsToHTMLFile();
+        //TextFileEncodingDetection.run();
 
-		// Search with Query as a parameter
-		// Searching.searchWithQuery();
+        //UpdateIndex.updateIndexedDocuments();
+        //UpdateIndex.updateIndexVersion();
 
-		// Search for any document in index
-		// Searching.searchFileName();
+        // Searching ----------------------------------------------------------------------------------------------------
 
-		// Shows how to implement own custom extractor for outlook document for
-		// the extension .ost and .pst files
-		// Searching.ownExtractorOst();
+        //BooleanSearch.operatorAnd();
+        //BooleanSearch.operatorOr();
+        //BooleanSearch.operatorNot();
+        //BooleanSearch.complexQueries();
 
-		// Search with wildcards using query
-		 //Searching.wildCardSearchInPhraseSearch();
+        //CaseSensitiveSearch.queryInTextForm();
+        //CaseSensitiveSearch.queryInObjectForm();
 
-		// Get searching time
-		// Searching.getSearchingTime();
+        //DateRangeSearch.creatingDateRangeSearchQueries();
+        //DateRangeSearch.specifyingDateRangeSearchFormats();
 
-		// Searching using morphological word forms
-		// Searching.searchUsingMorphologicalWordForm();
+        //DocumentFilteringInSearchResult.settingAFilter();
+        //DocumentFilteringInSearchResult.filePathFilters();
+        //DocumentFilteringInSearchResult.fileExtensionFilter();
+        //DocumentFilteringInSearchResult.combiningFilters();
 
-		// Generate HTML formatted text with highlighted found words
-		// Searching.savingEncodingAutomatically();
+        //FacetedSearch.simpleFacetedSearch();
+        //FacetedSearch.complexQuery();
 
-		// Search password protected document
-		// Searching.searchPasswordProtectedDocument();
+        //FuzzySearch.settingFuzzySearchAlgorithm();
+        //FuzzySearch.settingStepFunction();
 
-		// Search in Outlook Document
-		// Searching.outlookEmailMessageResultInfo();
+        //GettingIndexedDocuments.gettingDocuments();
+        //GettingIndexedDocuments.gettingTextOfIndexedDocuments();
 
-		// Custom Ost Extractor
-		// Searching.customOstExtractor();
+        //HighlightingSearchResults.highlightingInEntireDocument();
+        //HighlightingSearchResults.highlightingInSegments();
 
-		// Perform a case sensitive search
-		// Searching.caseSensitiveSearch();
+        //HomophoneSearch.run();
 
-		// Manages Stop Word dictionary
-		// Searching.manageStopWords();
+        //KeyboardLayoutCorrection.run();
 
-		// Searches while disabling use of stop words
-		// Searching.disableStopWords();
-		 
-		// Searches with stop words
-		// Searching.searchWithStopWords();
+        //NumericRangeSearch.run();
 
-		// use alias dictionary
-		// Searching.usingAliasToDictionary();
+        //OutputAdapters.run();
 
-		// Use homophone search
-		// Searching.useHomophoneSearch();
+        //PhraseSearch.simplePhraseSearch();
+        //PhraseSearch.phraseSearchWithWildcards();
+        //PhraseSearch.phraseSearchWithWildcards2();
 
-		// Manage homephone dictionary
-		// Searching.manageHomophoneDictionary();
+        //QueriesInTextAndObjectForm.run();
 
-		// Perform blended characters search
-		// Searching.searchBlendedCharacters();
+        //RegularExpressionSearch.run();
 
-		// Perform wild card search
-		// Searching.wildCardSearch();
+        //SearchByChunks.run();
 
-		// Perform wild card search with query in object form
-		// Searching.wildCardSearchUsingObject();
-		
-		//Searching with filters
-        //Searching.searchwithFilters();
-		
-		// Get search hits count against each word.
-        //Searching.getSearchHits();
+        //SearchForDifferentWordForms.run();
 
-		// endregion
+        //SearchReports.run();
 
-		// region Indexing
+        //SearchResults.run();
 
-		// Create Index in memory
-		// Indexing.createIndexInMemory();
+        //SpellChecking.run();
 
-		// Create Index on disk
-		// Indexing.createIndexOnDisk();
+        //SynonymSearch.run();
 
-		// Create Index in memory with required index settings
-		// Indexing.createIndexInMemoryWithIndexSettings();
+        //UsingAliases.run();
 
-		// Create Index on disk with required index settings
-		// Indexing.createIndexOnDiskWithIndexSettings();
+        //WildcardSearch.queryInTextForm();
 
-		// Create index with overwriting existing one
-		// Indexing.createWithOverwritingExistedIndex();
+        // Managing Dictionaries ----------------------------------------------------------------------------------------------------
 
-		// Load Index
-		// Indexing.loadIndex();
+        //AliasDictionary.run();
 
-		// Load Index to Index Repository
-		// Indexing.loadIndexToIndexRepository();
+        //Alphabet.run();
 
-		// Add Document to Index
-		// Indexing.addDocumentToIndex();
+        //CharacterReplacements.run();
 
-		// Add Document to Index Async
-		// Indexing.addDocumentToIndexAsync();
+        //DocumentPasswords.run();
 
-		// Subscribe to events
-		// Indexing.subscriptionToEvents();
-		// Indexing.finshedSearchNotificationEvent(); 
+        //HomophoneDictionary.run();
 
-		// Update Index
-		// Indexing.updateIndex();
+        //SpellingCorrector.run();
 
-		// Update Indexes in Index Repository
-		// Indexing.updateIndexInRepository();
+        //StopWordDictionary.run();
 
-		// Update Index asynchronously
-		// Indexing.updateIndexAsync();
+        //SynonymDictionary.run();
 
-		// Update Index in repo asynchronously
-		// Indexing.updateIndexInRepoAsync();
+        //WordFormsProvider.run();
 
-		// Update Index version
-		// Indexing.updateIndexVersion();
-
-		// Support for new document format
-		// Indexing.customExtractor();
-
-		// Compact Indexing
-		// Indexing.compactIndexing();
-
-		// Multi threaded indexing
-		// Indexing.multiThreadedIndexing();
-
-		// Multi threaded indexing async
-		// Indexing.multiThreadedIndexingAsync();
-
-		// Break Update operation manually
-		// Indexing.breakUpdatingManually();
-
-		// Break Updating with cancellation object
-		// Indexing.breakUpdatingUsingCancellationObject();
-
-		// Break Merging Manually
-		// Indexing.breakMergingManually();
-
-		// Break indexing
-		// Indexing.breakIndexing();
-
-		// Break indexing with cancellation object
-		// Indexing.breakIndexingWithCancellationObject();
-
-		// Break indexing with time limitation
-		// Indexing.breakIndexingWithTimeLimitation();
-
-		// Break Index Repository
-		// Indexing.breakIndexRepository();
-
-		// Break Index Repository using Cancellation Object
-		// Indexing.breakIndexRepositoryUsingCancellationObject();
-
-		// Get a list of indexed documents from an index
-		// Indexing.getListOfIndexedDocuments();
-
-		// Extract Document Text from Index
-		// Indexing.extractDocumentTextFromIndex();
-
-		// Extract Document Text from Index to File
-		// Indexing.extractDocumentTextToFileFromIndex();
-
-		// Merge Index with Delta Indexes
-		// Indexing.mergingIndexWithDeltaIndexes();
-
-		// Merge multiple Indexes
-		// Indexing.mergingMultipleIndexes();
-
-		// Merge current index with IndexRepository
-		// Indexing.mergingCurrentIndexWithIndexRepository();
-
-		// Merge Index with Delta Indexes Async
-		// Indexing.mergingIndexWithDeltaIndexesAsync();
-
-		// Merge multiple Indexes Async
-		// Indexing.mergingMultipleIndexesAsync();
-
-		// Merge current index with IndexRepository Async
-		// Indexing.mergingCurrentIndexWithIndexRepositoryAsync();
-
-		// Reload Index
-		// Indexing.reloadIndex();
-
-		// Cache Text of Indexed Documents
-		// Indexing.cacheTextOfIndexedDocuments();
-		
-		//Optimization of index storage format
-        //Indexing.optimizeIndex();
-
-        //Set log file path while indexing
-        //Indexing.setLogFileConfigs();
-
-        //Attach arbitrary additional fields to a document 
-        //Indexing.attachAbritraryFields();
-		
-
-		// endregion
-
-		// region Business Cases
-
-        // Create new books index, add documents and search
-		// BusinessCases.searchBooks();
-
-        // Search in existing books index
-		// BusinessCases.searchBooksInExistingIndex();
-
-        // Add documents in index
-		// BusinessCases.addDocumentsInBooksIndex();
-
-        // Update books index
-		// BusinessCases.updateBooksIndex();
-
-        // Search in several indexes
-        // BusinessCases.searchInSeveralIndexes();
-
-        // endregion
-
-		System.out.println("Operation completed...");
-	}
+        System.out.println();
+        System.out.println("All done.");
+    }
 }
