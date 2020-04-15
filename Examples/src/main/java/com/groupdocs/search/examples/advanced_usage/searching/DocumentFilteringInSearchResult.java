@@ -1,6 +1,8 @@
 package com.groupdocs.search.examples.advanced_usage.searching;
 
 import com.groupdocs.search.*;
+import com.groupdocs.search.events.EventHandler;
+import com.groupdocs.search.events.FileIndexingEventArgs;
 import com.groupdocs.search.options.*;
 import com.groupdocs.search.results.*;
 import com.groupdocs.search.examples.Utils;
@@ -50,7 +52,6 @@ public class DocumentFilteringInSearchResult {
         options.setSearchDocumentFilter(filter);
 
         // Search in the index
-        // Only text documents will be returned as the result of the search
         String query = "Advantages";
         SearchResult result = index.search(query, options);
 
@@ -77,8 +78,42 @@ public class DocumentFilteringInSearchResult {
         options.setSearchDocumentFilter(filter);
 
         // Search in the index
-        // Only text documents will be returned as the result of the search
         String query = "ipsum";
+        SearchResult result = index.search(query, options);
+
+        Utils.traceResult(query, result);
+    }
+
+    public static void attributeFilter() {
+        String indexFolder = ".\\output\\AdvancedUsage\\Searching\\DocumentFilteringInSearchResult\\AttributeFilter";
+        String documentsFolder = Utils.DocumentsPath;
+
+        // Creating an index in the specified folder
+        Index index = new Index(indexFolder);
+
+        index.getEvents().FileIndexing.add(new EventHandler<FileIndexingEventArgs>() {
+            public void invoke(Object sender, FileIndexingEventArgs args) {
+                if (args.getDocumentFullPath().endsWith(".txt")) {
+                    String[] mainAttribute = new String[] { "main" };
+                    args.setAttributes(mainAttribute);
+                }
+            }
+        });
+
+        // Indexing documents from the specified folder
+        index.add(documentsFolder);
+
+        // Creating a search options object
+        SearchOptions options = new SearchOptions();
+
+        // This filter returns only documents that have attribute "main"
+        ISearchDocumentFilter filter = SearchDocumentFilter.createAttribute("main");
+
+        // Setting a document filter
+        options.setSearchDocumentFilter(filter);
+
+        // Search in the index
+        String query = "ipsum OR length";
         SearchResult result = index.search(query, options);
 
         Utils.traceResult(query, result);
@@ -116,7 +151,6 @@ public class DocumentFilteringInSearchResult {
         options.setSearchDocumentFilter(notFilter);
 
         // Search in the index
-        // Only text documents will be returned as the result of the search
         String query = "ipsum";
         SearchResult result = index.search(query, options);
 

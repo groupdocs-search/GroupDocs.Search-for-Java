@@ -77,7 +77,7 @@ public class BuildYourFirstSearchSolution {
         // c) Subscribe to StatusChanged event
         index.getEvents().StatusChanged.add(new EventHandler<BaseIndexEventArgs>() {
             public void invoke(Object sender, BaseIndexEventArgs args) {
-                if (args.getStatus() != IndexStatus.InProgress) {
+                if (args.getStatus() != IndexStatus.Ready || args.getStatus() == IndexStatus.Failed) {
                     // There should be a code indicating the completion of the operation
                     System.out.println("Indexing completed.");
                 }

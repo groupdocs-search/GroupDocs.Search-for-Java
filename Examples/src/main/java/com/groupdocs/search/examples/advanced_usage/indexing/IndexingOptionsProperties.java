@@ -38,7 +38,7 @@ public class IndexingOptionsProperties {
         // Subscribing to the event
         index.getEvents().StatusChanged.add(new EventHandler<BaseIndexEventArgs>() {
             public void invoke(Object sender, BaseIndexEventArgs args) {
-                if (args.getStatus() != IndexStatus.InProgress) {
+                if (args.getStatus() == IndexStatus.Ready || args.getStatus() == IndexStatus.Failed) {
                     // A notification of the operation completion should be here
                     System.out.println("Status: " + args.getStatus());
                 }

@@ -19,6 +19,7 @@ public class MainClass {
         SetLicenseFromFile.run();
         //SetLicenseFromStream.run();
         //SetMeteredLicense.run();
+
         HelloWorld.run();
 
         // Basic Usage ----------------------------------------------------------------------------------------------------
@@ -58,6 +59,9 @@ public class MainClass {
 
         //DeleteIndexedPaths.run();
 
+        //DocumentAttributes.changeAttributes();
+        //DocumentAttributes.addAttributesDuringIndexing();
+
         //DocumentFilteringDuringIndexing.settingAFilter();
         //DocumentFilteringDuringIndexing.creationTimeFilters();
         //DocumentFilteringDuringIndexing.modificationTimeFilters();
@@ -67,6 +71,8 @@ public class MainClass {
         //DocumentFilteringDuringIndexing.logicalNotFilter();
         //DocumentFilteringDuringIndexing.logicalAndFilter();
         //DocumentFilteringDuringIndexing.logicalOrFilter();
+
+        //DocumentRenaming.run();
 
         //IndexingAdditionalFields.run();
 
@@ -113,6 +119,7 @@ public class MainClass {
         //DocumentFilteringInSearchResult.settingAFilter();
         //DocumentFilteringInSearchResult.filePathFilters();
         //DocumentFilteringInSearchResult.fileExtensionFilter();
+        //DocumentFilteringInSearchResult.attributeFilter();
         //DocumentFilteringInSearchResult.combiningFilters();
 
         //FacetedSearch.simpleFacetedSearch();
