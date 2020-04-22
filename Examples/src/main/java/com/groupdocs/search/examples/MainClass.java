@@ -81,6 +81,7 @@ public class MainClass {
         //IndexingOptionsProperties.cancellationProperty();
         //IndexingOptionsProperties.isAsyncProperty();
         //IndexingOptionsProperties.threadsProperty();
+        //IndexingOptionsProperties.metadataIndexingOptionsProperty();
 
         //IndexingPasswordProtectedDocuments.indexingUsingThePasswordDictionary();
         //IndexingPasswordProtectedDocuments.indexingUsingThePasswordRequiredEvent();

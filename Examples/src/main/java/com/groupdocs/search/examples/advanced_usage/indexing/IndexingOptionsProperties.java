@@ -70,4 +70,27 @@ public class IndexingOptionsProperties {
 
         Utils.traceIndexedDocuments(index);
     }
+
+    public static void metadataIndexingOptionsProperty()
+    {
+        String indexFolder = ".\\output\\AdvancedUsage\\Indexing\\IndexingOptionsProperties\\MetadataIndexingOptionsProperty";
+        String documentFolder = Utils.DocumentsPath;
+
+        // Creating an index
+        Index index = new Index(indexFolder);
+
+        // Setting the metadata indexing options
+        IndexingOptions options = new IndexingOptions();
+        options.getMetadataIndexingOptions().setDefaultFieldName("default");
+        options.getMetadataIndexingOptions().setSeparatorInCompoundName("\\");
+        options.getMetadataIndexingOptions().setMaxBytesToIndexField(10);
+        options.getMetadataIndexingOptions().setMaxIntsToIndexField(10);
+        options.getMetadataIndexingOptions().setMaxLongsToIndexField(10);
+        options.getMetadataIndexingOptions().setMaxDoublesToIndexField(10);
+
+        // Starting indexing operation
+        index.add(documentFolder, options);
+
+        Utils.traceIndexedDocuments(index);
+    }
 }
