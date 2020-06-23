@@ -23,9 +23,9 @@ The spelling corrector options class contains the following options:
 
 The following example shows how to perform a search using the spelling correction.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

@@ -16,9 +16,9 @@ In order to save information about events and errors in an index into a file, yo
 
 The following example demonstrates the use of the standard file logger. The constructor parameters of this logger are the path to the log file and its maximum size in MB.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
 String query = "Einstein";
@@ -38,9 +38,9 @@ SearchResult result = index.search(query); // Search in the index
 
 Sometimes you may need to implement your own logger, for example, to display the log in the console. An example implementation of such a logger is presented below.
 
-**Java**
 
-```csharp
+
+```java
 public class ConsoleLogger implements ILogger {
     public ConsoleLogger() {
     }

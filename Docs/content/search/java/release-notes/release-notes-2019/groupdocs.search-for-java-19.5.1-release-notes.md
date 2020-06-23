@@ -42,9 +42,9 @@ Method **removeRange(Iterable<Character> characters)** has been removed from 
 
 This example shows how to change character type for indexing:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
 

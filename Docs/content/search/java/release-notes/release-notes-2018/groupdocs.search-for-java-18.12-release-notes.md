@@ -49,9 +49,9 @@ Method **void setRange(char\[\] characters, byte)** nas been added to **com.g
 
 This example shows how to perform indexing and search with blended characters:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
  
@@ -100,9 +100,9 @@ Method ****SearchQuery g**etChild(int)** nas been added to **com.groupdocs.se
 
 The first example shows how to perform wildcard search using the query in text form:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
  
@@ -121,9 +121,9 @@ SearchResults results2 = index.search("\"?(0~2)sure equal opportunities\"");
 
 The next example shows how to perform wildcard search using a query in object form:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
   

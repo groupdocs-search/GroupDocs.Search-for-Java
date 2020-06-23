@@ -14,9 +14,9 @@ This brief guide describes the basic steps for creating your first search index.
 
 First of all you need to create an index. An index can be created in memory or on disk. An index created in memory cannot be saved after exiting your program. In contrast, an index created on disk may be loaded in the future to continue working. Details on creating an index are described in the section [Creating an index]({{< ref "search/java/developer-guide/advanced-usage/creating-an-index/_index.md" >}}). The following example shows how to create an index on disk.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\"; // Specify the path to the index folder
 Index index = new Index(indexFolder);
 ```
@@ -25,9 +25,9 @@ Index index = new Index(indexFolder);
 
 To continue working with a previously created index, it must be loaded. Each constructor of the [Index](https://apireference.groupdocs.com/search/java/com.groupdocs.search/Index) class by default loads the index, if it exists at the specified path. And only an explicit indication causes an index to be overwritten. The following example shows how to load an existing index.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\"; // Specify the path to the index folder
 Index index = new Index(indexFolder);
 ```
@@ -36,9 +36,9 @@ Index index = new Index(indexFolder);
 
 After creating an index, you need to add documents to the index for indexing. Indexing documents can be successful or unsuccessful for various reasons, for example, due to read errors from the disk or the presence of a password to access a document. To receive information about indexing errors, you can subscribe to the ErrorOccurred event. To work with events, see the section [Search index events]({{< ref "search/java/developer-guide/advanced-usage/creating-an-index/search-index-events.md" >}}). The following example shows how to subscribe to the ErrorOccurred event.
 
-**Java**
 
-```csharp
+
+```java
 index.getEvents().ErrorOccurred.add(new EventHandler<IndexErrorEventArgs>() {
     public void invoke(Object sender, IndexErrorEventArgs args) {
         System.out.println(args.getMessage()); // Writing error messages to the console
@@ -50,9 +50,9 @@ index.getEvents().ErrorOccurred.add(new EventHandler<IndexErrorEventArgs>() {
 
 Document indexing can be performed synchronously or asynchronously. Synchronous indexing means that a thread that started the indexing process will be busy until the operation is completed. The following example shows how to perform indexing synchronously.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\"; // Specify path to the index folder
 String documentsFolder = "c:\\MyDocuments\\"; // Specify the path to a folder containing documents to search
  
@@ -65,9 +65,9 @@ index.add(documentsFolder); // Synchronous indexing documents from the specified
 
 More often, however, it is necessary to perform indexing asynchronously, with the ability to execute other tasks in the thread that launched the operation. A detailed description of all aspects of the indexing process is provided in the section [Indexing]({{< ref "search/java/developer-guide/advanced-usage/indexing/_index.md" >}}). The following example shows how to perform indexing asynchronously.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\"; // Specify path to the index folder
 String documentsFolder = "c:\\MyDocuments\\"; // Specify the path to a folder containing documents to search
  
@@ -96,9 +96,9 @@ index.add(documentsFolder, options);
 
 When documents are indexed, the index is ready to handle search queries. The following types of search queries are supported: simple, fuzzy, case sensitive, boolean, phrasal, faceted, with wildcards, and others. Description of search queries of various types is presented in the section [Searching]({{< ref "search/java/developer-guide/advanced-usage/searching/_index.md" >}}). The example below shows how to perform simple search in an index.
 
-**Java**
 
-```csharp
+
+```java
 String query = "Einstein"; // Specify a search query
 SearchResult result = index.search(query); // Searching in the index
 ```
@@ -107,9 +107,9 @@ SearchResult result = index.search(query); // Searching in the index
 
 When a search is completed, you need to somehow interpret a result. The result can be represented by a simple list of documents found, or the words and phrases found can be highlighted in the text of the document. For more information on processing search results, see [Search results]({{< ref "search/java/developer-guide/advanced-usage/searching/search-results.md" >}}). The example below shows how to list found documents in the console.
 
-**Java**
 
-```csharp
+
+```java
 // Search in index
 SearchResult result = index.search(query);
  
@@ -125,9 +125,9 @@ for (int i = 0; i < result.getDocumentCount(); i++) {
 
 The following example shows how to highlight search results in the text of a document. Detailed information on how to highlight search results is described in the section [Highlighting search results]({{< ref "search/java/developer-guide/advanced-usage/searching/highlighting-search-results.md" >}}).
 
-**Java**
 
-```csharp
+
+```java
 SearchResult result = index.search(query); // Search in the index
 if (result.getDocumentCount() > 0)
 {

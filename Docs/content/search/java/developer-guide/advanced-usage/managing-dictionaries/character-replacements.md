@@ -28,9 +28,9 @@ To import character replacements from a file, use the [importDictionary](https:
 
 The following example demonstrates the use of the character replacement dictionary methods.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
  
 // Creating an index from in specified folder

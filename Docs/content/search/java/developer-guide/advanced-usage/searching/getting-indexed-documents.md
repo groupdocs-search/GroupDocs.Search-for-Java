@@ -14,9 +14,9 @@ This page contains a description of how to get a list of indexed documents from 
 
 To get a list of indexed documents from an index, use the [getIndexedDocuments](https://apireference.groupdocs.com/search/java/com.groupdocs.search/Index#getIndexedDocuments()) method of the [Index](https://apireference.groupdocs.com/search/java/com.groupdocs.search/Index) class. Documents with the extensions ZIP, PST, OST can also contain internal documents. To get a list of internal documents, use the [getIndexedDocumentItems](https://apireference.groupdocs.com/search/java/com.groupdocs.search/Index#getIndexedDocumentItems(com.groupdocs.search.results.DocumentInfo)) method of the [Index](https://apireference.groupdocs.com/search/java/com.groupdocs.search/Index) class. For ZIP archives, this way you can access documents of arbitrary nesting depth. An example of obtaining a list of documents from an index is presented below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -45,9 +45,9 @@ The generated text of the document is passed to an object of a class derived fro
 
 After generating the text of a document into a file, this file can be opened by an Internet browser. The following example shows how to extract document text from an index.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

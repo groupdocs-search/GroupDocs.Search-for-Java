@@ -60,9 +60,9 @@ Field **Event<EventHandler<SearchPhaseEventArgs>> SearchPhaseCompleted** has b
 
 This example shows how to use SearchPhaseCompleted event:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
 
@@ -117,7 +117,7 @@ This example shows how to search with stop words:
 
 **C#**
 
-```csharp
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
 
@@ -177,7 +177,7 @@ This example shows how to manage dictionaries:
 
 **C#**
 
-```csharp
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
   

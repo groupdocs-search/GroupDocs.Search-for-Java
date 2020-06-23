@@ -16,9 +16,9 @@ When saving text in the index, the values defined in a [Compression](https://ap
 
 The example below demonstrates storing text in an index using the high compression ratio.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

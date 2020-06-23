@@ -29,9 +29,9 @@ The other characters are defined as separators in the Alphabet.
 
 The following example demonstrates how to specify only numbers, low line character, and English characters as letters in the Alphabet.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentFolder = "c:\\MyDocuments\\";
  
@@ -69,9 +69,9 @@ SearchResult result = index.search("Einstein");
 
 Blended characters are special characters that are indexed both as separators and as letters. This type of character can be useful, for example, for indexing hyphens. In this case, parts of a compound word containing a hyphen will be indexed both as a single word with a hyphen and individually without a hyphen. An example of using blended characters is presented below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentFolder = "c:\\MyDocuments\\";
  

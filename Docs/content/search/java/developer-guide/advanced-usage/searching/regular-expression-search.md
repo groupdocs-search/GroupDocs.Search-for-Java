@@ -16,9 +16,9 @@ A regex search query in text form cannot be combined with other types of querie
 
 The following example demonstrates the regex search in text and object forms.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

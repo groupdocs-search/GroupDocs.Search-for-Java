@@ -42,9 +42,9 @@ The document field found is represented by an instance of the [FoundDocumentFie
 
 The following example shows how to print information on the documents found in the console.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentFolder = "c:\\MyDocuments\\";
  

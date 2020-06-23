@@ -64,9 +64,9 @@ Method **export(String)** has been removed from **com.groupdocs.search.Synony
 
 This example to perform search with special character escaping is given below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
 
@@ -92,9 +92,9 @@ This improvement provides ability of indexing ZIP archives inside other ZIP arch
 
 The example to perform indexing is given below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
 

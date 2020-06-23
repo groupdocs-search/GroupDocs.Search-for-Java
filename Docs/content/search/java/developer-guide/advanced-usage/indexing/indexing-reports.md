@@ -29,9 +29,9 @@ Each index report contains the following information:
 
 The following example demonstrates how to get indexing reports from an index.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder1 = "c:\\MyDocuments1\\";
 String documentsFolder2 = "c:\\MyDocuments2\\";

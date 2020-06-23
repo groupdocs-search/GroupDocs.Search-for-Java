@@ -14,9 +14,9 @@ This page contains a description of the document filters used during the search.
 
 To specify which of the documents found should be returned as a result of the search, the [setSearchDocumentFilter](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/SearchOptions#setSearchDocumentFilter(com.groupdocs.search.options.ISearchDocumentFilter)) method of the [SearchOptions](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/SearchOptions) class is used. If the document found does not match a filter passed to this method as an argument, the document will not be returned. The default value is null, which means that all documents found will be returned. The following example shows how to set a document filter for searching.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -39,9 +39,9 @@ SearchResult result = index.search("relativity", options);
 
 The first supported type of search document filters allows you to set a regular expression for getting those documents whose full paths match the specified pattern. This type of filters uses the **java.util.regex.Pattern** class to compare with a pattern.
 
-**Java**
 
-```csharp
+
+```java
 // The filter returns only files that contain the word 'Einstein' in their paths, not case sensitive
 ISearchDocumentFilter filter = SearchDocumentFilter.createFilePathRegularExpression("Einstein", Pattern.CASE_INSENSITIVE);
 ```
@@ -50,9 +50,9 @@ ISearchDocumentFilter filter = SearchDocumentFilter.createFilePathRegularExpress
 
 The next supported type of search document filters allows you to specify a list of valid file extensions for indexing.
 
-**Java**
 
-```csharp
+
+```java
 // This filter returns only FB2 and EPUB documents
 ISearchDocumentFilter filter = SearchDocumentFilter.createFileExtension(".fb2", ".epub");
 ```
@@ -61,9 +61,9 @@ ISearchDocumentFilter filter = SearchDocumentFilter.createFileExtension(".fb2", 
 
 The next supported type of search document filters allows you to search only those documents with which the specified text attribute is associated. You can learn more about attributes on the [Document attributes]({{< ref "search/java/developer-guide/advanced-usage/indexing/document-attributes.md" >}}) page.
 
-**Java**
 
-```csharp
+
+```java
 // This filter returns only documents that have attribute "main"
 ISearchDocumentFilter filter = SearchDocumentFilter.createAttribute("main");
 ```
@@ -72,9 +72,9 @@ ISearchDocumentFilter filter = SearchDocumentFilter.createAttribute("main");
 
 Search document filters can be combined using composite filters AND, OR, NOT. The following example shows how to combine search document filters.
 
-**Java**
 
-```csharp
+
+```java
 // Creating an AND composite filter that returns all FB2 and EPUB documents that have the word 'Einstein' in their full paths
 ISearchDocumentFilter filter1 = SearchDocumentFilter.createFilePathRegularExpression("Einstein", Pattern.CASE_INSENSITIVE);
 ISearchDocumentFilter filter2 = SearchDocumentFilter.createFileExtension(".fb2", ".epub");

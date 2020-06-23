@@ -14,9 +14,9 @@ number ~~ number
 
 The example below demonstrates the numeric range search in text and object forms.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

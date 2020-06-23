@@ -12,9 +12,9 @@ GroupDocs.Search supports the ability to remove indexed files and folders from a
 
 The following example shows how to remove indexed paths from an index.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder1 = "c:\\MyDocuments\\";
 String documentsFolder2 = "c:\\MyDocuments2\\";

@@ -28,9 +28,9 @@ where similarityLevel is a parameter of the fuzzy search algorithm; termLength i
 
 An example of setting a fuzzy search algorithm of this type is presented below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
 String query = "Einstein";
@@ -54,9 +54,9 @@ SearchResult result = index.search(query, options);
 
 The fuzzy search algorithm can also be specified by a table of correspondences between the length of the searched word and the maximum number of possible differences. For this, the algorithm presented by the [TableDiscreteFunction](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/TableDiscreteFunction) class is used. In this case, the correspondence table can be calculated based on the parameters of a step function. An example of setting a fuzzy search algorithm in the form of a step function is presented below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
 String query = "Einstein";

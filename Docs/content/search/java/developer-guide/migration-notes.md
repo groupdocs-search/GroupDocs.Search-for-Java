@@ -24,9 +24,9 @@ The following code examples demonstrate changes in the use of the API.
 
 Old coding style:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -52,9 +52,9 @@ if (results.getCount() > 0) {
 
 New coding style:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

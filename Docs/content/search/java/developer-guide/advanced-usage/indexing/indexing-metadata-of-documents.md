@@ -12,9 +12,9 @@ GroupDocs.Search allows creating of full-text and / or metadata index on documen
 
 The following example demonstrates the creation of the metadata index.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

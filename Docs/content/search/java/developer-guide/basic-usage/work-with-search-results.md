@@ -22,9 +22,9 @@ From the object of the class [FoundDocumentField](https://apireference.groupdoc
 
 Below is a code example that writes to the console the detailed information contained in an object of the class [SearchResult](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/SearchResult) about each document, document field, word, phrase and the number of their occurrences in the document fields.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentFolder = "c:\\MyDocuments\\";
  
@@ -78,9 +78,9 @@ for (int i = 0; i < result.getDocumentCount(); i++) {
 
 At the end of a search, it is usually necessary to visualize the results by highlighting the words found in the text. You can highlight search results either in the text of an entire document, or in separate segments. Detailed information about highlighting search results can be found on the page [Work with search results]({{< ref "search/java/developer-guide/basic-usage/work-with-search-results.md" >}}). Below is an example of highlighting search results in the text of an entire document.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentFolder = "c:\\MyDocuments\\";
  

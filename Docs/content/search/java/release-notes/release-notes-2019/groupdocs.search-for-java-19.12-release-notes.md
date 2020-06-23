@@ -46,9 +46,9 @@ This improvement allows highlighting the search results in separate short fragme
 
 This example shows how to generate short HTML snippets with highlighted found terms:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
  
@@ -136,9 +136,9 @@ This feature is designed to work with hieroglyphic languages and allows you to 
 
 The example shows how to perform indexing and search for Chinese characters:
 
-**Java**
 
-```csharp
+
+```java
 tring indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
  
@@ -172,9 +172,9 @@ This feature allows you to remove from an index paths added for indexing. When i
 
 The example shows how to remove indexed paths from an index:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder1 = "c:\\MyDocuments\\";
 String documentsFolder2 = "c:\\MyDocuments2\\";

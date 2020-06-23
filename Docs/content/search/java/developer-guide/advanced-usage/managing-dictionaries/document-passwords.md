@@ -24,9 +24,9 @@ To remove a password from the dictionary, use the [remove](https://apireference
 
 The following example demonstrates the use of methods of the password dictionary.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
  
 // Creating an index from in specified folder

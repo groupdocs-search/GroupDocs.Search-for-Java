@@ -35,9 +35,9 @@ file:///C:/Text.html#hit0
 
 The following example demonstrates how to highlight search results in the text of an entire document.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentFolder = "c:\\MyDocuments\\";
  
@@ -71,9 +71,9 @@ Generated text fragments with highlighted occurrences can be used, for example, 
 
 The example below demonstrates how to highlight search results in separate text fragments.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

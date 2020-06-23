@@ -14,9 +14,9 @@ Aliases are stored in the alias dictionary. By default the alias dictionary is e
 
 An example of using aliases for searching is presented below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

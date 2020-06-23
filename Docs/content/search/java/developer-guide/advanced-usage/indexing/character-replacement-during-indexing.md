@@ -12,9 +12,9 @@ Character replacement during indexing can be used, for example, to convert all t
 
 The example below demonstrates how to configure and use character replacements during indexing.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentFolder = "c:\\MyDocuments\\";
  

@@ -52,9 +52,9 @@ Constant **String MailSubject** has been added to **com.groupdocs.search.opti
 
 This example shows how to use field names constants to search specific fields of documents:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
  
@@ -90,9 +90,9 @@ Field **Optimizing** has been added to **com.groupdocs.search****.e****vents*
 
 This example shows how to get information about changing the status of an index and completing the index operation:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
  
@@ -173,9 +173,9 @@ Method **MetadataIndexingOptions getMetadataIndexingOptions()** has been added
 
 This example demonstrates how to set the metadata indexing options:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
  
@@ -212,9 +212,9 @@ Method **boolean**** notifyIndex(Notification)** has been added to **com.gro
 
 This example demonstrates how to notify an index about renaming an indexed document:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
  
@@ -270,9 +270,9 @@ Method **ISearchDocumentFilter createAttribute(String\[\] ... attributes)** ha
 
 This example demonstrates how to add and remove attributes from indexed documents:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
  
@@ -297,9 +297,9 @@ index.changeAttributes(batch);
 
 The next example demonstrates how to add attributes to documents during indexing and how to search with filter by attribute:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
  

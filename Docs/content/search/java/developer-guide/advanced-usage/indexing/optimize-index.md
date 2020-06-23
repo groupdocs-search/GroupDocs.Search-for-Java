@@ -14,9 +14,9 @@ To perform this operation, there is an overload that takes the [MergeOptions](h
 
 The following example demonstrates how to perform the index optimization.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder1 = "c:\\MyDocuments1\\";
 String documentsFolder2 = "c:\\MyDocuments2\\";

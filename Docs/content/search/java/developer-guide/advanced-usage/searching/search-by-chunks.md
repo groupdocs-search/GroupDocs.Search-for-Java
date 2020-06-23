@@ -14,9 +14,9 @@ When performing search by chunks, the [search](https://apireference.groupdocs.c
 
 The following example demonstrates the search by chunks.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
 String query = "Einstein";

@@ -14,9 +14,9 @@ To automatically fix such misprints, the keyboard layout correction feature can 
 
 The following example demonstrates using of the keyboard layout correction feature.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

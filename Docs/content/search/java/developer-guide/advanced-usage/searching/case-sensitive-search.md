@@ -14,9 +14,9 @@ Note that case-sensitive search is not compatible with other types of search (se
 
 The following example demonstrates how to perform case-sensitive search with a query in text form.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -36,9 +36,9 @@ SearchResult result = index.search(query, options);
 
 The next example demonstrates how to perform case-sensitive search with a query in object form.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

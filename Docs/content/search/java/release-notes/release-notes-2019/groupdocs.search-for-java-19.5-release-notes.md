@@ -65,9 +65,9 @@ Method **void**** set****SearchDocumentFilter(ISearchDocumentFilter value)****
 
 This example shows how to set up document filtering for searching:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
 
@@ -107,9 +107,9 @@ Method ********LogSettings****** get******LogSettings()******** has been adde
 
 This example shows how to configure logging settings:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
 
@@ -141,9 +141,9 @@ None.
 
 This example shows how to perform synonym search:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
 
@@ -176,9 +176,9 @@ Method **int\[\] getTermSequencesOccurrences()** has been added to **com.grou
 
 This example shows how to get number of occurrences for each found word:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
 
@@ -230,9 +230,9 @@ Method **int update(String, String)** has been added to **GroupDocs.Search.**
 
 This example shows how to update index of previous version:
 
-**Java**
 
-```csharp
+
+```java
 String oldIndexFolder = "c:\\MyIndex";
 String newIndexFolder = "c:\\MyIndexUpdated";
 
@@ -266,9 +266,9 @@ Field **String Xml** has been added to **com.groupdocs.search.DocumentTypes*
 
 This example shows how to add documents to an index:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
 
@@ -294,9 +294,9 @@ Method **double getConsumptionCredit()** has been added to **com.groupdocs.se
 
 This example shows how to check how many credits are spent:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
 
@@ -333,9 +333,9 @@ Method **void extractDocumentText(String, **DocumentInfo**, IFieldExtractor, 
 
 This example shows how to add additional fields to a document during indexing:
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
 

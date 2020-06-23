@@ -21,9 +21,9 @@ It is important to know that wildcard search is flexible enough to use for prefi
 
 Examples of wildcard search with queries in text form are presented below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -40,9 +40,9 @@ SearchResult result2 = index.search("card?(1~6)"); // Search for 'cardiff', 'car
 
 To build a query for the wildcard search in object form, use the [WordPattern](https://apireference.groupdocs.com/search/java/com.groupdocs.search.common/WordPattern) class. This class contains methods for adding known parts of a word and wildcards to a template. An example of constructing a query in object form is presented below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

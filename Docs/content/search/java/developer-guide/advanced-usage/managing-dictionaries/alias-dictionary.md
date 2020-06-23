@@ -30,9 +30,9 @@ To import the list of aliases from a file, use the [importDictionary](https://a
 
 The following example demonstrates the use of methods of the alias dictionary.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
  
 // Creating or opening an index from the specified folder

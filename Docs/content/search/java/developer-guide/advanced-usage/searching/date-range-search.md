@@ -22,9 +22,9 @@ where date is the date in yyyy-MM-dd format, for example, 2019-09-13. Please no
 
 The following example demonstrates how to search by date using queries in text and object form.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -66,9 +66,9 @@ Formats for date range search are set in the collection that is returned by the�
 
 An example of setting the date format for the search is presented below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

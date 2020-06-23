@@ -12,9 +12,9 @@ The [getSupportedFileTypes](https://apireference.groupdocs.com/search/java/com.
 
 An example of obtaining a list of supported file types is presented below.
 
-**Java**
 
-```csharp
+
+```java
 Iterable<FileType> supportedFileTypes = FileType.getSupportedFileTypes();
 Iterator iterator = supportedFileTypes.iterator();      
 while (iterator.hasNext()) {

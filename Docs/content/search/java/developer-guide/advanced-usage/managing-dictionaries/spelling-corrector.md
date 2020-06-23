@@ -24,9 +24,9 @@ To import words from a file, use the [importDictionary](https://apireference.gr
 
 The following example demonstrates the use of methods of the spelling corrector.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
  
 // Creating an index from in specified folder

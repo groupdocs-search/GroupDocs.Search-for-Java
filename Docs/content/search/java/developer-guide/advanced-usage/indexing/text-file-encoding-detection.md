@@ -22,9 +22,9 @@ By default, the encoding auto detection of text files is disabled. But in any ca
 
 The example below shows how to set encoding of a text during indexing.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

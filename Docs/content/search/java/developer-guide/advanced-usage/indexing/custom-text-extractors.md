@@ -12,9 +12,9 @@ GroupDocs.Search supports indexing of many document formats. But there is also t
 
 The following example demonstrates how to implement a custom text extractor.
 
-**Java**
 
-```csharp
+
+```java
 public class LogExtractor implements IFieldExtractor
 {
     private final String[] extensions = new String[] {
@@ -53,9 +53,9 @@ public class LogExtractor implements IFieldExtractor
 
 The next example shows how to use the custorm extractor for indexing.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\"; // Specify path to the index folder
 String documentsFolder = "c:\\MyDocuments\\"; // Specify path to a folder containing documents to search
  

@@ -16,9 +16,9 @@ The [setCancellation](https://apireference.groupdocs.com/search/java/com.groupd
 
 The following example demonstrates cancelling of an indexing operation.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentFolder = "c:\\MyDocuments\\";
  
@@ -38,9 +38,9 @@ index.add(documentFolder, options);
 
 The [setAsync](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/IndexingOptions#setAsync(boolean)) method is used to specify whether to perform indexing operation asynchronously or synchronously. The default value is false, meaning synchronous execution. The example below demonstrates the performing of an asynchronous indexing.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentFolder = "c:\\MyDocuments\\";
  
@@ -73,9 +73,9 @@ A larger number of threads accelerates the indexing process. However, be caref
 
 The following example demonstrates how to perform indexing in 2 threads.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentFolder = "c:\\MyDocuments\\";
  
@@ -106,9 +106,9 @@ The [getMetadataIndexingOptions](https://apireference.groupdocs.com/search/java/
 
 The following example demonstrates how to set the metadata indexing options.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
 

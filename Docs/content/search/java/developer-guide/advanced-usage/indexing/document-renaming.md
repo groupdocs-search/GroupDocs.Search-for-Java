@@ -14,9 +14,9 @@ To notify an index about renaming a document, the [notifyIndex](https://apirefe
 
 You should keep in mind that if an index is notified of the renaming of a document, it will not be reindexed the next time you call the [update](https://apireference.groupdocs.com/search/java/com.groupdocs.search/Index#update()) method, even if its contents have changed. The following example demonstrates how to notify an index of a renamed document.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
  

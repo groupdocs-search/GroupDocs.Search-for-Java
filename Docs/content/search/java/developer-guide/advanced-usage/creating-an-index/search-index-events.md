@@ -14,9 +14,9 @@ This page contains information about the purpose and use of all index events.
 
 The [OperationFinished](https://apireference.groupdocs.com/search/java/com.groupdocs.search.events/EventHub#OperationFinished) event occurs when an index operation completes – indexing, updating, merging, deleting, or optimizing (segment merging). This event can be used to receive notification of the completion of an asynchronous operation. The following example demonstrates the use of the event.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -42,9 +42,9 @@ index.add(documentsFolder);
 
 The [ErrorOccured](https://apireference.groupdocs.com/search/java/com.groupdocs.search.events/EventHub#ErrorOccurred) event occurs when an error happens in an index. Errors in an index can be caused, for example, by file system errors or unsupported formats of indexed documents. An example of receiving error notifications in the index is presented below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
 String query = "Einstein";
@@ -70,9 +70,9 @@ SearchResult result = index.search(query);
 
 The [OperationProgressChanged](https://apireference.groupdocs.com/search/java/com.groupdocs.search.events/EventHub#OperationProgressChanged) event occurs when the progress of an index operation changes. The example below demonstrates how to track the progress of an index operation.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -97,9 +97,9 @@ index.add(documentsFolder);
 
 The [PasswordRequired](https://apireference.groupdocs.com/search/java/com.groupdocs.search.events/EventHub#PasswordRequired) event occurs when an index requires a password to open a document. An example of processing this event is presented below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -130,9 +130,9 @@ The [FileIndexing](https://apireference.groupdocs.com/search/java/com.groupdocs
 
 The following example demonstrates how to add additional fields to documents ending in "Protected.pdf" and how to skip indexing documents containing "important" text in their paths.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -161,9 +161,9 @@ index.add(documentsFolder);
 
 The [StatusChanged](https://apireference.groupdocs.com/search/java/com.groupdocs.search.events/EventHub#StatusChanged) event occurs when an index status changes. The following example demonstrates how to use this event to notify the completion of an index operation.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -192,9 +192,9 @@ index.add(documentsFolder, options);
 
 The [SearchPhaseCompleted](https://apireference.groupdocs.com/search/java/com.groupdocs.search.events/EventHub#SearchPhaseCompleted) event occurs when a phase (or stage) of a search operation in an index completes. This event is used to study intermediate search results when tuning search queries. Information on the phases of different types of search is presented on the page [Search flow]({{< ref "search/java/developer-guide/advanced-usage/searching/search-flow.md" >}}). The following example demonstrates the use of this event.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

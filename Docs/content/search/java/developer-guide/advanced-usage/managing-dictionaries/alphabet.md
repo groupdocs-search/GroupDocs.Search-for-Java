@@ -24,9 +24,9 @@ To import types of all characters from a file, use the [importDictionary](https
 
 The following example demonstrates the use of methods of the alphabet.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
  
 // Creating or opening an index from the specified folder

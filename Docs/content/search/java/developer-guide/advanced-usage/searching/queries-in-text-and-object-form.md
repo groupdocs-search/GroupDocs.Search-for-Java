@@ -20,9 +20,9 @@ Each example in this documentation is usually given with the search query in tex
 
 The example of complex query in object form is given below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

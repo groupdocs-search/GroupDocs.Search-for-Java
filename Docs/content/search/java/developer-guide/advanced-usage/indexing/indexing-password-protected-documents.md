@@ -18,9 +18,9 @@ The password dictionary is stored on disk in encrypted form. However, very simpl
 
 The following example demonstrates how to perform indexing of password protected documents using a password dictionary.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -44,9 +44,9 @@ Both of the described methods for providing document passwords can be used toget
 
 The following example shows how to provide password for a document using the [PasswordRequired](https://apireference.groupdocs.com/search/java/com.groupdocs.search.events/EventHub#PasswordRequired) event.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

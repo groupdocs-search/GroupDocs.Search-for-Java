@@ -16,9 +16,9 @@ The default synonym dictionary contains synonyms only for the English language. 
 
 The following example demonstrates the synonym search.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

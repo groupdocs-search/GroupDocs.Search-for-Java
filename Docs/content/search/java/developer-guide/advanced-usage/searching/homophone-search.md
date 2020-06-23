@@ -16,9 +16,9 @@ The default homophone dictionary contains homophones only for the English langua
 
 The following example demonstrates the homophone search.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

@@ -37,9 +37,9 @@ The license can be loaded from a file or stream object. The easiest way to set 
 
 The code below will explain how to apply product license.
 
-**Java**
 
-```csharp
+
+```java
 // For complete examples and data files, please go to https://github.com/groupdocs-search/GroupDocs.Search-for-Java
 
 //initialize License
@@ -53,9 +53,9 @@ lic.setLicense("GroupDocs.Search.lic");
 
 The following example shows how to load a license from a stream.
 
-**Java**
 
-```csharp
+
+```java
 // For complete examples and data files, please go to https://github.com/groupdocs-search/GroupDocs.Search-for-Java
 Path fileLocation = Paths.get("GroupDocs.Search.lic");
  
@@ -86,9 +86,9 @@ Here are the simple steps to use the **`Metered`**class.
 
 Following is the sample code demonstrating how to use **`Metered`** class.
 
-**Java**
 
-```csharp
+
+```java
 // For complete examples and data files, please go to https://github.com/groupdocs-search/GroupDocs.Search-for-Java
  
 String indexPath = "c:\\MyIndex";

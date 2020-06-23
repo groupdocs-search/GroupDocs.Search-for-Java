@@ -14,9 +14,9 @@ To add and delete attributes of indexed documents, use the [changeAttributes](h
 
 The following example demonstrates how to add and remove attributes from indexed documents.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
  
@@ -47,9 +47,9 @@ SearchResult result = index.search("Einstein", options);
 
 Attributes can be associated with documents during indexing using the [FileIndexing](https://apireference.groupdocs.com/search/java/com.groupdocs.search.events/EventHub#FileIndexing) event. The following example demonstrates this.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
  

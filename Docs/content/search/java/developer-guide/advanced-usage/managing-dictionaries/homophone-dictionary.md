@@ -22,9 +22,9 @@ To import homophones from a file, use the [importDictionary](https://apireferen
 
 The following example demonstrates the use of methods of the homophone dictionary.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
  
 // Creating an index from in specified folder

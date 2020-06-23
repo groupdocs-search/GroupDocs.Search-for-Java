@@ -14,9 +14,9 @@ Additional fields are associated with the document through the arguments of theÂ
 
 The example below demonstrates the associating of additional fields with documents during indexing.
 
-**Java**
 
-```csharp
+
+```java
 // Defining somewhere a dictionary containing subjects of documents
 final HashMap<String, String> subjects = new HashMap();
 subjects.put("C:\\MyDocuments\\BhagavadGitaAsItIs.pdf".toLowerCase(), "Spiritual");

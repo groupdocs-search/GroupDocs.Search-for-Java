@@ -18,9 +18,9 @@ When updating, the same options can be specified in the instance of the [Update
 
 The following example demonstrates how to update an index using 2 threads.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentFolder = "c:\\MyDocuments\\";
  
@@ -44,9 +44,9 @@ Sometimes when a new version of the GroupDocs.Search library is released, the fo
 
 When the index version is updated, the documents are reindexed and saved in a folder different from the original in the new format. However, the index of old version does not change. The folder containing the old version of the index may be deleted after the update. The following example demonstrates updating a previous version of an index.
 
-**Java**
 
-```csharp
+
+```java
 String sourceIndexFolder = "c:\\MyOldIndex\\";
 String targetIndexFolder = "c:\\MyNewIndex\\";
  

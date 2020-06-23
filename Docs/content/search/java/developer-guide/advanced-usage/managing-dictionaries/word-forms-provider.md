@@ -12,9 +12,9 @@ The [IWordFormsProvider](https://apireference.groupdocs.com/search/java/com.gro
 
 The [IWordFormsProvider](https://apireference.groupdocs.com/search/java/com.groupdocs.search.dictionaries/IWordFormsProvider) interface contains only one [getWordForms](https://apireference.groupdocs.com/search/java/com.groupdocs.search.dictionaries/IWordFormsProvider#getWordForms(java.lang.String)) method, which returns various forms for the word passed as an argument. An example implementation of a simple provider of word forms is presented below.
 
-**Java**
 
-```csharp
+
+```java
 public class SimpleWordFormsProvider implements IWordFormsProvider {
     public final String[] getWordForms(String word)     {
         ArrayList<String> result = new ArrayList<String>();
@@ -45,9 +45,9 @@ public class SimpleWordFormsProvider implements IWordFormsProvider {
 
 By default, the [EnglishWordFormsProvider](https://apireference.groupdocs.com/search/java/com.groupdocs.search.dictionaries/EnglishWordFormsProvider) class is used, which for English generates various forms of nouns, adjectives, pronouns, verbs, etc. An example of setting a custom provider of word forms is presented below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

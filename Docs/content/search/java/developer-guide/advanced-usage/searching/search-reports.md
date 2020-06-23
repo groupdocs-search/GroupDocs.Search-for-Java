@@ -24,9 +24,9 @@ Each index search report contains the following information:
 
 The following example demonstrates how to get search reports from an index.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

@@ -16,9 +16,9 @@ Output adapters are used to output generated HTML text to various output objects
 
 The example below demonstates how to use adapters of different types.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

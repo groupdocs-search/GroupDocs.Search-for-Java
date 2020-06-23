@@ -28,9 +28,9 @@ Please note that if stop words are used in a search query, the phrase will still
 
 The following example demonstrates performing the phrase search with a query in text and object form.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -67,9 +67,9 @@ Phrase search query with wildcards is flexible enough to be used instead of span
 
 The following example demonstrates the use of wildcards in phrase search queries in text and object form.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -99,9 +99,9 @@ Phrase search can be combined with other types of searches. The specification of
 
 The following example demonstrates the use of both wildcards representing words and characters in words.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

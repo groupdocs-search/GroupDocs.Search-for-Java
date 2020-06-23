@@ -12,9 +12,9 @@ The [IndexRepository](https://apireference.groupdocs.com/search/java/com.groupd
 
 To start using the index repository, indexes must be created or loaded and added to an instance of the index repository. Examples of creating and adding indexes to the repository are presented below.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder1 = "c:\\MyIndex1\\";
 String indexFolder2 = "c:\\MyIndex2\\";
 String documentsFolder1 = "c:\\MyDocuments1\\";
@@ -39,9 +39,9 @@ index2.add(documentsFolder2);
 
 The following example shows how to subscribe to the repository events, update indexes in the repository, and search in the repository.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder1 = "c:\\MyIndex1\\";
 String indexFolder2 = "c:\\MyIndex2\\";
 String documentFolder1 = "c:\\MyDocuments1\\";

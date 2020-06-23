@@ -16,9 +16,9 @@ To generate various forms of words, a class that implements the [IWordFormsProv
 
 The following example demonstrates how to perform search for different word forms in an index.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

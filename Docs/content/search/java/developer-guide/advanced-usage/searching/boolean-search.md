@@ -18,9 +18,9 @@ Boolean search is a type of search that allows you to combine queries with boole
 
 The AND operator allows you to find only those documents that are found for each nested search query separately. The following example demonstrates the use of the AND operator in text and object form queries. The queries search for documents in the text of which there are both words "theory" and "relativity".
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -44,9 +44,9 @@ SearchResult result2 = index.search(andQuery);
 
 The OR operator allows you to find all the documents that are found for at least one nested search query. The example demonstrates the use of the OR operator in text and object form queries. The queries search for documents in the text of which there is at least one of the words "Einstein" and "relativity".
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -70,9 +70,9 @@ SearchResult result2 = index.search(orQuery);
 
 The NOT operator allows you to invert the result of a nested search query and find all documents in which for the nested search query are found no occurrences. The example demonstrates the use of the NOT operator in text and object form queries. The queries search for documents in the text of which the word "relativity" is presented but the word "Einstein" is not.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -97,9 +97,9 @@ SearchResult result2 = index.search(andQuery);
 
 Boolean search operators can be combined using parentheses. The example below shows how to use parentheses to construct complex boolean search queries. In the example the query is presented in text and object form and searches for documents containing the words "theory" and "relativity" and not containing the words "Einstein" and "Albert".
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  

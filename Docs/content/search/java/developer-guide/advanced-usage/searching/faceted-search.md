@@ -18,9 +18,9 @@ Faceted search within GroupDocs.Search is a filtering of search results by setti
 
 Faceted search allows you to search only in certain fields of documents, for example, only in the content field or in the file name field. A simple faceted search example is presented below with queries in text and object form.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -41,9 +41,9 @@ SearchResult result2 = index.search(fieldQuery);
 
 Faceted search can be combined with other types of searches using parentheses. The following faceted search example demonstrates the same multi-faceted search query in text and object form. Both queries search for documents in the name of which there are both the words "Albert" and "Einstein", or the documents in the contents of which contain the phrase "theory of relativity" or the phrase "special relativity".
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
  
@@ -85,9 +85,9 @@ There are also fields that may be present in documents of any type. The names of
 
 An example of using standard field names of documents is presented in the following example.
 
-**Java**
 
-```csharp
+
+```java
 String indexFolder = "c:\\MyIndex";
 String documentsFolder = "c:\\MyDocuments";
  
