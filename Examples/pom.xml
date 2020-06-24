@@ -14,7 +14,7 @@
         <dependency>
             <groupId>com.groupdocs</groupId>
             <artifactId>groupdocs-search</artifactId>
-            <version>20.4</version>
+            <version>20.6</version>
         </dependency>
     </dependencies>
     <repositories>

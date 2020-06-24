@@ -1,6 +1,6 @@
 package com.groupdocs.search.examples.advanced_usage.indexing;
 
-import com.groupdocs.search.AttributeChangeBatch;
+import com.groupdocs.search.common.AttributeChangeBatch;
 import com.groupdocs.search.Index;
 import com.groupdocs.search.SearchDocumentFilter;
 import com.groupdocs.search.events.EventHandler;
@@ -24,7 +24,7 @@ public class DocumentAttributes {
         DocumentInfo[] documents = index.getIndexedDocuments();
 
         // Creating an attribute change container object
-        AttributeChangeBatch batch = new AttributeChangeBatch();
+        AttributeChangeBatch batch = AttributeChangeBatch.create();
         // Adding one attribute to all indexed documents
         batch.addToAll("public");
         // Removing one attribute from one indexed document
