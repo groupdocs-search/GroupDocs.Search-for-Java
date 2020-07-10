@@ -64,6 +64,12 @@ The [setUseCharacterReplacements](https://apireference.groupdocs.com/search/jav
 
 The [setUseStopWords](https://apireference.groupdocs.com/search/java/com.groupdocs.search/IndexSettings#setUseStopWords(boolean)) method allows you to specify a value indicating whether to use stop words during indexing or not. Stop words are frequently used words that do not carry a semantic load, which are removed from an index to reduce its size. The default value for this parameter is true. Detailed information on stop words and their use is presented on the page [Indexing with stop words]({{< ref "search/java/developer-guide/advanced-usage/indexing/indexing-with-stop-words.md" >}}).
 
+## setUseRawTextExtraction method
+
+Property [setUseRawTextExtraction](https://apireference.groupdocs.com/search/java/com.groupdocs.search/IndexSettings#setUseRawTextExtraction(boolean)) allows you to specify a value indicating whether to use raw text extraction  mode whenever possible during indexing. The raw text extraction mode can significantly speed up the indexing process at the cost of losing the  formatting quality of the extracted text. The default value for this  parameter is true.
+
+
+
 ## More resources
 
 ### GitHub examples
