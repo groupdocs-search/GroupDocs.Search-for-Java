@@ -8,7 +8,7 @@ keywords:
 productName: GroupDocs.Search for Java
 hideChildren: False
 ---
-The table below shows the internal stages of each search operation. See also [Query language specification](Query%2Blanguage%2Bspecification.html), [Search operation table]({{< ref "search/java/developer-guide/advanced-usage/searching/search-operation-table.md" >}}).
+The table below shows the internal stages of each search operation. See also [Query language specification]({{< ref "search/java/developer-guide/advanced-usage/searching/query-language-specification.md" >}}), [Search operation table]({{< ref "search/java/developer-guide/advanced-usage/searching/search-operation-table.md" >}}).
 
 | Operation | Search flow |
 | --- | --- |

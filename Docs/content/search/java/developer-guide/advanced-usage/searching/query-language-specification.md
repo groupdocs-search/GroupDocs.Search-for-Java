@@ -8,7 +8,7 @@ keywords:
 productName: GroupDocs.Search for Java
 hideChildren: False
 ---
-The text below represents the complete specification of the search query DSL (Domain Specific Language) used in text queries. See also [Search operation table](Search%2Boperation%2Btable.html), [Search flow]({{< ref "search/java/developer-guide/advanced-usage/searching/search-flow.md" >}}).
+The text below represents the complete specification of the search query DSL (Domain Specific Language) used in text queries. See also [Search operation table]({{< ref "search/java/developer-guide/advanced-usage/searching/search-operation-table.md" >}}), [Search flow]({{< ref "search/java/developer-guide/advanced-usage/searching/search-flow.md" >}}).
 
 *query*:
 

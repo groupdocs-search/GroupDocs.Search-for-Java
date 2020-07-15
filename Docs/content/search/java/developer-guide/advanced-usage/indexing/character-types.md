@@ -8,7 +8,7 @@ keywords:
 productName: GroupDocs.Search for Java
 hideChildren: False
 ---
-This page contains descriptions of all character types. Character types differ in how characters of these types are indexed. For more information on managing the Alphabet, see the [Alphabet](Alphabet.html) page in the [Managing dictionaries]({{< ref "search/java/developer-guide/advanced-usage/managing-dictionaries/_index.md" >}}) section.
+This page contains descriptions of all character types. Character types differ in how characters of these types are indexed. For more information on managing the Alphabet, see the [Alphabet]({{< ref "search/java/developer-guide/advanced-usage/managing-dictionaries/alphabet.md" >}}) page in the [Managing dictionaries]({{< ref "search/java/developer-guide/advanced-usage/managing-dictionaries/_index.md" >}}) section.
 
 ## Regular characters
 

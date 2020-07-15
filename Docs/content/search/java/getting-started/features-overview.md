@@ -8,7 +8,7 @@ keywords:
 productName: GroupDocs.Search for Java
 hideChildren: False
 ---
-This page contains a list of supported features. For detailed information on a particular feature, refer to the corresponding pages in the [Advanced Usage]({{< ref "search/java/getting-started/features-overview.md" >}}) section.
+This page contains a list of supported features. For detailed information on a particular feature, refer to the corresponding pages in the [Advanced Usage]({{< ref "search/java/developer-guide/advanced-usage/_index.md" >}}) section.
 
 ## Indexing
 

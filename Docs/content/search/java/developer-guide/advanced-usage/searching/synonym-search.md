@@ -12,7 +12,7 @@ Synonym search allows you to find not only the words specified in the search que
 
 To enable synonym search, you must call the [setUseSynonymSearch](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/SearchOptions#setUseSynonymSearch(boolean)) method of the [SearchOptions](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/SearchOptions) class with the true value as an argument. By default, synonym search is disabled.
 
-The default synonym dictionary contains synonyms only for the English language. To manage the synonym dictionary, see the [Synonym dictionary](Synonym%2Bdictionary.html) page in the [Managing dictionaries]({{< ref "search/java/developer-guide/advanced-usage/managing-dictionaries/_index.md" >}}) section.
+The default synonym dictionary contains synonyms only for the English language. To manage the synonym dictionary, see the [Synonym dictionary]({{< ref "search/java/developer-guide/advanced-usage/managing-dictionaries/synonym-dictionary.md" >}}) page in the [Managing dictionaries]({{< ref "search/java/developer-guide/advanced-usage/managing-dictionaries/_index.md" >}}) section.
 
 The following example demonstrates the synonym search.
 

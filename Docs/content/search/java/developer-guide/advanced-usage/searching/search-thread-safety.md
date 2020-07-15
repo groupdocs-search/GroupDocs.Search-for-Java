@@ -18,7 +18,7 @@ Simultaneous search from different threads is a thread safe operation and can be
 
 However, indexing, updating, optimizing, and merging operations themselves cannot be performed at the same time. A new start of one of these operations before the completion of the previous operation will result in an error.
 
-Details on performing these operations can be found in the [Search thread safety](Search%2Bthread%2Bsafety.html) section and on the [Merge indexes](Merge%2Bindexes.html), [Optimize index](Optimize%2Bindex.html), and [Update index]({{< ref "search/java/developer-guide/advanced-usage/indexing/update-index.md" >}}) pages.
+Details on performing these operations can be found in the [Indexing]({{< ref "search/java/developer-guide/advanced-usage/indexing/_index.md" >}}) section and on the [Merge indexes]({{< ref "search/java/developer-guide/advanced-usage/indexing/merge-indexes.md" >}}), [Optimize index]({{< ref "search/java/developer-guide/advanced-usage/indexing/optimize-index.md" >}}), and [Update index]({{< ref "search/java/developer-guide/advanced-usage/indexing/update-index.md" >}}) pages.
 
 ## More resources
 

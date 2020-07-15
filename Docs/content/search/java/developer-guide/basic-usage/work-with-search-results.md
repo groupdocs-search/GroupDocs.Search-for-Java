@@ -76,7 +76,7 @@ for (int i = 0; i < result.getDocumentCount(); i++) {
 
 ## Highlight search results
 
-At the end of a search, it is usually necessary to visualize the results by highlighting the words found in the text. You can highlight search results either in the text of an entire document, or in separate segments. Detailed information about highlighting search results can be found on the page [Work with search results]({{< ref "search/java/developer-guide/basic-usage/work-with-search-results.md" >}}). Below is an example of highlighting search results in the text of an entire document.
+At the end of a search, it is usually necessary to visualize the results by highlighting the words found in the text. You can highlight search results either in the text of an entire document, or in separate segments. Detailed information about highlighting search results can be found on the page [Highlighting search results]({{< ref "search/java/developer-guide/advanced-usage/searching/highlighting-search-results.md" >}}). Below is an example of highlighting search results in the text of an entire document.
 
 
 

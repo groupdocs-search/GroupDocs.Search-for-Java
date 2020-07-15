@@ -8,7 +8,7 @@ keywords:
 productName: GroupDocs.Search for Java
 hideChildren: False
 ---
-The table below provides syntax of all elements allowed in text search queries. See also [Query language specification](Query%2Blanguage%2Bspecification.html), [Search flow]({{< ref "search/java/developer-guide/advanced-usage/searching/search-flow.md" >}}).
+The table below provides syntax of all elements allowed in text search queries. See also [Query language specification]({{< ref "search/java/developer-guide/advanced-usage/searching/query-language-specification.md" >}}), [Search flow]({{< ref "search/java/developer-guide/advanced-usage/searching/search-flow.md" >}}).
 
 | Element | Syntax | Description | Examples |
 | --- | --- | --- | --- |
