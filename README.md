@@ -1,7 +1,7 @@
 
 # Java Library to Search & Index Documents
 
-GroupDocs.Search for Java API performs basic and advanced search operations against various formats to gain data insights. It can also be used for indexing various documents and performs search on the basis of different search query types. Advance searching techniques such as fuzzy, synonyms, boolean and full-text search are supported.
+GroupDocs.Search for Java is a [Search & Indexing Library](https://products.groupdocs.com/search/java) that can perform basic and advanced search operations against various formats to gain data insights. It can also be used for indexing [various document types](https://docs.groupdocs.com/search/java/supported-document-formats/) to perform search on the basis of different search query types. Advance searching techniques such as fuzzy, synonyms, boolean and full-text search are supported.
 
 <p align="center">
   <a title="Download complete GroupDocs.Search for Java source code" href="https://github.com/groupdocs-search/GroupDocs.Search-for-Java/archive/master.zip"> 
