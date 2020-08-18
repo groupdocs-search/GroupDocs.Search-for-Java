@@ -2,7 +2,7 @@
 id: indexing-password-protected-documents
 url: search/java/indexing-password-protected-documents
 title: Indexing password protected documents
-weight: 11
+weight: 12
 description: ""
 keywords: 
 productName: GroupDocs.Search for Java
@@ -28,7 +28,8 @@ String documentsFolder = "c:\\MyDocuments\\";
 Index index = new Index(indexFolder);
  
 // Adding document passwords to the dictionary
-index.getDictionaries().getDocumentPasswords().add("C:\\MyDocuments\\ProtectedDocument.pdf", "123456");
+String path = new File("C:\\MyDocuments\\ProtectedDocument.pdf").getAbsolutePath();
+index.getDictionaries().getDocumentPasswords().add(path, "123456");
 // ...
  
 // Indexing documents from the specified folder

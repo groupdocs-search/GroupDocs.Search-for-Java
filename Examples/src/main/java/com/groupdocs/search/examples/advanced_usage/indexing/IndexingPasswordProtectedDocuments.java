@@ -8,6 +8,7 @@ import com.groupdocs.search.highlighters.*;
 import com.groupdocs.search.options.*;
 import com.groupdocs.search.results.*;
 import com.groupdocs.search.examples.Utils;
+import java.io.File;
 
 public class IndexingPasswordProtectedDocuments {
     public static void indexingUsingThePasswordDictionary() {
@@ -18,8 +19,10 @@ public class IndexingPasswordProtectedDocuments {
         Index index = new Index(indexFolder);
 
         // Adding document passwords to the dictionary
-        index.getDictionaries().getDocumentPasswords().add(Utils.PasswordProtectedDocumentsPath + "English.docx", "123456");
-        index.getDictionaries().getDocumentPasswords().add(Utils.PasswordProtectedDocumentsPath + "Lorem ipsum.docx", "123456");
+        String path1 = new File(Utils.PasswordProtectedDocumentsPath + "English.docx").getAbsolutePath();
+        index.getDictionaries().getDocumentPasswords().add(path1, "123456");
+        String path2 = new File(Utils.PasswordProtectedDocumentsPath + "Lorem ipsum.docx").getAbsolutePath();
+        index.getDictionaries().getDocumentPasswords().add(path2, "123456");
 
         // Indexing documents from the specified folder
         // Passwords will be automatically retrieved from the dictionary when necessary

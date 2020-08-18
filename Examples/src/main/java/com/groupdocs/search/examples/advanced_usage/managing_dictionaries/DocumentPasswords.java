@@ -3,6 +3,7 @@ package com.groupdocs.search.examples.advanced_usage.managing_dictionaries;
 import com.groupdocs.search.*;
 import com.groupdocs.search.results.*;
 import com.groupdocs.search.examples.Utils;
+import java.io.File;
 
 public class DocumentPasswords {
     public static void run() {
@@ -17,7 +18,7 @@ public class DocumentPasswords {
             index.getDictionaries().getDocumentPasswords().clear();
         }
 
-        String path = Utils.PasswordProtectedDocumentsPath + "English.docx";
+        String path = new File(Utils.PasswordProtectedDocumentsPath + "English.docx").getAbsolutePath();
         index.getDictionaries().getDocumentPasswords().add(path, "123456");
 
         if (index.getDictionaries().getDocumentPasswords().contains(path)) {

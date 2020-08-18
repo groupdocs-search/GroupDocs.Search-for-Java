@@ -2,7 +2,7 @@
 id: optimize-index
 url: search/java/optimize-index
 title: Optimize index
-weight: 16
+weight: 17
 description: ""
 keywords: 
 productName: GroupDocs.Search for Java

@@ -2,7 +2,7 @@
 id: indexing-options
 url: search/java/indexing-options
 title: Indexing options
-weight: 10
+weight: 11
 description: ""
 keywords: 
 productName: GroupDocs.Search for Java

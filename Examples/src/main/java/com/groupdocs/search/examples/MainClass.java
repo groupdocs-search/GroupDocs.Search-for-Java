@@ -76,6 +76,12 @@ public class MainClass {
 
         //IndexingAdditionalFields.run();
 
+        //IndexingFromDifferentSources.indexingFromFile();
+        //IndexingFromDifferentSources.indexingFromStream();
+        //IndexingFromDifferentSources.indexingFromStructure();
+        //IndexingFromDifferentSources.indexingFromUrl();
+        //IndexingFromDifferentSources.indexingFromFtp();
+
         //IndexingMetadataOfDocuments.run();
 
         //IndexingOptionsProperties.cancellationProperty();

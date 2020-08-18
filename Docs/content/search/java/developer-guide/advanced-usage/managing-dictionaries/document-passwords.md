@@ -37,7 +37,7 @@ if (index.getDictionaries().getDocumentPasswords().getCount() > 0) {
     index.getDictionaries().getDocumentPasswords().clear();
 }
  
-String path = "c:\\MyIndex\\Protected.pdf";
+String path = new File("c:\\MyIndex\\Protected.pdf").getAbsolutePath();
 if (index.getDictionaries().getDocumentPasswords().contains(path)) {
     // Getting a password for a document
     String password = index.getDictionaries().getDocumentPasswords().getPassword(path);

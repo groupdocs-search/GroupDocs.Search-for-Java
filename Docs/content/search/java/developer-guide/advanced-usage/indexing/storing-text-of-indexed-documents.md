@@ -2,7 +2,7 @@
 id: storing-text-of-indexed-documents
 url: search/java/storing-text-of-indexed-documents
 title: Storing text of indexed documents
-weight: 17
+weight: 18
 description: ""
 keywords: 
 productName: GroupDocs.Search for Java

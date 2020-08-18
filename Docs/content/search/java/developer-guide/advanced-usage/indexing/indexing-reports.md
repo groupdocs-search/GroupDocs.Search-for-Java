@@ -2,7 +2,7 @@
 id: indexing-reports
 url: search/java/indexing-reports
 title: Indexing reports
-weight: 12
+weight: 13
 description: ""
 keywords: 
 productName: GroupDocs.Search for Java
