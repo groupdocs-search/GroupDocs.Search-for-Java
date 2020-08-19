@@ -38,15 +38,15 @@ There are the following new features and improvements in this release:
 
 ### Add MailFieldNames class containing e-mail field names
 
-This improvement adds the ****MailFieldNames**** class, which contains constants with values of field names of mail documents.
+This improvement adds the **MailFieldNames** class, which contains constants with values of field names of mail documents.
 
 ##### Public API changes
 
-Static class ****MailFieldNames**** has been added to **com.groupdocs.search.options** package.  
-Constant **String MailMessageBody**has been added to **com.groupdocs.search.options.**MailFieldNames**** class.  
-Constant **String MailSenderName** has been added to **com.groupdocs.search.options****.**MailFieldNames**** class.  
-Constant **String MailDisplayTo** has been added to **com.groupdocs.search.options****.**MailFieldNames**** class.  
-Constant **String MailSubject** has been added to **com.groupdocs.search.options****.**MailFieldNames**** class.
+Static class **MailFieldNames** has been added to **com.groupdocs.search.options** package.
+Constant **String MailMessageBody** has been added to **com.groupdocs.search.options.MailFieldNames** class.
+Constant **String MailSenderName** has been added to **com.groupdocs.search.options.MailFieldNames** class.
+Constant **String MailDisplayTo** has been added to **com.groupdocs.search.options.MailFieldNames** class.
+Constant **String MailSubject** has been added to **com.groupdocs.search.options.MailFieldNames** class.
 
 ##### Use cases
 
@@ -74,23 +74,21 @@ This improvement brings order to the set of statuses of the index, and also clar
 
 ##### Public API changes
 
-Field **NotStarted** has been deleted from **com.groupdocs.search****.common.IndexStatus** class.  
-Field **InProgress** has been deleted from **com.groupdocs.search****.common****.IndexStatus** class.  
-Field **LicenseRestrictionFinished** has been deleted from **com.groupdocs.search****.common****.IndexStatus** class.  
-Field **Indexing** has been added to **com.groupdocs.search****.common****.IndexStatus** class.  
-Field **Updating** has been added to **com.groupdocs.search****.common****.IndexStatus** class.  
-Field **Merging** has been added to **com.groupdocs.search****.common****.IndexStatus** class.  
-Field **Optimizing** has been added to **com.groupdocs.search****.common****.IndexStatus** class.  
-Field **Deleting** has been added to **com.groupdocs.search****.common****.IndexStatus** class.
+Field **NotStarted** has been deleted from **com.groupdocs.search.common.IndexStatus** class.  
+Field **InProgress** has been deleted from **com.groupdocs.search.common.IndexStatus** class.  
+Field **LicenseRestrictionFinished** has been deleted from **com.groupdocs.search.common.IndexStatus** class.  
+Field **Indexing** has been added to **com.groupdocs.search.common.IndexStatus** class.  
+Field **Updating** has been added to **com.groupdocs.search.common.IndexStatus** class.  
+Field **Merging** has been added to **com.groupdocs.search.common.IndexStatus** class.  
+Field **Optimizing** has been added to **com.groupdocs.search.common.IndexStatus** class.  
+Field **Deleting** has been added to **com.groupdocs.search.common.IndexStatus** class.
 
-Field **Deleting** has been added to **com.groupdocs.search****.e****vents.OperationType** class.  
-Field **Optimizing** has been added to **com.groupdocs.search****.e****vents****.OperationType** class.
+Field **Deleting** has been added to **com.groupdocs.search.events.OperationType** class.  
+Field **Optimizing** has been added to **com.groupdocs.search.events.OperationType** class.
 
 ##### Use cases
 
 This example shows how to get information about changing the status of an index and completing the index operation:
-
-
 
 ```java
 String indexFolder = "c:\\MyIndex";
@@ -119,11 +117,11 @@ index.add(documentFolder);
 
 ### Remove Legacy namespace
 
-All types from the **com.groupdocs.search****.legacy** package have been removed.
+All types from the **com.groupdocs.search.legacy** package have been removed.
 
 ##### Public API changes
 
-All types from the **com.groupdocs.search****.legacy** package have been removed.
+All types from the **com.groupdocs.search.legacy** package have been removed.
 
 ##### Use cases
 
@@ -131,49 +129,47 @@ None.
 
 ### Implement options for metadata indexing
 
-This improvement adds the **getMetadataIndexingOptions()** method to **IndexingOptions**, ****UpdateOptions****, and ******TextOptions****** classes. The **MetadataIndexingOptions** class contains the following methods for setting metadata indexing options:
+This improvement adds the **getMetadataIndexingOptions()** method to **IndexingOptions**, **UpdateOptions**, and **TextOptions** classes. The **MetadataIndexingOptions** class contains the following methods for setting metadata indexing options:
 
 *   The **setIndexingEmptyValues(boolean)** property sets a value indicating whether to index empty field values or not. The default value is true.
-*   The ****setIndexingEmptyNames(boolean)**** property sets a value indicating whether to index empty field names or not. The default value is true.
+*   The **setIndexingEmptyNames(boolean)** property sets a value indicating whether to index empty field names or not. The default value is true.
 *   The **setDefaultFieldName(String)** property sets the default field name used to index empty field names. The default value is "unknown".
 *   The **setSeparatorInCompoundName(String)** property sets the separator in the compound name of a field. The default value is "." (period character).
 *   The **setMaxBytesToIndexField(int)** property sets the maximum number of values indexed from an array of **byte** values. The default value is **int.MaxValue**.
-*   The **setMaxIntsToIndexField**(int)**** property sets the maximum number of values indexed from an array of **int** values. The default value is **int.MaxValue**.
-*   The **setMaxLongsToIndexField**(int)**** property sets the maximum number of values indexed from an array of **long** values. The default value is **int.MaxValue**.
-*   The **setMaxDoublesToIndexField**(int)**** property sets the maximum number of values indexed from an array of **double** values. The default value is **int.MaxValue**.
-*   The **setSeparatorBetweenValues**(String)**** property sets the separator between values in a field of type array. The default value is " " (space character).
+*   The **setMaxIntsToIndexField(int)** property sets the maximum number of values indexed from an array of **int** values. The default value is **int.MaxValue**.
+*   The **setMaxLongsToIndexField(int)** property sets the maximum number of values indexed from an array of **long** values. The default value is **int.MaxValue**.
+*   The **setMaxDoublesToIndexField(int)** property sets the maximum number of values indexed from an array of **double** values. The default value is **int.MaxValue**.
+*   The **setSeparatorBetweenValues(String)** property sets the separator between values in a field of type array. The default value is " " (space character).
 
 ##### Public API changes
 
-Class **MetadataIndexingOptions** has been added to **com.groupdocs.search****.options** package.  
-Method **boolean**** getIndexingEmptyValues()** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **void setIndexingEmptyValues(**boolean**)** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **boolean getIndexingEmptyNames**()**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **void s****etIndexingEmptyNames**(**boolean**)**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **String getDefaultFieldName**()**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **void s****etDefaultFieldName**(S**tring**)**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **String getSeparatorInCompoundName**()**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **void s****etSeparatorInCompoundName**(S**tring**)**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **int getMaxBytesToIndexField**()**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **void s****etMaxBytesToIndexField**(**int**)**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **int getMaxIntsToIndexField**()**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **void s****etMaxIntsToIndexField**(**int**)**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **int getMaxLongsToIndexField**()**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **void s****etMaxLongsToIndexField**(**int**)**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **int getMaxDoublesToIndexField**()**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **void s****etMaxDoublesToIndexField**(**int**)**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **String getSeparatorBetweenValues**()**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
-Method **void s****etSeparatorBetweenValues**(S**tring**)**** has been added to **com.groupdocs.search****.options****.**MetadataIndexingOptions**** class.  
+Class **MetadataIndexingOptions** has been added to **com.groupdocs.search.options** package.
+Method **boolean getIndexingEmptyValues()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **void setIndexingEmptyValues(boolean)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **boolean getIndexingEmptyNames()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **void setIndexingEmptyNames(boolean)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **String getDefaultFieldName()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **void setDefaultFieldName(String)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **String getSeparatorInCompoundName()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **void setSeparatorInCompoundName(String)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **int getMaxBytesToIndexField()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **void setMaxBytesToIndexField(int)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **int getMaxIntsToIndexField()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **void setMaxIntsToIndexField(int)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **int getMaxLongsToIndexField()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **void setMaxLongsToIndexField(int)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **int getMaxDoublesToIndexField()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **void setMaxDoublesToIndexField(int)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **String getSeparatorBetweenValues()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Method **void setSeparatorBetweenValues(String)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
 
-Method **MetadataIndexingOptions getMetadataIndexingOptions()** has been added to **com.groupdocs.search****.options****.IndexingOptions** class.  
-Method **MetadataIndexingOptions getMetadataIndexingOptions()** has been added to **com.groupdocs.search****.options****.TextOptions** class.  
-Method **MetadataIndexingOptions getMetadataIndexingOptions()** has been added to **com.groupdocs.search****.options****.UpdateOptions** class.
+Method **MetadataIndexingOptions getMetadataIndexingOptions()** has been added to **com.groupdocs.search.options.IndexingOptions** class.
+Method **MetadataIndexingOptions getMetadataIndexingOptions()** has been added to **com.groupdocs.search.options.TextOptions** class.
+Method **MetadataIndexingOptions getMetadataIndexingOptions()** has been added to **com.groupdocs.search.options.UpdateOptions** class.
 
 ##### Use cases
 
 This example demonstrates how to set the metadata indexing options:
-
-
 
 ```java
 String indexFolder = "c:\\MyIndex";
@@ -201,18 +197,16 @@ This feature allows you to notify an index about renaming or moving to another l
 
 ##### Public API changes
 
-Field **Renaming** has been added to **com.groupdocs.search****.common.IndexStatus** class.
+Field **Renaming** has been added to **com.groupdocs.search.common.IndexStatus** class.
 
-Class **Notification** has been added to **com.groupdocs.search****.common** package.  
-Method **Notification createRenameNotification(String, String)** has been added to **com.groupdocs.search****.common.**Notification**** class.
+Class **Notification** has been added to **com.groupdocs.search.common** package.
+Method **Notification createRenameNotification(String, String)** has been added to **com.groupdocs.search.common.Notification** class.
 
-Method **boolean**** notifyIndex(Notification)** has been added to **com.groupdocs.search****.Index** class.
+Method **boolean notifyIndex(Notification)** has been added to **com.groupdocs.search.Index** class.
 
 ##### Use cases
 
 This example demonstrates how to notify an index about renaming an indexed document:
-
-
 
 ```java
 String indexFolder = "c:\\MyIndex";
@@ -244,33 +238,31 @@ This feature allows you to add text attributes to indexed documents without the 
 
 ##### Public API changes
 
-Field **ChangingAttributes** has been added to **com.groupdocs.search****.common.IndexStatus** class.
+Field **ChangingAttributes** has been added to **com.groupdocs.search.common.IndexStatus** class.
 
-Class **AttributeChangeBatch** has been added to **com.groupdocs.search****.common** package.  
-Constructor **AttributeChangeBatch()** has been added to **com.groupdocs.search****.common****.AttributeChangeBatch** class.  
-Method **void add(String path, String\[\] ... attributes)** has been added to **com.groupdocs.search****.common****.AttributeChangeBatch** class.  
-Method **void add(String\[\] paths, String\[\] ... attributes)** has been added to **com.groupdocs.search****.common****.AttributeChangeBatch** class.  
-Method **void addToAll(String\[\] ... attributes)** has been added to **com.groupdocs.search****.common****.AttributeChangeBatch** class.  
-Method **void remove(String path, String\[\] ... attributes)** has been added to **com.groupdocs.search****.common****.AttributeChangeBatch** class.  
-Method **void remove(String\[\] paths, String\[\] ... attributes)** has been added to **com.groupdocs.search****.common****.AttributeChangeBatch** class.  
-Method **void removeAll(String path)** has been added to **com.groupdocs.search****.common****.AttributeChangeBatch** class.  
-Method **void removeAll(String\[\] paths)** has been added to **com.groupdocs.search****.common****.AttributeChangeBatch** class.  
-Method **void removeFromAll(String\[\] ... attributes)** has been added to **com.groupdocs.search****.common****.AttributeChangeBatch** class.  
-Method **void clear()** has been added to **com.groupdocs.search****.common****.AttributeChangeBatch** class.
+Class **AttributeChangeBatch** has been added to **com.groupdocs.search.common** package.  
+Constructor **AttributeChangeBatch()** has been added to **com.groupdocs.search.common.AttributeChangeBatch** class.  
+Method **void add(String path, String\[\] ... attributes)** has been added to **com.groupdocs.search.common.AttributeChangeBatch** class.  
+Method **void add(String\[\] paths, String\[\] ... attributes)** has been added to **com.groupdocs.search.common.AttributeChangeBatch** class.  
+Method **void addToAll(String\[\] ... attributes)** has been added to **com.groupdocs.search.common.AttributeChangeBatch** class.  
+Method **void remove(String path, String\[\] ... attributes)** has been added to **com.groupdocs.search.common.AttributeChangeBatch** class.  
+Method **void remove(String\[\] paths, String\[\] ... attributes)** has been added to **com.groupdocs.search.common.AttributeChangeBatch** class.  
+Method **void removeAll(String path)** has been added to **com.groupdocs.search.common.AttributeChangeBatch** class.  
+Method **void removeAll(String\[\] paths)** has been added to **com.groupdocs.search.common.AttributeChangeBatch** class.  
+Method **void removeFromAll(String\[\] ... attributes)** has been added to **com.groupdocs.search.common.AttributeChangeBatch** class.  
+Method **void clear()** has been added to **com.groupdocs.search.common.AttributeChangeBatch** class.
 
-Method **void changeAttributes(AttributeChangeBatch batch)** has been added to **com.groupdocs.search****.Index** class.  
-Method **String\[\] getAttributes(String path)** has been added to **com.groupdocs.search****.Index** class.
+Method **void changeAttributes(AttributeChangeBatch batch)** has been added to **com.groupdocs.search.Index** class.  
+Method **String\[\] getAttributes(String path)** has been added to **com.groupdocs.search.Index** class.
 
-Method **String\[\] getAttributes()** has been added to **com.groupdocs.search****.events.FileIndexingEventArgs** class.  
-Method **void setAttributes(**String\[\]**)** has been added to **com.groupdocs.search****.events.FileIndexingEventArgs** class.
+Method **String\[\] getAttributes()** has been added to **com.groupdocs.search.events.FileIndexingEventArgs** class.  
+Method **void setAttributes(**String\[\]**)** has been added to **com.groupdocs.search.events.FileIndexingEventArgs** class.
 
-Method **ISearchDocumentFilter createAttribute(String\[\] ... attributes)** has been added to **com.groupdocs.search****.options.SearchDocumentFilter** class.
+Method **ISearchDocumentFilter createAttribute(String\[\] ... attributes)** has been added to **com.groupdocs.search.options.SearchDocumentFilter** class.
 
 ##### Use cases
 
 This example demonstrates how to add and remove attributes from indexed documents:
-
-
 
 ```java
 String indexFolder = "c:\\MyIndex";
@@ -296,8 +288,6 @@ index.changeAttributes(batch);
 ```
 
 The next example demonstrates how to add attributes to documents during indexing and how to search with filter by attribute:
-
-
 
 ```java
 String indexFolder = "c:\\MyIndex";

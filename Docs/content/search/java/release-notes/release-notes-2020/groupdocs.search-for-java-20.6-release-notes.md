@@ -39,15 +39,12 @@ By default, the raw mode is used if possible.
 
 ##### Public API changes {#GroupDocs.SearchforJava20.6-PublicAPIchanges}
 
-Method **boolean getUseRawTextExtraction()** has been added
-to **com.groupdocs.search.IndexSettings** class.\
-Method **void setUseRawTextExtraction(boolean)** has been added
-to **com.groupdocs.search.IndexSettings** class.
+Method **boolean getUseRawTextExtraction()** has been added to **com.groupdocs.search.IndexSettings** class.
+Method **void setUseRawTextExtraction(boolean)** has been added to **com.groupdocs.search.IndexSettings** class.
 
 ##### Use cases {#GroupDocs.SearchforJava20.6-Usecases}
 
-The following example demonstrates how to disable raw text extraction
-mode to improve formatting of extracted text:
+The following example demonstrates how to disable raw text extraction mode to improve formatting of extracted text:
 
 
 ```java
@@ -71,18 +68,13 @@ This improvement brings order to the grouping of classes into packages.
 
 ##### Public API changes {#GroupDocs.SearchforJava20.6-PublicAPIchanges.1}
 
-Class **AttributeChangeBatch** has been moved
-from **com.groupdocs.search** to **com.groupdocs.search.common**
-package.\
-Constructor **AttributeChangeBatch()** has been deleted
-from **com.groupdocs.search.common.**AttributeChangeBatch**** class.\
-Method **AttributeChangeBatch create()** has been added
-to **com.groupdocs.search.common.**AttributeChangeBatch**** class.
+Class **AttributeChangeBatch** has been moved from **com.groupdocs.search** to **com.groupdocs.search.common** package.
+Constructor **AttributeChangeBatch()** has been deleted from **com.groupdocs.search.common.AttributeChangeBatch** class.
+Method **AttributeChangeBatch create()** has been added to **com.groupdocs.search.common.AttributeChangeBatch** class.
 
 ##### Use cases {#GroupDocs.SearchforJava20.6-Usecases.1}
 
-This example demonstrates how to add and remove attributes from indexed
-documents:
+This example demonstrates how to add and remove attributes from indexed documents:
 
 ```java
 String indexFolder = "c:\\MyIndex";
@@ -106,3 +98,4 @@ batch.add("c:\\MyDocuments\\KeyPoints.doc", "main", "key");
 // Applying attribute changes in the index
 index.changeAttributes(batch);
 ```
+
