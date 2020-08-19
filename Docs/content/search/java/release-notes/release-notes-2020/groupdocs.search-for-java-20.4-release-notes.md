@@ -42,10 +42,10 @@ This improvement adds the **MailFieldNames** class, which contains constants w
 
 ##### Public API changes
 
-Static class **MailFieldNames** has been added to **com.groupdocs.search.options** package.
-Constant **String MailMessageBody** has been added to **com.groupdocs.search.options.MailFieldNames** class.
-Constant **String MailSenderName** has been added to **com.groupdocs.search.options.MailFieldNames** class.
-Constant **String MailDisplayTo** has been added to **com.groupdocs.search.options.MailFieldNames** class.
+Static class **MailFieldNames** has been added to **com.groupdocs.search.options** package.  
+Constant **String MailMessageBody** has been added to **com.groupdocs.search.options.MailFieldNames** class.  
+Constant **String MailSenderName** has been added to **com.groupdocs.search.options.MailFieldNames** class.  
+Constant **String MailDisplayTo** has been added to **com.groupdocs.search.options.MailFieldNames** class.  
 Constant **String MailSubject** has been added to **com.groupdocs.search.options.MailFieldNames** class.
 
 ##### Use cases
@@ -143,28 +143,28 @@ This improvement adds the **getMetadataIndexingOptions()** method to **Indexin
 
 ##### Public API changes
 
-Class **MetadataIndexingOptions** has been added to **com.groupdocs.search.options** package.
-Method **boolean getIndexingEmptyValues()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **void setIndexingEmptyValues(boolean)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **boolean getIndexingEmptyNames()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **void setIndexingEmptyNames(boolean)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **String getDefaultFieldName()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **void setDefaultFieldName(String)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **String getSeparatorInCompoundName()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **void setSeparatorInCompoundName(String)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **int getMaxBytesToIndexField()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **void setMaxBytesToIndexField(int)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **int getMaxIntsToIndexField()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **void setMaxIntsToIndexField(int)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **int getMaxLongsToIndexField()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **void setMaxLongsToIndexField(int)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **int getMaxDoublesToIndexField()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **void setMaxDoublesToIndexField(int)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
-Method **String getSeparatorBetweenValues()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.
+Class **MetadataIndexingOptions** has been added to **com.groupdocs.search.options** package.  
+Method **boolean getIndexingEmptyValues()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **void setIndexingEmptyValues(boolean)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **boolean getIndexingEmptyNames()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **void setIndexingEmptyNames(boolean)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **String getDefaultFieldName()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **void setDefaultFieldName(String)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **String getSeparatorInCompoundName()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **void setSeparatorInCompoundName(String)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **int getMaxBytesToIndexField()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **void setMaxBytesToIndexField(int)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **int getMaxIntsToIndexField()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **void setMaxIntsToIndexField(int)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **int getMaxLongsToIndexField()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **void setMaxLongsToIndexField(int)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **int getMaxDoublesToIndexField()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **void setMaxDoublesToIndexField(int)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
+Method **String getSeparatorBetweenValues()** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
 Method **void setSeparatorBetweenValues(String)** has been added to **com.groupdocs.search.options.MetadataIndexingOptions** class.  
 
-Method **MetadataIndexingOptions getMetadataIndexingOptions()** has been added to **com.groupdocs.search.options.IndexingOptions** class.
-Method **MetadataIndexingOptions getMetadataIndexingOptions()** has been added to **com.groupdocs.search.options.TextOptions** class.
+Method **MetadataIndexingOptions getMetadataIndexingOptions()** has been added to **com.groupdocs.search.options.IndexingOptions** class.  
+Method **MetadataIndexingOptions getMetadataIndexingOptions()** has been added to **com.groupdocs.search.options.TextOptions** class.  
 Method **MetadataIndexingOptions getMetadataIndexingOptions()** has been added to **com.groupdocs.search.options.UpdateOptions** class.
 
 ##### Use cases
@@ -199,7 +199,7 @@ This feature allows you to notify an index about renaming or moving to another l
 
 Field **Renaming** has been added to **com.groupdocs.search.common.IndexStatus** class.
 
-Class **Notification** has been added to **com.groupdocs.search.common** package.
+Class **Notification** has been added to **com.groupdocs.search.common** package.  
 Method **Notification createRenameNotification(String, String)** has been added to **com.groupdocs.search.common.Notification** class.
 
 Method **boolean notifyIndex(Notification)** has been added to **com.groupdocs.search.Index** class.

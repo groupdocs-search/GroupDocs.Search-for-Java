@@ -2,7 +2,7 @@
 id: groupdocs-search-for-java-20-6-release-notes
 url: search/java/groupdocs-search-for-java-20-6-release-notes
 title: GroupDocs.Search for Java 20.6 Release Notes
-weight: 1
+weight: 2
 description: ""
 keywords: 
 productName: GroupDocs.Search for Java
@@ -39,7 +39,7 @@ By default, the raw mode is used if possible.
 
 ##### Public API changes {#GroupDocs.SearchforJava20.6-PublicAPIchanges}
 
-Method **boolean getUseRawTextExtraction()** has been added to **com.groupdocs.search.IndexSettings** class.
+Method **boolean getUseRawTextExtraction()** has been added to **com.groupdocs.search.IndexSettings** class.  
 Method **void setUseRawTextExtraction(boolean)** has been added to **com.groupdocs.search.IndexSettings** class.
 
 ##### Use cases {#GroupDocs.SearchforJava20.6-Usecases}
@@ -68,8 +68,8 @@ This improvement brings order to the grouping of classes into packages.
 
 ##### Public API changes {#GroupDocs.SearchforJava20.6-PublicAPIchanges.1}
 
-Class **AttributeChangeBatch** has been moved from **com.groupdocs.search** to **com.groupdocs.search.common** package.
-Constructor **AttributeChangeBatch()** has been deleted from **com.groupdocs.search.common.AttributeChangeBatch** class.
+Class **AttributeChangeBatch** has been moved from **com.groupdocs.search** to **com.groupdocs.search.common** package.  
+Constructor **AttributeChangeBatch()** has been deleted from **com.groupdocs.search.common.AttributeChangeBatch** class.  
 Method **AttributeChangeBatch create()** has been added to **com.groupdocs.search.common.AttributeChangeBatch** class.
 
 ##### Use cases {#GroupDocs.SearchforJava20.6-Usecases.1}

@@ -2,7 +2,7 @@
 id: groupdocs-search-for-java-20-8-release-notes
 url: search/java/groupdocs-search-for-java-20-8-release-notes
 title: GroupDocs.Search for Java 20.8 Release Notes
-weight: 1
+weight: 3
 description: ""
 keywords: 
 productName: GroupDocs.Search for Java
@@ -32,31 +32,31 @@ This feature provides the ability to index documents from streams and data struc
 
 ##### Public API changes
 
-Class **DocumentSourceKind** has been added to **com.groupdocs.search.common** package.
-Field **File** has been added to **com.groupdocs.search.common.DocumentSourceKind** class.
-Field **Stream** has been added to **com.groupdocs.search.common.DocumentSourceKind** class.
+Class **DocumentSourceKind** has been added to **com.groupdocs.search.common** package.  
+Field **File** has been added to **com.groupdocs.search.common.DocumentSourceKind** class.  
+Field **Stream** has been added to **com.groupdocs.search.common.DocumentSourceKind** class.  
 Field **Structure** has been added to **com.groupdocs.search.common.DocumentSourceKind** class.
 
-Class **Document** has been added to **com.groupdocs.search** package.
-Method **int getDocumentSourceKind()** has been added to **com.groupdocs.search.Document** class.
-Method **String getDocumentKey()** has been added to **com.groupdocs.search.Document** class.
-Method **boolean isLazy()** has been added to **com.groupdocs.search.Document** class.
-Method **Date getModificationDate()** has been added to **com.groupdocs.search.Document** class.
-Method **String getExtension()** has been added to **com.groupdocs.search.Document** class.
-Method **DocumentField[] getAdditionalFields()** has been added to **com.groupdocs.search.Document** class.
-Method **void setAdditionalFields(DocumentField[])** has been added to **com.groupdocs.search.Document** class.
-Method **String[] getAttributes()** has been added to **com.groupdocs.search.Document** class.
-Method **void setAttributes(String[])** has been added to **com.groupdocs.search.Document** class.
-Static method **Document createFromFile(String)** has been added to **com.groupdocs.search.Document** class.
-Static method **Document createFromStream(String, Date, String, InputStream)** has been added to **com.groupdocs.search.Document** class.
-Static method **Document createFromStructure(String, Date, DocumentField[])** has been added to **com.groupdocs.search.Document** class.
+Class **Document** has been added to **com.groupdocs.search** package.  
+Method **int getDocumentSourceKind()** has been added to **com.groupdocs.search.Document** class.  
+Method **String getDocumentKey()** has been added to **com.groupdocs.search.Document** class.  
+Method **boolean isLazy()** has been added to **com.groupdocs.search.Document** class.  
+Method **Date getModificationDate()** has been added to **com.groupdocs.search.Document** class.  
+Method **String getExtension()** has been added to **com.groupdocs.search.Document** class.  
+Method **DocumentField[] getAdditionalFields()** has been added to **com.groupdocs.search.Document** class.  
+Method **void setAdditionalFields(DocumentField[])** has been added to **com.groupdocs.search.Document** class.  
+Method **String[] getAttributes()** has been added to **com.groupdocs.search.Document** class.  
+Method **void setAttributes(String[])** has been added to **com.groupdocs.search.Document** class.  
+Static method **Document createFromFile(String)** has been added to **com.groupdocs.search.Document** class.  
+Static method **Document createFromStream(String, Date, String, InputStream)** has been added to **com.groupdocs.search.Document** class.  
+Static method **Document createFromStructure(String, Date, DocumentField[])** has been added to **com.groupdocs.search.Document** class.  
 Static method **Document createLazy(int, String, IDocumentLoader)** has been added to **com.groupdocs.search.Document** class.
 
-Interface **IDocumentLoader** has been added to **com.groupdocs.search.common** package.
-Method **Document loadDocument()** has been added to **com.groupdocs.search.common.IDocumentLoader** interface.
+Interface **IDocumentLoader** has been added to **com.groupdocs.search.common** package.  
+Method **Document loadDocument()** has been added to **com.groupdocs.search.common.IDocumentLoader** interface.  
 Method **void closeDocument()** has been added to **com.groupdocs.search.common.IDocumentLoader** interface.
 
-Method **Document getDocument()** has been added to **com.groupdocs.search.events.FileIndexingEventArgs** class.
+Method **Document getDocument()** has been added to **com.groupdocs.search.events.FileIndexingEventArgs** class.  
 Method **String getDocumentKey()** has been added to **com.groupdocs.search.events.FileIndexingEventArgs** class.
 
 Method **String getLastDocumentKey()** has been added to **com.groupdocs.search.events.OperationProgressEventArgs** class.
