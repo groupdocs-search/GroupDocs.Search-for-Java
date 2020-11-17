@@ -16,6 +16,23 @@ public class HomophoneDictionary {
         // Indexing documents from the specified folder
         index.add(documentsFolder);
 
+        // Getting homophones for word 'braid'
+        String[] homophones = index.getDictionaries().getHomophoneDictionary().getHomophones("braid");
+        System.out.println("Homophones for 'braid':");
+        for (String homophone : homophones) {
+            System.out.println(homophone);
+        }
+
+        // Getting groups of homophones to which word 'braid' belongs to
+        String[][] groups = index.getDictionaries().getHomophoneDictionary().getHomophoneGroups("braid");
+        System.out.println("Homophone groups for 'braid':");
+        for (String[] group : groups) {
+            for (String group1 : group) {
+                System.out.print(group1 + " ");
+            }
+            System.out.println();
+        }
+
         if (index.getDictionaries().getHomophoneDictionary().getCount() > 0) {
             // Removing all homophones from the dictionary
             index.getDictionaries().getHomophoneDictionary().clear();

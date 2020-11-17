@@ -20,6 +20,23 @@ public class SynonymDictionary {
         // Indexing documents from the specified folder
         index.add(documentsFolder);
 
+        // Getting synonyms for word 'make'
+        String[] synonyms = index.getDictionaries().getSynonymDictionary().getSynonyms("make");
+        System.out.println("Synonyms for 'make':");
+        for (String synonym : synonyms) {
+            System.out.println(synonym);
+        }
+
+        // Getting groups of synonyms to which word 'make' belongs to
+        String[][] groups = index.getDictionaries().getSynonymDictionary().getSynonymGroups("make");
+        System.out.println("Synonym groups for 'make':");
+        for (String[] group : groups) {
+            for (String group1 : group) {
+                System.out.print(group1 + " ");
+            }
+            System.out.println();
+        }
+
         if (index.getDictionaries().getSynonymDictionary().getCount() > 0) {
             // Removing all synonyms from the dictionary
             index.getDictionaries().getSynonymDictionary().clear();
