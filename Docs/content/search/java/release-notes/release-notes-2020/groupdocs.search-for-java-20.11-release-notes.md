@@ -32,8 +32,8 @@ This improvement adds a method to get synonyms for a specific word from the syno
 
 ##### Public API changes
 
-Method **String[] getSynonyms(String)** has been added to **com.groupdocs.search.dictionaries.SynonymDictionary** class.
-Method **String[]\[] getSynonymGroups(String)** has been added to **com.groupdocs.search.dictionaries.SynonymDictionary** class.
+Method **String[] getSynonyms(String)** has been added to **com.groupdocs.search.dictionaries.SynonymDictionary** class.  
+Method **String[]\[] getSynonymGroups(String)** has been added to **com.groupdocs.search.dictionaries.SynonymDictionary** class.  
 Method **String[]\[] getAllSynonymGroups()** has been added to **com.groupdocs.search.dictionaries.SynonymDictionary** class.
 
 ##### Use cases
@@ -70,8 +70,8 @@ This improvement adds a method to get homophones for a specific word from the ho
 
 ##### Public API changes
 
-Method **String[] getHomophones(String)** has been added to **com.groupdocs.search.dictionaries.HomophoneDictionary** class.
-Method **String[]\[] getHomophoneGroups(String)** has been added to **com.groupdocs.search.dictionaries.HomophoneDictionary** class.
+Method **String[] getHomophones(String)** has been added to **com.groupdocs.search.dictionaries.HomophoneDictionary** class.  
+Method **String[]\[] getHomophoneGroups(String)** has been added to **com.groupdocs.search.dictionaries.HomophoneDictionary** class.  
 Method **String[]\[] getAllHomophoneGroups()** has been added to **com.groupdocs.search.dictionaries.HomophoneDictionary** class.
 
 The following example demonstrates how to get homophones for a word and how to get homophone groups to which a word belongs to.
