@@ -40,8 +40,6 @@ None.
 
 The following example demonstrates a logical search using a stop word in a query.
 
-**Java**
-
 ```java
 String indexFolder = "c:\\MyIndex";
 String documentFolder = "c:\\MyDocuments";
@@ -68,8 +66,6 @@ Method **boolean getIndexedWithError()** has been added to **com.groupdocs.searc
 ##### Use cases
 
 The following example demonstrates how to get the type of source of an indexed document and the indexing error indicator.
-
-**Java**
 
 ```java
 String indexFolder = "c:\\MyIndex";
@@ -100,8 +96,6 @@ Method **DeleteResult delete(UpdateOptions, String[])** has been added to **com.
 ##### Use cases
 
 The following example demonstrates how to delete documents from an index by key.
-
-**Java**
 
 ```java
 String indexFolder = "c:\\MyIndex";
