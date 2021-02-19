@@ -35,7 +35,7 @@ for (String path : indexedPaths1) {
     System.out.println("\t" + path);
 }
  
-// Deleting index path from the index
+// Deleting indexed path from the index
 DeleteResult deleteResult = index.delete(new String[] { documentsFolder1 }, new UpdateOptions());
  
 // Getting indexed paths after deletion
