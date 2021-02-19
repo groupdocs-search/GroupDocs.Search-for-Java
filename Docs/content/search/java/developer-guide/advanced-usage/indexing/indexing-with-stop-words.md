@@ -2,7 +2,7 @@
 id: indexing-with-stop-words
 url: search/java/indexing-with-stop-words
 title: Indexing with stop words
-weight: 14
+weight: 15
 description: ""
 keywords: 
 productName: GroupDocs.Search for Java

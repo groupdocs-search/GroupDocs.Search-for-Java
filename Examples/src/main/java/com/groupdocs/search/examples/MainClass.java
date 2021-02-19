@@ -57,6 +57,8 @@ public class MainClass {
 
         //CustomTextExtractors.run();
 
+        //DeleteIndexedDocuments.run();
+
         //DeleteIndexedPaths.run();
 
         //DocumentAttributes.changeAttributes();

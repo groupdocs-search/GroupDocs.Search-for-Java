@@ -2,7 +2,7 @@
 id: indexing-from-different-sources
 url: search/java/indexing-from-different-sources
 title: Indexing from different sources
-weight: 9
+weight: 10
 description: ""
 keywords: 
 productName: GroupDocs.Search for Java

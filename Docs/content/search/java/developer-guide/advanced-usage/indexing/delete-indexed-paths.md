@@ -2,7 +2,7 @@
 id: delete-indexed-paths
 url: search/java/delete-indexed-paths
 title: Delete indexed paths
-weight: 4
+weight: 5
 description: ""
 keywords: 
 productName: GroupDocs.Search for Java

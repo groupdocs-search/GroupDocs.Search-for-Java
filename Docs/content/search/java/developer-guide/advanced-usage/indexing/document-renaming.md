@@ -2,7 +2,7 @@
 id: document-renaming
 url: search/java/document-renaming
 title: Document renaming
-weight: 7
+weight: 8
 description: ""
 keywords: 
 productName: GroupDocs.Search for Java

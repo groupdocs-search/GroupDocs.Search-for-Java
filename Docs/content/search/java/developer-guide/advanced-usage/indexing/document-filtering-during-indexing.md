@@ -2,7 +2,7 @@
 id: document-filtering-during-indexing
 url: search/java/document-filtering-during-indexing
 title: Document filtering during indexing
-weight: 6
+weight: 7
 description: ""
 keywords: 
 productName: GroupDocs.Search for Java
