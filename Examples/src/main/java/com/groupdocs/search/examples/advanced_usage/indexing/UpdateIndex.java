@@ -60,7 +60,7 @@ public class UpdateIndex {
 
         if (updater.canUpdateVersion(sourceIndexFolder)) {
             // The index of old version does not change
-            int result = updater.updateVersion(sourceIndexFolder, targetIndexFolder);
+            VersionUpdateResult result = updater.updateVersion(sourceIndexFolder, targetIndexFolder);
         }
 
         // Loading index from target folder

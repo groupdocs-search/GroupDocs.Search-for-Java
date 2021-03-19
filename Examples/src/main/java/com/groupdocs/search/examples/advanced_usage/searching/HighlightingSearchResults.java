@@ -30,12 +30,16 @@ public class HighlightingSearchResults {
             FoundDocument document = result.getFoundDocument(0); // Getting the first found document
             OutputAdapter outputAdapter = new FileOutputAdapter(".\\output\\AdvancedUsage\\Searching\\HighlightingSearchResults\\Highlighted.html"); // Creating an output adapter to a file
             Highlighter highlighter = new HtmlHighlighter(outputAdapter); // Creating the highlighter object
-            index.highlight(document, highlighter); // Generating HTML formatted text with highlighted occurrences
+            HighlightOptions options = new HighlightOptions(); // Creating the highlight options
+            options.setHighlightColor(new Color(0, 127, 0)); // Setting highlight color
+            options.setUseInlineStyles(false); // Using CSS styles to highlight occurrences
+            options.setGenerateHead(true); // Generating Head tag in output HTML
+            index.highlight(document, highlighter, options); // Generating HTML formatted text with highlighted occurrences
         }
     }
 
-    public static void highlightingInSegments() {
-        String indexFolder = ".\\output\\AdvancedUsage\\Searching\\HighlightingSearchResults\\HighlightingInSegments";
+    public static void highlightingInFragments() {
+        String indexFolder = ".\\output\\AdvancedUsage\\Searching\\HighlightingSearchResults\\HighlightingInFragments";
         String documentFolder = Utils.ArchivesPath;
 
         // Creating an index
@@ -52,6 +56,8 @@ public class HighlightingSearchResults {
         options.setTermsBefore(5);
         options.setTermsAfter(5);
         options.setTermsTotal(15);
+        options.setHighlightColor(new Color(0, 0, 127));
+        options.setUseInlineStyles(true);
 
         // Highlighting found words in separate text fragments of a document
         FoundDocument document = result.getFoundDocument(0);
@@ -75,7 +81,7 @@ public class HighlightingSearchResults {
         System.out.println(stringBuilder.toString());
 
         try {
-            String fileName = ".\\output\\AdvancedUsage\\Searching\\HighlightingSearchResults\\Segments.html";
+            String fileName = ".\\output\\AdvancedUsage\\Searching\\HighlightingSearchResults\\Fragments.html";
             Files.write(Paths.get(fileName), stringBuilder.toString().getBytes());
         } catch (IOException e) {
             e.printStackTrace();

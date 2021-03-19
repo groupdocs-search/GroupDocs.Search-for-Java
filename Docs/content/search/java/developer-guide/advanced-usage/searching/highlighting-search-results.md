@@ -19,7 +19,10 @@ The Index class also represents an overload of the [highlight](https://apirefer
 *   [setCustomExtractor](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/TextOptions#setCustomExtractor(com.groupdocs.search.common.IFieldExtractor)) method sets an extractor used during indexing, it is necessary if the text of the document was not saved in the index;
 *   [setAdditionalFields](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/TextOptions#setAdditionalFields(com.groupdocs.search.common.DocumentField%5B%5D)) method sets additional document fields added during document indexing which are also necessary if the document text was not saved in the index;
 *   [setCancellation](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/TextOptions#setCancellation(com.groupdocs.search.common.Cancellation)) method sets an object used to cancel the operation;
-*   [getMetadataIndexingOptions](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/TextOptions#getMetadataIndexingOptions()) method returns an object for specifying metadata indexing options.
+*   [setGenerateHead](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/TextOptions#setGenerateHead(boolean)) method sets a flag to specify whether the Head tag is generated in the output HTML;
+*   [getMetadataIndexingOptions](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/TextOptions#getMetadataIndexingOptions()) method returns an object for specifying metadata indexing options;
+*   [setUseInlineStyles](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/HighlightOptions#setUseInlineStyles(boolean)) method sets a flag to specify whether inline styles or CSS class are used to highlight occurrences;
+*   [setHighlightColor](https://apireference.groupdocs.com/search/java/com.groupdocs.search.options/HighlightOptions#setHighlightColor(com.groupdocs.search.options.Color)) method sets a color used to highlight occurrences.
 
 The other options are used for highlighting occurrences in text fragments.
 
@@ -40,22 +43,26 @@ The following example demonstrates how to highlight search results in the text o
 ```java
 String indexFolder = "c:\\MyIndex\\";
 String documentFolder = "c:\\MyDocuments\\";
- 
+
 // Creating an index
 Index index = new Index(indexFolder);
- 
+
 // Indexing documents from the specified folder
 index.add(documentFolder);
- 
+
 // Search for the word 'eternity'
 SearchResult result = index.search("eternity");
- 
+
 // Highlighting occurrences in the text
 if (result.getDocumentCount() > 0) {
     FoundDocument document = result.getFoundDocument(0); // Getting the first found document
     OutputAdapter outputAdapter = new FileOutputAdapter("c:\\Highlighted.html"); // Creating an output adapter to a file
     Highlighter highlighter = new HtmlHighlighter(outputAdapter); // Creating the highlighter object
-    index.highlight(document, highlighter); // Generating HTML formatted text with highlighted occurrences
+    HighlightOptions options = new HighlightOptions(); // Creating the highlight options
+    options.setHighlightColor(new Color(0, 127, 0)); // Setting highlight color
+    options.setUseInlineStyles(false); // Using CSS styles to highlight occurrences
+    options.setGenerateHead(true); // Generating Head tag in output HTML
+    index.highlight(document, highlighter, options); // Generating HTML formatted text with highlighted occurrences
 }
 ```
 
@@ -76,27 +83,29 @@ The example below demonstrates how to highlight search results in separate text 
 ```java
 String indexFolder = "c:\\MyIndex\\";
 String documentsFolder = "c:\\MyDocuments\\";
- 
+
 // Creating an index
 Index index = new Index(indexFolder);
- 
+
 // Indexing documents from the specified folder
 index.add(documentsFolder);
- 
+
 // Search for the word 'Einstein'
 SearchResult result = index.search("Einstein");
- 
+
 // Assigning highlight options
 HighlightOptions options = new HighlightOptions();
 options.setTermsBefore(5);
 options.setTermsAfter(5);
 options.setTermsTotal(15);
- 
+options.setHighlightColor(new Color(0, 0, 127));
+options.setUseInlineStyles(true);
+
 // Highlighting found words in separate text fragments of a document
 FoundDocument document = result.getFoundDocument(0);
 HtmlFragmentHighlighter highlighter = new HtmlFragmentHighlighter();
 index.highlight(document, highlighter, options);
- 
+
 // Getting the result
 FragmentContainer[] fragmentContainers = highlighter.getResult();
 for (FragmentContainer container : fragmentContainers) {

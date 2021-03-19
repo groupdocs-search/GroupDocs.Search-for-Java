@@ -20,7 +20,7 @@ The [SearchResult](https://apireference.groupdocs.com/search/java/com.groupdocs
 *   The [getStartTime](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/SearchResult#getStartTime()) method returns the start time of the search.
 *   The [getEndTime](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/SearchResult#getEndTime()) method returns the end time of the search.
 *   The [getSearchDuration](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/SearchResult#getSearchDuration()) method returns the search duration.
-*   The[getFoundDocument](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/SearchResult#getFoundDocument(int)) method returns the found document by index.
+*   The [getFoundDocument](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/SearchResult#getFoundDocument(int)) method returns the found document by index.
 
 The found document is represented by an instance of the [FoundDocument](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocument) class. The [FoundDocument](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocument) class contains the following members:
 
@@ -30,8 +30,10 @@ The found document is represented by an instance of the [FoundDocument](https:/
 *   The [getFoundFields](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocument#getFoundFields()) method returns the found document fields.
 *   The [getTerms](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocument#getTerms()) method returns the found terms. The value is evaluated each time the property is accessed based on the data for each document field found.
 *   The [getTermSequences](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocument#getTermSequences()) method returns the found term sequences.
+*   The [serialize](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocument#serialize()) method serializes the current found document instance to a byte array.
+*   The [deserialize](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocument#deserialize(byte[])) method deserializes an instance of found document from a byte array.
 
-The document field found is represented by an instance of the [FoundDocumentField](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocumentField) class. The [FoundDocumentField](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocumentField) class contains the following members:
+The found document field is represented by an instance of the [FoundDocumentField](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocumentField) class. The [FoundDocumentField](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocumentField) class contains the following members:
 
 *   The [getFieldName](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocumentField#getFieldName()) method returns the field name.
 *   The [getOccurrenceCount](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocumentField#getOccurrenceCount()) method returns the number of occurrences found.
@@ -39,6 +41,8 @@ The document field found is represented by an instance of the [FoundDocumentFie
 *   The [getTermsOccurrences](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocumentField#getTermsOccurrences()) method returns the occurrences of the found terms.
 *   The [getTermSequences](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocumentField#getTermSequences()) method returns the term sequences found.
 *   The [getTermSequencesOccurrences](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocumentField#getTermSequencesOccurrences()) method returns the occurrences of the found term sequences.
+*   The [serialize](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocumentField#serialize()) method serializes the current found document field instance to a byte array.
+*   The [deserialize](https://apireference.groupdocs.com/search/java/com.groupdocs.search.results/FoundDocumentField#deserialize(byte[])) method deserializes an instance of found document field from a byte array.
 
 The following example shows how to print information on the documents found in the console.
 

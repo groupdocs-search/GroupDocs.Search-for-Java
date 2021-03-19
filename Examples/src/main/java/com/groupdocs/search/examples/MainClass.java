@@ -141,7 +141,7 @@ public class MainClass {
         //GettingIndexedDocuments.gettingTextOfIndexedDocuments();
 
         //HighlightingSearchResults.highlightingInEntireDocument();
-        //HighlightingSearchResults.highlightingInSegments();
+        //HighlightingSearchResults.highlightingInFragments();
 
         //HomophoneSearch.run();
 
