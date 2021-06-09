@@ -11,7 +11,6 @@ GroupDocs.Search for Java is a [Search & Indexing Library](https://products.grou
 
 Directory | Description
 --------- | -----------
-[Docs](https://github.com/groupdocs-search/GroupDocs.Search-for-Java/tree/master/Docs)  | Product documentation containing the Developer's Guide, Release Notes and more.
 [Examples](https://github.com/groupdocs-search/GroupDocs.Search-for-Java/tree/master/Examples)  | Java examples and sample documents for you to get started quickly. 
 
 ## Document Indexing Features
