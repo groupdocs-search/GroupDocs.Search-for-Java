@@ -103,6 +103,8 @@ public class MainClass {
 
         //MergeIndexes.run();
 
+        //OcrSupport.run();
+
         //OptimizeIndex.run();
 
         //StoringTextOfIndexedDocuments.run();

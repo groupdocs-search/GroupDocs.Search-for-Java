@@ -24,6 +24,7 @@ public class Utils {
     public static final String DocumentsPath2 = System.getProperty("user.dir") + "\\Resources\\SampleFiles\\Documents2\\";
     public static final String DocumentsPath3 = System.getProperty("user.dir") + "\\Resources\\SampleFiles\\Documents3\\";
     public static final String DocumentsPath4 = System.getProperty("user.dir") + "\\Resources\\SampleFiles\\Documents4\\";
+    public static final String DocumentsPNG = System.getProperty("user.dir") + "\\Resources\\SampleFiles\\DocumentsPNG\\";
     public static final String PasswordProtectedDocumentsPath = System.getProperty("user.dir") + "\\Resources\\SampleFiles\\PasswordProtectedDocuments\\";
     public static final String LogPath = System.getProperty("user.dir") + "\\Resources\\SampleFiles\\Log\\";
     public static final String DocumentsUtf32Path = System.getProperty("user.dir") + "\\Resources\\SampleFiles\\DocumentsUtf32\\";
