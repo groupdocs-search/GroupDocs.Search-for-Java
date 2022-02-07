@@ -5,6 +5,7 @@ import com.groupdocs.search.examples.advanced_usage.indexing.*;
 import com.groupdocs.search.examples.advanced_usage.managing_dictionaries.*;
 import com.groupdocs.search.examples.advanced_usage.searching.*;
 import com.groupdocs.search.examples.basic_usage.*;
+import com.groupdocs.search.examples.highlight_in_html.*;
 import com.groupdocs.search.examples.quick_start.*;
 
 public class MainClass {
@@ -196,6 +197,10 @@ public class MainClass {
         //SynonymDictionary.run();
 
         //WordFormsProvider.run();
+
+        // Highlight Search Results in HTML ----------------------------------------------------------------------------------------------------
+
+        //HighlightExample.run();
 
         System.out.println();
         System.out.println("All done.");
