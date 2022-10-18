@@ -14,7 +14,7 @@
         <dependency>
             <groupId>com.groupdocs</groupId>
             <artifactId>groupdocs-search</artifactId>
-            <version>21.8</version>
+            <version>22.10</version>
         </dependency>
         <dependency>
             <groupId>com.groupdocs</groupId>
@@ -42,7 +42,7 @@
         <repository>
             <id>GroupDocsJavaAPI</id>
             <name>GroupDocs Java API</name>
-            <url>https://repository.groupdocs.com/repo/</url>
+            <url>https://releases.groupdocs.com/java/repo/</url>
         </repository>
         <repository>
             <id>AsposeJavaAPI</id>

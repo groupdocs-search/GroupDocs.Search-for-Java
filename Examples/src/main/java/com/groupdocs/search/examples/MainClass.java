@@ -108,6 +108,8 @@ public class MainClass {
 
         //OptimizeIndex.run();
 
+        //SeparateDataExtraction.run();
+
         //StoringTextOfIndexedDocuments.run();
 
         //TextFileEncodingDetection.run();
@@ -161,6 +163,8 @@ public class MainClass {
         //QueriesInTextAndObjectForm.run();
 
         //RegularExpressionSearch.run();
+
+        //ReverseImageSearch.run();
 
         //SearchByChunks.run();
 
