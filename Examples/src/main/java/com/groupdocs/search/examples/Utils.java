@@ -52,8 +52,8 @@ public class Utils {
     public static void highlight(Index index, FoundDocument document, String filePath) {
         if (document == null) return;
 
-        FileOutputAdapter outputAdapter = new FileOutputAdapter(filePath);
-        HtmlHighlighter highlighter = new HtmlHighlighter(outputAdapter);
+        FileOutputAdapter outputAdapter = new FileOutputAdapter(OutputFormat.Html, filePath);
+        DocumentHighlighter highlighter = new DocumentHighlighter(outputAdapter);
         index.highlight(document, highlighter);
     }
 

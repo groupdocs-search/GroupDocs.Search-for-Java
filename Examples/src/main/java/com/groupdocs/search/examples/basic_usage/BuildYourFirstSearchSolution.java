@@ -47,8 +47,8 @@ public class BuildYourFirstSearchSolution {
         if (result.getDocumentCount() > 0) {
             FoundDocument document = result.getFoundDocument(0); // Getting the first found document
             String path = ".\\output\\BasicUsage\\Highlighted.html";
-            OutputAdapter outputAdapter = new FileOutputAdapter(path); // Creating the output adapter to a file
-            HtmlHighlighter highlighter = new HtmlHighlighter(outputAdapter); // Creating the highlighter object
+            OutputAdapter outputAdapter = new FileOutputAdapter(OutputFormat.Html, path); // Creating the output adapter to a file
+            DocumentHighlighter highlighter = new DocumentHighlighter(outputAdapter); // Creating the highlighter object
             index.highlight(document, highlighter); // Generating output HTML formatted document with highlighted search results
 
             System.out.println();

@@ -2,9 +2,6 @@ package com.groupdocs.search.examples.advanced_usage.searching;
 
 import com.groupdocs.search.*;
 import com.groupdocs.search.common.*;
-import com.groupdocs.search.dictionaries.*;
-import com.groupdocs.search.events.*;
-import com.groupdocs.search.highlighters.*;
 import com.groupdocs.search.options.*;
 import com.groupdocs.search.results.*;
 import com.groupdocs.search.examples.Utils;
@@ -37,8 +34,12 @@ public class GettingIndexedDocuments {
         String indexFolder = ".\\output\\AdvancedUsage\\Searching\\GettingIndexedDocuments\\GettingTextOfIndexedDocuments";
         String documentsFolder = Utils.ArchivesPath;
 
+        // Creating an index settings instance
+        IndexSettings settings = new IndexSettings();
+        settings.setTextStorageSettings(new TextStorageSettings(Compression.High)); // Enabling the storage of extracted text in the index
+
         // Creating an index in the specified folder
-        Index index = new Index(indexFolder);
+        Index index = new Index(indexFolder, settings);
 
         // Indexing documents from the specified folder
         index.add(documentsFolder);
@@ -48,13 +49,13 @@ public class GettingIndexedDocuments {
 
         // Getting a document text
         if (documents.length > 0) {
-            FileOutputAdapter outputAdapter = new FileOutputAdapter(".\\output\\AdvancedUsage\\Searching\\GettingIndexedDocuments\\Text.html");
+            FileOutputAdapter outputAdapter = new FileOutputAdapter(OutputFormat.Html, ".\\output\\AdvancedUsage\\Searching\\GettingIndexedDocuments\\Text.html");
             index.getDocumentText(documents[0], outputAdapter);
 
             // Getting list of files in the archive
             DocumentInfo[] items = index.getIndexedDocumentItems(documents[0]);
             if (items.length > 0) {
-                FileOutputAdapter outputAdapter2 = new FileOutputAdapter(".\\output\\AdvancedUsage\\Searching\\GettingIndexedDocuments\\ItemText.html");
+                FileOutputAdapter outputAdapter2 = new FileOutputAdapter(OutputFormat.Html, ".\\output\\AdvancedUsage\\Searching\\GettingIndexedDocuments\\ItemText.html");
                 index.getDocumentText(items[0], outputAdapter2);
             }
         }

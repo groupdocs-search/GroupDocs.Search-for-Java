@@ -16,8 +16,12 @@ public class HighlightingSearchResults {
         String indexFolder = ".\\output\\AdvancedUsage\\Searching\\HighlightingSearchResults\\HighlightingInEntireDocument";
         String documentFolder = Utils.ArchivesPath;
 
-        // Creating an index
-        Index index = new Index(indexFolder);
+        // Creating an index settings instance
+        IndexSettings settings = new IndexSettings();
+        settings.setTextStorageSettings(new TextStorageSettings(Compression.High)); // Enabling the storage of extracted text in the index
+
+        // Creating an index in the specified folder
+        Index index = new Index(indexFolder, settings);
 
         // Indexing documents from the specified folder
         index.add(documentFolder);
@@ -27,14 +31,32 @@ public class HighlightingSearchResults {
 
         // Highlighting occurrences in the text
         if (result.getDocumentCount() > 0) {
-            FoundDocument document = result.getFoundDocument(0); // Getting the first found document
-            OutputAdapter outputAdapter = new FileOutputAdapter(".\\output\\AdvancedUsage\\Searching\\HighlightingSearchResults\\Highlighted.html"); // Creating an output adapter to a file
-            Highlighter highlighter = new HtmlHighlighter(outputAdapter); // Creating the highlighter object
-            HighlightOptions options = new HighlightOptions(); // Creating the highlight options
-            options.setHighlightColor(new Color(0, 127, 0)); // Setting highlight color
-            options.setUseInlineStyles(false); // Using CSS styles to highlight occurrences
-            options.setGenerateHead(true); // Generating Head tag in output HTML
-            index.highlight(document, highlighter, options); // Generating HTML formatted text with highlighted occurrences
+            {
+                FoundDocument document = result.getFoundDocument(0); // Getting the first found document
+                OutputAdapter outputAdapter = new FileOutputAdapter(OutputFormat.Html, ".\\output\\AdvancedUsage\\Searching\\HighlightingSearchResults\\Highlighted.html"); // Creating an output adapter to a file
+                Highlighter highlighter = new DocumentHighlighter(outputAdapter); // Creating the highlighter object
+                HighlightOptions options = new HighlightOptions(); // Creating the highlight options
+                options.setHighlightColor(new Color(150, 255, 150)); // Setting highlight color
+                options.setUseInlineStyles(false); // Using CSS styles to highlight occurrences
+                options.setGenerateHead(true); // Generating Head tag in output HTML
+                index.highlight(document, highlighter, options); // Generating HTML formatted text with highlighted occurrences
+            }
+            {
+                FoundDocument document = result.getFoundDocument(0); // Getting the first found document
+                StructureOutputAdapter outputAdapter = new StructureOutputAdapter(OutputFormat.PlainText); // Creating the output adapter
+                Highlighter highlighter = new DocumentHighlighter(outputAdapter); // Creating the highlighter instance
+                HighlightOptions options = new HighlightOptions(); // Creating the highlight options
+                options.setTermHighlightStartTag("<Term>"); // Setting the start tag for the found word
+                options.setTermHighlightEndTag("</Term>"); // Setting the end tag for the found word
+                index.highlight(document, highlighter, options); // Generating plain text with highlighted occurrences
+
+                DocumentField[] fields = outputAdapter.getResult();
+                System.out.println(document.toString());
+                for (DocumentField field : fields) {
+                    // Printing field names of the found document
+                    System.out.println("\t" + field.getName());
+                }
+            }
         }
     }
 
@@ -42,8 +64,12 @@ public class HighlightingSearchResults {
         String indexFolder = ".\\output\\AdvancedUsage\\Searching\\HighlightingSearchResults\\HighlightingInFragments";
         String documentFolder = Utils.ArchivesPath;
 
-        // Creating an index
-        Index index = new Index(indexFolder);
+        // Creating an index settings instance
+        IndexSettings settings = new IndexSettings();
+        settings.setTextStorageSettings(new TextStorageSettings(Compression.High)); // Enabling the storage of extracted text in the index
+
+        // Creating an index in the specified folder
+        Index index = new Index(indexFolder, settings);
 
         // Indexing documents from the specified folder
         index.add(documentFolder);
@@ -56,12 +82,12 @@ public class HighlightingSearchResults {
         options.setTermsBefore(5);
         options.setTermsAfter(5);
         options.setTermsTotal(15);
-        options.setHighlightColor(new Color(0, 0, 127));
+        options.setHighlightColor(new Color(127, 200, 255));
         options.setUseInlineStyles(true);
 
         // Highlighting found words in separate text fragments of a document
         FoundDocument document = result.getFoundDocument(0);
-        HtmlFragmentHighlighter highlighter = new HtmlFragmentHighlighter();
+        FragmentHighlighter highlighter = new FragmentHighlighter(OutputFormat.Html);
         index.highlight(document, highlighter, options);
 
         // Getting the result

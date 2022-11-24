@@ -66,8 +66,12 @@ public class WorkWithSearchResults {
         String indexFolder = ".\\output\\BasicUsage\\WorkWithSearchResults\\HighlightSearchResults";
         String documentFolder = Utils.DocumentsPath;
 
-        // Creating an index
-        Index index = new Index(indexFolder);
+        // Creating an index settings instance
+        IndexSettings settings = new IndexSettings();
+        settings.setTextStorageSettings(new TextStorageSettings(Compression.High)); // Enabling the storage of extracted text in the index
+
+        // Creating an index in the specified folder
+        Index index = new Index(indexFolder, settings);
 
         // Indexing documents from the specified folder
         index.add(documentFolder);
@@ -79,8 +83,8 @@ public class WorkWithSearchResults {
         if (result.getDocumentCount() > 0) {
             FoundDocument document = result.getFoundDocument(0); // Getting the first found document
             String path = ".\\output\\BasicUsage\\WorkWithSearchResults\\Highlighted.html";
-            OutputAdapter outputAdapter = new FileOutputAdapter(path); // Creating an output adapter to the file
-            Highlighter highlighter = new HtmlHighlighter(outputAdapter); // Creating the highlighter object
+            OutputAdapter outputAdapter = new FileOutputAdapter(OutputFormat.Html, path); // Creating an output adapter to the file
+            Highlighter highlighter = new DocumentHighlighter(outputAdapter); // Creating the highlighter object
             index.highlight(document, highlighter); // Generating HTML formatted text with highlighted occurrences
 
             System.out.println();
