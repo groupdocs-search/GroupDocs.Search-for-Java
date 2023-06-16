@@ -77,6 +77,40 @@ public class UsingEvents {
         index.add(documentsFolder);
     }
 
+    public static void optimizationProgressChangedEvent() {
+        String indexFolder = ".\\output\\AdvancedUsage\\CreatingAnIndex\\UsingEvents\\OptimizationProgressChangedEvent";
+        String[] documents = new String[]
+        {
+            Utils.DocumentsPath + "English.docx",
+            Utils.DocumentsPath + "English.txt",
+            Utils.DocumentsPath + "Lorem ipsum.docx",
+            Utils.DocumentsPath + "Lorem ipsum.pdf",
+            Utils.DocumentsPath + "Lorem ipsum.txt",
+        };
+
+        // Creating an index
+        Index index = new Index(indexFolder);
+
+        // Indexing documents
+        index.add(documents[0]);
+        index.add(documents[1]);
+        index.add(documents[2]);
+        index.add(documents[3]);
+        index.add(documents[4]);
+
+        // Subscribing to the event
+        index.getEvents().OptimizationProgressChanged.add(new EventHandler<OptimizationProgressEventArgs>() {
+            public void invoke(Object sender, OptimizationProgressEventArgs args) {
+                System.out.println();
+                System.out.println("Processed segments: " + args.getProcessedSegments());
+                System.out.println("Total segments: " + args.getTotalSegments());
+                System.out.println("Progress percentage: " + args.getProgressPercentage());
+            }
+        });
+
+        index.optimize();
+    }
+
     public static void passwordRequiredEvent() {
         String indexFolder = ".\\output\\AdvancedUsage\\CreatingAnIndex\\UsingEvents\\PasswordRequiredEvent";
         String documentsFolder = Utils.PasswordProtectedDocumentsPath;

@@ -41,6 +41,7 @@ public class MainClass {
         //UsingEvents.operationFinishedEvent();
         //UsingEvents.errorOccurredEvent();
         //UsingEvents.operationProgressChangedEvent();
+        //UsingEvents.optimizationProgressChangedEvent();
         //UsingEvents.passwordRequiredEvent();
         //UsingEvents.fileIndexingEvent();
         //UsingEvents.statusChangedEvent();
