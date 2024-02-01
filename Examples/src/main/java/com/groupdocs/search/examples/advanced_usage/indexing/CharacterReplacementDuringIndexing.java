@@ -1,10 +1,7 @@
 package com.groupdocs.search.examples.advanced_usage.indexing;
 
 import com.groupdocs.search.*;
-import com.groupdocs.search.common.*;
 import com.groupdocs.search.dictionaries.*;
-import com.groupdocs.search.events.*;
-import com.groupdocs.search.highlighters.*;
 import com.groupdocs.search.options.*;
 import com.groupdocs.search.results.*;
 import com.groupdocs.search.examples.Utils;
@@ -26,8 +23,7 @@ public class CharacterReplacementDuringIndexing {
         index.getDictionaries().getCharacterReplacements().clear();
         // Creating new character replacements
         CharacterReplacementPair[] characterReplacements = new CharacterReplacementPair[Character.MAX_VALUE + 1];
-        for (int i = 0; i < characterReplacements.length; i++)
-        {
+        for (int i = 0; i < characterReplacements.length; i++) {
             char character = (char)i;
             char replacement = Character.toLowerCase(character);
             characterReplacements[i] = new CharacterReplacementPair(character, replacement);

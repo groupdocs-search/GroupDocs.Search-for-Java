@@ -2,11 +2,8 @@ package com.groupdocs.search.examples.advanced_usage.indexing;
 
 import com.groupdocs.search.*;
 import com.groupdocs.search.common.*;
-import com.groupdocs.search.dictionaries.*;
 import com.groupdocs.search.events.*;
-import com.groupdocs.search.highlighters.*;
 import com.groupdocs.search.options.*;
-import com.groupdocs.search.results.*;
 import com.groupdocs.search.examples.Utils;
 
 public class IndexingOptionsProperties {
@@ -37,6 +34,7 @@ public class IndexingOptionsProperties {
 
         // Subscribing to the event
         index.getEvents().StatusChanged.add(new EventHandler<BaseIndexEventArgs>() {
+            @Override
             public void invoke(Object sender, BaseIndexEventArgs args) {
                 if (args.getStatus() == IndexStatus.Ready || args.getStatus() == IndexStatus.Failed) {
                     // A notification of the operation completion should be here
@@ -71,8 +69,7 @@ public class IndexingOptionsProperties {
         Utils.traceIndexedDocuments(index);
     }
 
-    public static void metadataIndexingOptionsProperty()
-    {
+    public static void metadataIndexingOptionsProperty() {
         String indexFolder = ".\\output\\AdvancedUsage\\Indexing\\IndexingOptionsProperties\\MetadataIndexingOptionsProperty";
         String documentFolder = Utils.DocumentsPath;
 

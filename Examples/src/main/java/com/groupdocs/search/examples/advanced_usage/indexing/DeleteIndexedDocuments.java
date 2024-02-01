@@ -2,9 +2,6 @@ package com.groupdocs.search.examples.advanced_usage.indexing;
 
 import com.groupdocs.search.*;
 import com.groupdocs.search.common.*;
-import com.groupdocs.search.dictionaries.*;
-import com.groupdocs.search.events.*;
-import com.groupdocs.search.highlighters.*;
 import com.groupdocs.search.options.*;
 import com.groupdocs.search.results.*;
 import com.groupdocs.search.examples.Utils;
@@ -76,9 +73,11 @@ public class DeleteIndexedDocuments {
             return documentKey;
         }
 
+        @Override
         public final void closeDocument() {
         }
 
+        @Override
         public final Document loadDocument() {
             try {
                 String extension = "." + FilenameUtils.getExtension(filePath);
@@ -87,8 +86,7 @@ public class DeleteIndexedDocuments {
                 ByteArrayInputStream stream = new ByteArrayInputStream(buffer);
                 Document document = Document.createFromStream(documentKey, new Date(System.currentTimeMillis()), extension, stream);
                 return document;
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }

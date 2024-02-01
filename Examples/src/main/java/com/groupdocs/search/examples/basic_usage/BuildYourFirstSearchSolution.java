@@ -21,6 +21,7 @@ public class BuildYourFirstSearchSolution {
 
         // c) Subscribe to index events
         index.getEvents().ErrorOccurred.add(new EventHandler<IndexErrorEventArgs>() {
+            @Override
             public void invoke(Object sender, IndexErrorEventArgs args) {
                 System.out.println(args.getMessage()); // Writing error messages to the console
             }
@@ -58,8 +59,7 @@ public class BuildYourFirstSearchSolution {
         }
     }
 
-    public static void runAsynchronousIndexing()
-    {
+    public static void runAsynchronousIndexing() {
         String indexFolder = ".\\output\\BasicUsage\\BuildYourFirstSearchSolution\\AsynchronousIndexing"; // Specify the path to the index folder
         String documentsFolder = Utils.DocumentsPath; // Specify the path to a folder containing documents to search
 
@@ -69,6 +69,7 @@ public class BuildYourFirstSearchSolution {
 
         // c) Subscribe to ErrorOccurred events
         index.getEvents().ErrorOccurred.add(new EventHandler<IndexErrorEventArgs>() {
+            @Override
             public void invoke(Object sender, IndexErrorEventArgs args) {
                 System.out.println(args.getMessage()); // Writing error messages to the console
             }
@@ -76,6 +77,7 @@ public class BuildYourFirstSearchSolution {
 
         // c) Subscribe to StatusChanged event
         index.getEvents().StatusChanged.add(new EventHandler<BaseIndexEventArgs>() {
+            @Override
             public void invoke(Object sender, BaseIndexEventArgs args) {
                 if (args.getStatus() != IndexStatus.Ready || args.getStatus() == IndexStatus.Failed) {
                     // There should be a code indicating the completion of the operation

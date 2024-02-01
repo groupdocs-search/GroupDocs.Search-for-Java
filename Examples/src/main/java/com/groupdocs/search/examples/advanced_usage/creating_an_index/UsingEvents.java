@@ -2,9 +2,7 @@ package com.groupdocs.search.examples.advanced_usage.creating_an_index;
 
 import com.groupdocs.search.*;
 import com.groupdocs.search.common.*;
-import com.groupdocs.search.dictionaries.*;
 import com.groupdocs.search.events.*;
-import com.groupdocs.search.highlighters.*;
 import com.groupdocs.search.options.*;
 import com.groupdocs.search.results.*;
 import com.groupdocs.search.examples.Utils;
@@ -21,6 +19,7 @@ public class UsingEvents {
 
         // Subscribing to the event
         index.getEvents().OperationFinished.add(new EventHandler<OperationFinishedEventArgs>() {
+            @Override
             public void invoke(Object sender, OperationFinishedEventArgs args) {
                 System.out.println("Operation finished: " + args.getOperationType());
                 System.out.println("Message: " + args.getMessage());
@@ -44,6 +43,7 @@ public class UsingEvents {
 
         // Subscribing to the event
         index.getEvents().ErrorOccurred.add(new EventHandler<IndexErrorEventArgs>() {
+            @Override
             public void invoke(Object sender, IndexErrorEventArgs args) {
                 System.out.println(args.getMessage());
             }
@@ -65,6 +65,7 @@ public class UsingEvents {
 
         // Subscribing to the event
         index.getEvents().OperationProgressChanged.add(new EventHandler<OperationProgressEventArgs>() {
+            @Override
             public void invoke(Object sender, OperationProgressEventArgs args) {
                 System.out.println("Last processed: " + args.getLastDocumentPath());
                 System.out.println("Result: " + args.getLastDocumentStatus());
@@ -79,8 +80,7 @@ public class UsingEvents {
 
     public static void optimizationProgressChangedEvent() {
         String indexFolder = ".\\output\\AdvancedUsage\\CreatingAnIndex\\UsingEvents\\OptimizationProgressChangedEvent";
-        String[] documents = new String[]
-        {
+        String[] documents = new String[] {
             Utils.DocumentsPath + "English.docx",
             Utils.DocumentsPath + "English.txt",
             Utils.DocumentsPath + "Lorem ipsum.docx",
@@ -100,6 +100,7 @@ public class UsingEvents {
 
         // Subscribing to the event
         index.getEvents().OptimizationProgressChanged.add(new EventHandler<OptimizationProgressEventArgs>() {
+            @Override
             public void invoke(Object sender, OptimizationProgressEventArgs args) {
                 System.out.println();
                 System.out.println("Processed segments: " + args.getProcessedSegments());
@@ -120,11 +121,11 @@ public class UsingEvents {
 
         // Subscribing to the event
         index.getEvents().PasswordRequired.add(new EventHandler<PasswordRequiredEventArgs>() {
+            @Override
             public void invoke(Object sender, PasswordRequiredEventArgs args) {
                 if (args.getDocumentFullPath().endsWith("English.docx")) {
                     args.setPassword("123456");
-                }
-                else if (args.getDocumentFullPath().endsWith("Lorem ipsum.docx")) {
+                } else if (args.getDocumentFullPath().endsWith("Lorem ipsum.docx")) {
                     args.setPassword("123456");
                 }
             }
@@ -149,6 +150,7 @@ public class UsingEvents {
 
         // Subscribing to the event
         index.getEvents().FileIndexing.add(new EventHandler<FileIndexingEventArgs>() {
+            @Override
             public void invoke(Object sender, FileIndexingEventArgs args) {
                 if (args.getDocumentFullPath().endsWith("Lorem ipsum.docx")) {
                     args.setAdditionalFields(new DocumentField[] {
@@ -180,6 +182,7 @@ public class UsingEvents {
 
         // Subscribing to the event
         index.getEvents().StatusChanged.add(new EventHandler<BaseIndexEventArgs>() {
+            @Override
             public void invoke(Object sender, BaseIndexEventArgs args) {
                 if (args.getStatus() == IndexStatus.Ready || args.getStatus() == IndexStatus.Failed) {
                     // A notification of the operation completion should be here
@@ -209,11 +212,12 @@ public class UsingEvents {
 
         // Subscribing to the event
         index.getEvents().SearchPhaseCompleted.add(new EventHandler<SearchPhaseEventArgs>() {
+            @Override
             public void invoke(Object sender, SearchPhaseEventArgs args) {
                 System.out.println("Search phase: " + args.getSearchPhase());
                 System.out.println("Words: " + args.getWords().length);
-                for (int i = 0; i < args.getWords().length; i++) {
-                    System.out.println("\t" + args.getWords()[i]);
+                for (String word : args.getWords()) {
+                    System.out.println("\t" + word);
                 }
                 System.out.println();
             }

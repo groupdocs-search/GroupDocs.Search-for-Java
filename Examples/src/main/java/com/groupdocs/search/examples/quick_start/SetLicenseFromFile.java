@@ -13,8 +13,7 @@ public class SetLicenseFromFile {
             license.setLicense(Utils.LicensePath);
 
             System.out.println("License set successfully.");
-        }
-        else {
+        } else {
             System.out.println("\nWe do not ship any license with this example. " +
                               "\nVisit the GroupDocs site to obtain either a temporary or permanent license. " +
                               "\nLearn more about licensing at https://purchase.groupdocs.com/faqs/licensing. " +

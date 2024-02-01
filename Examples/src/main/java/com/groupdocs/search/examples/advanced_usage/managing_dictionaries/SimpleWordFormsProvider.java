@@ -5,6 +5,7 @@ import com.groupdocs.search.dictionaries.*;
 import java.util.ArrayList;
 
 public class SimpleWordFormsProvider implements IWordFormsProvider {
+    @Override
     public final String[] getWordForms(String word)     {
         ArrayList<String> result = new ArrayList<String>();
 

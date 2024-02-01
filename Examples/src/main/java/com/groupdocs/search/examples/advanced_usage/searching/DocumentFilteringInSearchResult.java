@@ -92,6 +92,7 @@ public class DocumentFilteringInSearchResult {
         Index index = new Index(indexFolder);
 
         index.getEvents().FileIndexing.add(new EventHandler<FileIndexingEventArgs>() {
+            @Override
             public void invoke(Object sender, FileIndexingEventArgs args) {
                 if (args.getDocumentFullPath().endsWith(".txt")) {
                     String[] mainAttribute = new String[] { "main" };

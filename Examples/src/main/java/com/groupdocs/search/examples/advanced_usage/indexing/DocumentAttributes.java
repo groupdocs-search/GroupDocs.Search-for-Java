@@ -54,6 +54,7 @@ public class DocumentAttributes {
 
         // Subscribing to the FileIndexing event for adding attributes
         index.getEvents().FileIndexing.add(new EventHandler<FileIndexingEventArgs>() {
+            @Override
             public void invoke(Object sender, FileIndexingEventArgs args) {
                 if (args.getDocumentFullPath().endsWith("Lorem ipsum.pdf")) {
                     // Adding two attributes

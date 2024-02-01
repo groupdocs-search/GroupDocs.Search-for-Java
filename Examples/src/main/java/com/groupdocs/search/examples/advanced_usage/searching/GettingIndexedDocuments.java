@@ -19,12 +19,10 @@ public class GettingIndexedDocuments {
 
         // Getting list of indexed documents
         DocumentInfo[] documents = index.getIndexedDocuments();
-        for (int i = 0; i < documents.length; i++) {
-            DocumentInfo document = documents[i];
+        for (DocumentInfo document : documents) {
             System.out.println(document.getFilePath());
             DocumentInfo[] items = index.getIndexedDocumentItems(document); // Getting list of document items
-            for (int j = 0; j < items.length; j++) {
-                DocumentInfo item = items[j];
+            for (DocumentInfo item : items) {
                 System.out.println("\t" + item.getInnerPath());
             }
         }

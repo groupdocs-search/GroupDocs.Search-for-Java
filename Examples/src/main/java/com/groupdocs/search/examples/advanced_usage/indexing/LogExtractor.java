@@ -21,8 +21,8 @@ public class LogExtractor implements IFieldExtractor {
     public DocumentField[] getFields(String filePath) {
         File file = new File(filePath);
         DocumentField[] fields = new DocumentField[] {
-                new DocumentField("FileName", file.getAbsolutePath()),
-                new DocumentField("Content", extractContent(filePath)),
+            new DocumentField("FileName", file.getAbsolutePath()),
+            new DocumentField("Content", extractContent(filePath)),
         };
         return fields;
     }
@@ -31,8 +31,8 @@ public class LogExtractor implements IFieldExtractor {
         try {
             String contents = new String(Files.readAllBytes(Paths.get(filePath)));
             return contents;
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
             return "";
         }
     }

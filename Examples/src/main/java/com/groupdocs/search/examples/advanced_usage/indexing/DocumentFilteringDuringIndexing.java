@@ -3,7 +3,6 @@ package com.groupdocs.search.examples.advanced_usage.indexing;
 import com.groupdocs.search.*;
 import com.groupdocs.search.examples.Utils;
 
-import java.util.Date;
 import java.util.regex.Pattern;
 
 public class DocumentFilteringDuringIndexing {

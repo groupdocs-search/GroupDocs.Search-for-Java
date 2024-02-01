@@ -2,8 +2,6 @@ package com.groupdocs.search.examples.basic_usage;
 
 import com.groupdocs.search.*;
 import com.groupdocs.search.common.*;
-import com.groupdocs.search.dictionaries.*;
-import com.groupdocs.search.events.*;
 import com.groupdocs.search.highlighters.*;
 import com.groupdocs.search.options.*;
 import com.groupdocs.search.results.*;
@@ -37,8 +35,7 @@ public class WorkWithSearchResults {
             FoundDocument document = result.getFoundDocument(i);
             System.out.println("\tDocument: " + document.getDocumentInfo().getFilePath());
             System.out.println("\tOccurrences: " + document.getOccurrenceCount());
-            for (int j = 0; j < document.getFoundFields().length; j++) {
-                FoundDocumentField field = document.getFoundFields()[j];
+            for (FoundDocumentField field : document.getFoundFields()) {
                 System.out.println("\t\tField: " + field.getFieldName());
                 System.out.println("\t\tOccurrences: " + document.getOccurrenceCount());
                 // Printing found terms
@@ -52,8 +49,8 @@ public class WorkWithSearchResults {
                     for (int k = 0; k < field.getTermSequences().length; k++) {
                         String[] terms = field.getTermSequences()[k];
                         String sequence = "";
-                        for (int m = 0; m < terms.length; m++) {
-                            sequence += terms[m] + " ";
+                        for (String term : terms) {
+                            sequence += term + " ";
                         }
                         System.out.println("\t\t\t" + sequence + " - " + field.getTermSequencesOccurrences()[k]);
                     }

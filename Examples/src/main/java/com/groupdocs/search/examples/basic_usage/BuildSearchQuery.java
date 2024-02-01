@@ -1,10 +1,7 @@
 package com.groupdocs.search.examples.basic_usage;
 
 import com.groupdocs.search.*;
-import com.groupdocs.search.common.*;
-import com.groupdocs.search.dictionaries.*;
 import com.groupdocs.search.events.*;
-import com.groupdocs.search.highlighters.*;
 import com.groupdocs.search.options.*;
 import com.groupdocs.search.results.*;
 import com.groupdocs.search.examples.Utils;
@@ -19,6 +16,7 @@ public class BuildSearchQuery {
 
         // Subscribe to the event
         index.getEvents().ErrorOccurred.add(new EventHandler<IndexErrorEventArgs>() {
+            @Override
             public void invoke(Object sender, IndexErrorEventArgs args) {
                 System.out.println(args.getMessage()); // Writing error messages to the console
             }

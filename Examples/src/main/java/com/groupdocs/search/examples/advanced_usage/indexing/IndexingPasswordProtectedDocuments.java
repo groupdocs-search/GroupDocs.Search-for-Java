@@ -1,11 +1,7 @@
 package com.groupdocs.search.examples.advanced_usage.indexing;
 
 import com.groupdocs.search.*;
-import com.groupdocs.search.common.*;
-import com.groupdocs.search.dictionaries.*;
 import com.groupdocs.search.events.*;
-import com.groupdocs.search.highlighters.*;
-import com.groupdocs.search.options.*;
 import com.groupdocs.search.results.*;
 import com.groupdocs.search.examples.Utils;
 import java.io.File;
@@ -44,6 +40,7 @@ public class IndexingPasswordProtectedDocuments {
 
         // Subscribing to the event
         index.getEvents().PasswordRequired.add(new EventHandler<PasswordRequiredEventArgs>() {
+            @Override
             public void invoke(Object sender, PasswordRequiredEventArgs args) {
                 if (args.getDocumentFullPath().endsWith(".docx")) {
                     args.setPassword("123456"); // Providing password for DOCX files

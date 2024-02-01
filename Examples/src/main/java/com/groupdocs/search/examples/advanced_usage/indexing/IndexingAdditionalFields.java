@@ -3,8 +3,6 @@ package com.groupdocs.search.examples.advanced_usage.indexing;
 import com.groupdocs.search.*;
 import com.groupdocs.search.common.*;
 import com.groupdocs.search.events.*;
-import com.groupdocs.search.highlighters.*;
-import com.groupdocs.search.options.*;
 import com.groupdocs.search.results.*;
 import com.groupdocs.search.examples.Utils;
 
@@ -28,11 +26,12 @@ public class IndexingAdditionalFields {
 
         // Subscribing to the event
         index.getEvents().FileIndexing.add(new EventHandler<FileIndexingEventArgs>() {
+            @Override
             public void invoke(Object sender, FileIndexingEventArgs args) {
                 String subject = subjects.get(args.getDocumentFullPath().toLowerCase()); // Getting a subject for the current document
                 if (subject != null) {
                     args.setAdditionalFields(new DocumentField[] { // Setting additional fields for the current document
-                            new DocumentField("Subject", subject)
+                        new DocumentField("Subject", subject)
                     });
                 }
             }

@@ -2,7 +2,6 @@ package com.groupdocs.search.examples.advanced_usage.searching;
 
 import com.groupdocs.search.*;
 import com.groupdocs.search.common.*;
-import com.groupdocs.search.options.*;
 import com.groupdocs.search.results.*;
 import com.groupdocs.search.examples.Utils;
 

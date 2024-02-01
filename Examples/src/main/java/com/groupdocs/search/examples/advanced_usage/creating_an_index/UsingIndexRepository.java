@@ -1,10 +1,7 @@
 package com.groupdocs.search.examples.advanced_usage.creating_an_index;
 
 import com.groupdocs.search.*;
-import com.groupdocs.search.common.*;
 import com.groupdocs.search.events.*;
-import com.groupdocs.search.highlighters.*;
-import com.groupdocs.search.options.*;
 import com.groupdocs.search.results.*;
 import com.groupdocs.search.examples.Utils;
 
@@ -20,6 +17,7 @@ public class UsingIndexRepository {
 
         // Subscribing to an event
         indexRepository.getEvents().OperationProgressChanged.add(new EventHandler<OperationProgressEventArgs>() {
+            @Override
             public void invoke(Object sender, OperationProgressEventArgs args) {
                 System.out.println("Indexed document:\n\t" + args.getLastDocumentPath());
             }

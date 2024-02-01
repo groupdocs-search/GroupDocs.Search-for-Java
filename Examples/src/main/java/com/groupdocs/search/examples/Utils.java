@@ -2,8 +2,6 @@ package com.groupdocs.search.examples;
 
 import com.groupdocs.search.*;
 import com.groupdocs.search.common.*;
-import com.groupdocs.search.dictionaries.*;
-import com.groupdocs.search.events.*;
 import com.groupdocs.search.highlighters.*;
 import com.groupdocs.search.options.*;
 import com.groupdocs.search.results.*;
@@ -44,8 +42,8 @@ public class Utils {
         System.out.println();
         System.out.println("Indexed documents:");
         DocumentInfo[] documents = index.getIndexedDocuments();
-        for (int i = 0; i < documents.length; i++) {
-            System.out.println("\t" + documents[i].getFilePath());
+        for (DocumentInfo document : documents) {
+            System.out.println("\t" + document.getFilePath());
         }
     }
 
@@ -62,12 +60,12 @@ public class Utils {
             if (Files.isDirectory(Paths.get(path))) {
                 delete(new File(path));
             }
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
         try {
             Files.createDirectories(Paths.get(path));
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
     }
@@ -77,8 +75,8 @@ public class Utils {
         File destinationFolder = new File(destinationPath);
         try {
             copyFolder(sourceFolder, destinationFolder);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
         }
     }
 

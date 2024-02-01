@@ -93,14 +93,16 @@ public class HighlightingSearchResults {
         // Getting the result
         StringBuilder stringBuilder = new StringBuilder();
         FragmentContainer[] fragmentContainers = highlighter.getResult();
-        for (int i = 0; i < fragmentContainers.length; i++) {
-            FragmentContainer container = fragmentContainers[i];
+        for (FragmentContainer container : fragmentContainers) {
             String[] fragments = container.getFragments();
             if (fragments.length > 0) {
-                stringBuilder.append("\n<br>" + container.getFieldName() + "<br>\n");
-                for (int j = 0; j < fragments.length; j++) {
+                stringBuilder.append("\n<br>");
+                stringBuilder.append(container.getFieldName());
+                stringBuilder.append("<br>\n");
+                for (String fragment : fragments) {
                     // Printing HTML markup to console
-                    stringBuilder.append(fragments[j] + "\n");
+                    stringBuilder.append(fragment);
+                    stringBuilder.append("\n");
                 }
             }
         }
@@ -109,8 +111,8 @@ public class HighlightingSearchResults {
         try {
             String fileName = ".\\output\\AdvancedUsage\\Searching\\HighlightingSearchResults\\Fragments.html";
             Files.write(Paths.get(fileName), stringBuilder.toString().getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
         }
     }
 }

@@ -42,12 +42,12 @@ public class OcrSupport {
                 throw new RuntimeException("The image type is not supported: " + context.getImageLocation());
             } else {
                 switch (context.getImageLocation()) {
-                case Separate:
-                case Embedded:
-                case ContainerItem:
-                    return recognizePrivate(context);
-                default:
-                    throw new RuntimeException("The image type is not supported: " + context.getImageLocation());
+                    case Separate:
+                    case Embedded:
+                    case ContainerItem:
+                        return recognizePrivate(context);
+                    default:
+                        throw new RuntimeException("The image type is not supported: " + context.getImageLocation());
                 }
             }
         }
