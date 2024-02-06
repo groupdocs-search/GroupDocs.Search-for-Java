@@ -4,6 +4,7 @@ import com.groupdocs.search.examples.advanced_usage.creating_an_index.*;
 import com.groupdocs.search.examples.advanced_usage.indexing.*;
 import com.groupdocs.search.examples.advanced_usage.managing_dictionaries.*;
 import com.groupdocs.search.examples.advanced_usage.searching.*;
+import com.groupdocs.search.examples.advanced_usage.scaling.*;
 import com.groupdocs.search.examples.basic_usage.*;
 import com.groupdocs.search.examples.quick_start.*;
 
@@ -201,6 +202,36 @@ public class MainClass {
         //SynonymDictionary.run();
 
         //WordFormsProvider.run();
+
+        // Scaling ----------------------------------------------------------------------------------------------------
+
+        //ConfiguringSearchNetwork.run();
+
+        //SearchNetworkDeployment.run();
+
+        //SearchNetworkNodeEvents.run();
+
+        //IndexingDocuments.run();
+
+        //DeletingDocuments.run();
+
+        //OptimizingShards.run();
+
+        //SynchronizingShards.run();
+
+        //WorkingWithAttributes.run();
+
+        //TextSearchInNetwork.run();
+
+        //ImageSearchInNetwork.run();
+
+        //HighlightingResultsInNetwork.run();
+
+        //GettingDocumentsInNetwork.run();
+
+        //GettingDocumentTextInNetwork.run();
+
+        //ManagingDictionariesInNetwork.run();
 
         // Highlight Search Results in HTML ----------------------------------------------------------------------------------------------------
 

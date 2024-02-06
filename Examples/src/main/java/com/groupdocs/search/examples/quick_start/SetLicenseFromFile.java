@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class SetLicenseFromFile {
-    public static void run() {
+    public static void run() throws Exception {
         if (Files.exists(Paths.get(Utils.LicensePath))) {
             License license = new License();
             license.setLicense(Utils.LicensePath);

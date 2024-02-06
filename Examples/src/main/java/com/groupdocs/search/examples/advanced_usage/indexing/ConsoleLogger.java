@@ -2,8 +2,7 @@ package com.groupdocs.search.examples.advanced_usage.indexing;
 
 import com.groupdocs.search.common.ILogger;
 
-public class ConsoleLogger implements ILogger
-{
+public class ConsoleLogger implements ILogger {
     public ConsoleLogger() {
     }
 

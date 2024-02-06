@@ -10,7 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class SetLicenseFromStream {
-    public static void run() throws FileNotFoundException {
+    public static void run() throws FileNotFoundException, Exception {
         if (Files.exists(Paths.get(Utils.LicensePath))) {
             InputStream stream = new FileInputStream(Utils.LicensePath);
             License license = new License();

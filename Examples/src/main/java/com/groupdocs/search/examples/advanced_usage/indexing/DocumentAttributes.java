@@ -24,7 +24,7 @@ public class DocumentAttributes {
         DocumentInfo[] documents = index.getIndexedDocuments();
 
         // Creating an attribute change container object
-        AttributeChangeBatch batch = AttributeChangeBatch.create();
+        AttributeChangeBatch batch = new AttributeChangeBatch();
         // Adding one attribute to all indexed documents
         batch.addToAll("public");
         // Removing one attribute from one indexed document

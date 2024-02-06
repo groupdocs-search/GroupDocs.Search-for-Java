@@ -24,14 +24,12 @@ import java.nio.file.Paths;
 import java.util.Date;
 
 public class IndexingFromDifferentSources {
-    public static void indexingFromFile()
-    {
+    public static void indexingFromFile() {
         String indexFolder = ".\\output\\AdvancedUsage\\Indexing\\IndexingFromDifferentSources\\IndexingFromFile";
         String documentFilePath = Utils.DocumentsPath + "Lorem ipsum.pdf";
 
         // Creating an index
         IndexSettings settings = new IndexSettings();
-        settings.setUseRawTextExtraction(false);
         Index index = new Index(indexFolder, settings);
 
         // Creating a document object
@@ -42,6 +40,7 @@ public class IndexingFromDifferentSources {
 
         // Indexing document from the file
         IndexingOptions options = new IndexingOptions();
+        options.setUseRawTextExtraction(false);
         index.add(documents, options);
 
         // Searching in the index
@@ -51,8 +50,7 @@ public class IndexingFromDifferentSources {
         Utils.traceResult(query, result);
     }
 
-    public static void indexingFromStream() throws FileNotFoundException, IOException
-    {
+    public static void indexingFromStream() throws FileNotFoundException, IOException {
         String indexFolder = ".\\output\\AdvancedUsage\\Indexing\\IndexingFromDifferentSources\\IndexingFromStream";
         String documentFilePath = Utils.DocumentsPath + "Lorem ipsum.pdf";
 
@@ -80,8 +78,7 @@ public class IndexingFromDifferentSources {
         Utils.traceResult(query, result);
     }
 
-    public static void indexingFromStructure() throws IOException
-    {
+    public static void indexingFromStructure() throws IOException {
         String indexFolder = ".\\output\\AdvancedUsage\\Indexing\\IndexingFromDifferentSources\\IndexingFromStructure";
         String documentFilePath = Utils.DocumentsPath + "Lorem ipsum.txt";
 
@@ -109,15 +106,13 @@ public class IndexingFromDifferentSources {
         Utils.traceResult(query, result);
     }
 
-    public static void indexingFromUrl()
-    {
+    public static void indexingFromUrl() {
         String indexFolder = ".\\output\\AdvancedUsage\\Indexing\\IndexingFromDifferentSources\\IndexingFromUrl";
         String url = "http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf";
 
         // Creating an index
         IndexSettings settings = new IndexSettings();
         settings.setTextStorageSettings(new TextStorageSettings(Compression.High));
-        settings.setUseRawTextExtraction(false);
         Index index = new Index(indexFolder, settings, true);
 
         index.getEvents().ErrorOccurred.add(new EventHandler<IndexErrorEventArgs>() {
@@ -137,6 +132,7 @@ public class IndexingFromDifferentSources {
 
         // Indexing the lazy-loaded document
         IndexingOptions options = new IndexingOptions();
+        options.setUseRawTextExtraction(false);
         index.add(documents, options);
 
         // Searching in the index
@@ -146,15 +142,13 @@ public class IndexingFromDifferentSources {
         Utils.traceResult(query, result);
     }
 
-    public static void indexingFromFtp()
-    {
+    public static void indexingFromFtp() {
         String indexFolder = ".\\output\\AdvancedUsage\\Indexing\\IndexingFromDifferentSources\\IndexingFromFtp";
         String url = "ftp://example.com/ExampleDocument.pdf";
 
         // Creating an index
         IndexSettings settings = new IndexSettings();
         settings.setTextStorageSettings(new TextStorageSettings(Compression.High));
-        settings.setUseRawTextExtraction(false);
         Index index = new Index(indexFolder, settings, true);
 
         index.getEvents().ErrorOccurred.add(new EventHandler<IndexErrorEventArgs>() {
@@ -174,6 +168,7 @@ public class IndexingFromDifferentSources {
 
         // Indexing the lazy-loaded document
         IndexingOptions options = new IndexingOptions();
+        options.setUseRawTextExtraction(false);
         index.add(documents, options);
 
         // Searching in the index
@@ -183,22 +178,19 @@ public class IndexingFromDifferentSources {
         Utils.traceResult(query, result);
     }
 
-    private static class DocumentLoaderFromUrl implements IDocumentLoader
-    {
+    private static class DocumentLoaderFromUrl implements IDocumentLoader {
         private final String documentKey;
         private final String url;
         private final String extension;
 
-        public DocumentLoaderFromUrl(String documentKey, String url, String extension)
-        {
+        public DocumentLoaderFromUrl(String documentKey, String url, String extension) {
             this.documentKey = documentKey;
             this.url = url;
             this.extension = extension;
         }
 
         @Override
-        public final Document loadDocument()
-        {
+        public final Document loadDocument() {
             try {
                 java.net.URL urlInstance = new java.net.URL(url);
                 java.io.InputStream stream = urlInstance.openStream();
@@ -210,8 +202,7 @@ public class IndexingFromDifferentSources {
         }
 
         @Override
-        public final void closeDocument()
-        {
+        public final void closeDocument() {
         }
     }
 }
