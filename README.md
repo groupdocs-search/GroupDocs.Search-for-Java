@@ -15,6 +15,7 @@ Directory | Description
 
 ## Document Indexing Features
 
+- [70+ supported file formats](https://docs.groupdocs.com/search/java/supported-document-formats/).
 - Create index in memory or on disk.
 - Update index to take into account changed, deleted and added documents.
 - Merge several indexes into one.
