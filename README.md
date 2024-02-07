@@ -29,6 +29,10 @@ Directory | Description
 - Option for compact and metadata index.
 - Ability to save extracted text in index with different level of compression.
 - Document filtering during indexing.
+- Ability to separately extract data from documents and index them.
+- Support for optical text recognition on images.
+- Calculation and indexing of image hashes for reverse image search.
+- The ability to create a distributed search network that automatically balances the load across nodes.
 
 ## Document Search Features
 
@@ -57,6 +61,7 @@ Directory | Description
 - Multiple simultaneous thread safe search.
 - Thread safe search during indexing, updating or merging operation.
 - Search over several indexes simultaneously.
+- Built-in support for reverse image search.
 
 
 ## Get Started with GroupDocs.Search for Java
