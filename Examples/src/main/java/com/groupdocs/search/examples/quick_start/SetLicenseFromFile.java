@@ -1,6 +1,6 @@
 package com.groupdocs.search.examples.quick_start;
 
-import com.groupdocs.search.licensing.License;
+import com.groupdocs.search.licenses.License;
 import com.groupdocs.search.examples.Utils;
 
 import java.nio.file.Files;
