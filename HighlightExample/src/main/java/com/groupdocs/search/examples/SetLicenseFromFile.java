@@ -1,6 +1,6 @@
 package com.groupdocs.search.examples;
 
-import com.groupdocs.search.licensing.License;
+import com.groupdocs.search.licenses.License;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;

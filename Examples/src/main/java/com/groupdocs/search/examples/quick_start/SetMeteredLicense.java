@@ -1,6 +1,6 @@
 package com.groupdocs.search.examples.quick_start;
 
-import com.groupdocs.search.licensing.Metered;
+import com.groupdocs.search.licenses.Metered;
 
 public class SetMeteredLicense {
     public static void run() throws Exception {
