@@ -230,4 +230,25 @@ public class UsingEvents {
         options.setUseHomophoneSearch(true);
         SearchResult result = index.search("buy", options);
     }
+    
+    public static void ImagePreparingEvent() {
+        String indexFolder = ".\\output\\AdvancedUsage\\CreatingAnIndex\\UsingEvents\\ImagePreparingEvent";
+        String documentsFolder = Utils.DocumentsPNG;
+
+        // Creating an index
+        Index index = new Index(indexFolder, true);
+
+        // Subscribing to the event
+        index.getEvents().ImagePreparing.add(new EventHandler<ImagePreparingEventArgs>() {
+            @Override
+            public void invoke(Object sender, ImagePreparingEventArgs args) {
+                System.out.println("Document: " + args.getDocumentKey());
+                System.out.println("Image index: " + args.getImageIndex());
+                System.out.println("Image frames: " + args.getImageFrames().length);
+            }
+        });
+
+        // Indexing files
+        index.add(documentsFolder);
+    }
 }

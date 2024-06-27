@@ -9,13 +9,13 @@ public class HelloWorld {
         String indexFolder = ".\\output\\GettingStarted\\HelloWorld";
         String documentsFolder = Utils.DocumentsPath;
 
-        // Creating index in the specified folder
+        // Creating an index in the specified folder
         Index index = new Index(indexFolder);
 
         // Indexing documents from the specified folder
         index.add(documentsFolder);
 
-        // Searching in index
+        // Searching in the index
         SearchResult result = index.search("Lorem");
 
         System.out.println("Documents found: " + result.getDocumentCount());

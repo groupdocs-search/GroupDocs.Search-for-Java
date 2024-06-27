@@ -11,7 +11,7 @@ public class BuildSearchQuery {
         String indexFolder = ".\\output\\BasicUsage\\BuildSearchQuery";
         String documentsFolder = Utils.DocumentsPath;
 
-        // Creating index in the specified folder
+        // Creating an index in the specified folder
         Index index = new Index(indexFolder);
 
         // Subscribe to the event

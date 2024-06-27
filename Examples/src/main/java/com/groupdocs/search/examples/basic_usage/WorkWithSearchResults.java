@@ -29,6 +29,7 @@ public class WorkWithSearchResults {
         SearchResult result = index.search("favourable OR \"ipsum dolor\"", options);
 
         // Printing the result
+        System.out.println();
         System.out.println("Documents: " + result.getDocumentCount());
         System.out.println("Total occurrences: " + result.getOccurrenceCount());
         for (int i = 0; i < result.getDocumentCount(); i++) {

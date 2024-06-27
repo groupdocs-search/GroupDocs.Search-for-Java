@@ -8,13 +8,12 @@ import java.io.File;
 
 public class DocumentRenaming {
     public static void run() {
-        String indexFolder = ".\\output\\AdvancedUsage\\Indexing\\DocumentAttributes\\Index";
+        String indexFolder = ".\\output\\AdvancedUsage\\Indexing\\DocumentRenaming\\Index";
         String documentFolder = ".\\output\\AdvancedUsage\\Indexing\\DocumentRenaming\\Documents\\";
 
         // Prepare data
         Utils.cleanDirectory(documentFolder);
         Utils.copyFiles(Utils.DocumentsPath, documentFolder);
-
 
         // Creating an index
         Index index = new Index(indexFolder);

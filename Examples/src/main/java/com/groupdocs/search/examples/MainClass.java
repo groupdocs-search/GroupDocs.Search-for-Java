@@ -47,7 +47,8 @@ public class MainClass {
 //        UsingEvents.fileIndexingEvent();
 //        UsingEvents.statusChangedEvent();
 //        UsingEvents.searchPhaseCompletedEvent();
-//
+//        UsingEvents.ImagePreparingEvent();
+
 //        UsingIndexRepository.run();
 
         // Indexing ----------------------------------------------------------------------------------------------------

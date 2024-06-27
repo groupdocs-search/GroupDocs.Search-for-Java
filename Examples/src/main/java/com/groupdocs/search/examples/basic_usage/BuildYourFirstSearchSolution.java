@@ -15,11 +15,11 @@ public class BuildYourFirstSearchSolution {
         String indexFolder = ".\\output\\BasicUsage\\BuildYourFirstSearchSolution\\SynchronousIndexing"; // Specify the path to the index folder
         String documentsFolder = Utils.DocumentsPath; // Specify the path to a folder containing documents to search
 
-        // a) Create new index or
-        // b) Open existing index
+        // Create a new index or
+        // Open an existing one
         Index index = new Index(indexFolder);
 
-        // c) Subscribe to index events
+        // Subscribe to index events
         index.getEvents().ErrorOccurred.add(new EventHandler<IndexErrorEventArgs>() {
             @Override
             public void invoke(Object sender, IndexErrorEventArgs args) {
@@ -27,14 +27,14 @@ public class BuildYourFirstSearchSolution {
             }
         });
 
-        // d) Add files synchronously
+        // Add files synchronously
         index.add(documentsFolder); // Synchronous indexing documents from the specified folder
 
-        // f) Perform search
+        // Perform search
         String query = "tincidunt"; // Specify a search query
         SearchResult result = index.search(query); // Searching in the index
 
-        // g) Use search results
+        // Use search results
         // Printing the result
         System.out.println("Documents found: " + result.getDocumentCount());
         System.out.println("Total occurrences found: " + result.getOccurrenceCount());
@@ -63,11 +63,11 @@ public class BuildYourFirstSearchSolution {
         String indexFolder = ".\\output\\BasicUsage\\BuildYourFirstSearchSolution\\AsynchronousIndexing"; // Specify the path to the index folder
         String documentsFolder = Utils.DocumentsPath; // Specify the path to a folder containing documents to search
 
-        // a) Create new index or
-        // b) Open existing index
+        // Create a new index or
+        // Open an existing one
         Index index = new Index(indexFolder);
 
-        // c) Subscribe to ErrorOccurred events
+        // Subscribe to ErrorOccurred events
         index.getEvents().ErrorOccurred.add(new EventHandler<IndexErrorEventArgs>() {
             @Override
             public void invoke(Object sender, IndexErrorEventArgs args) {
@@ -75,7 +75,7 @@ public class BuildYourFirstSearchSolution {
             }
         });
 
-        // c) Subscribe to StatusChanged event
+        // Subscribe to StatusChanged event
         index.getEvents().StatusChanged.add(new EventHandler<BaseIndexEventArgs>() {
             @Override
             public void invoke(Object sender, BaseIndexEventArgs args) {
@@ -86,8 +86,8 @@ public class BuildYourFirstSearchSolution {
             }
         });
 
-        // e) Add files asynchronously
-        // Setting the flag for asynchronous indexing
+        // Add files asynchronously
+        // Setting the asynchronous indexing flag
         IndexingOptions options = new IndexingOptions();
         options.setAsync(true);
 

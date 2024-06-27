@@ -52,7 +52,7 @@ public class DocumentAttributes {
         // Creating an index
         Index index = new Index(indexFolder);
 
-        // Subscribing to the FileIndexing event for adding attributes
+        // Subscribing to the FileIndexing event to add attributes
         index.getEvents().FileIndexing.add(new EventHandler<FileIndexingEventArgs>() {
             @Override
             public void invoke(Object sender, FileIndexingEventArgs args) {

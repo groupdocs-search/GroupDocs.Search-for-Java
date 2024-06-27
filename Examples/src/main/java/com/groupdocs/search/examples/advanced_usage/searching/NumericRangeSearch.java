@@ -23,7 +23,7 @@ public class NumericRangeSearch {
         SearchQuery query2 = SearchQuery.createNumericRangeQuery(400, 4000);
         SearchResult result2 = index.search(query2);
 
-        Utils.traceResult(query1, result2);
+        Utils.traceResult(query1, result1);
         Utils.traceResult(query2.toString(), result2);
     }
 }

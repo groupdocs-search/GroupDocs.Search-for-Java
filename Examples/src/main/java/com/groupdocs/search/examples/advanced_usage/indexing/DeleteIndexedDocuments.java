@@ -15,12 +15,12 @@ import org.apache.commons.io.FilenameUtils;
 
 public class DeleteIndexedDocuments {
     public static void run() {
-        String indexFolder = ".\\output\\AdvancedUsage\\Indexing\\DeleteIndexedPaths";
+        String indexFolder = ".\\output\\AdvancedUsage\\Indexing\\DeleteIndexedDocuments";
         String filePath = Utils.DocumentsPath + "English.docx";
         String query = "moment";
 
         // Creating an index in the specified folder
-        Index index = new Index(indexFolder);
+        Index index = new Index(indexFolder, true);
 
         // Indexing the document from stream
         DocumentLoader documentLoader = new DocumentLoader(filePath);
