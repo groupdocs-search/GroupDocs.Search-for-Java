@@ -185,6 +185,7 @@ public class MainClass {
 //        UsingAliases.run();
 //
 //        WildcardSearch.queryInTextForm();
+//        WildcardSearch.queryInObjectForm();
 
         // Managing Dictionaries ----------------------------------------------------------------------------------------------------
 
