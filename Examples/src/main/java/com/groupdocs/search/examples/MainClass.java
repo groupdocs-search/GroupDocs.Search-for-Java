@@ -172,6 +172,8 @@ public class MainClass {
 //
 //        SearchForDifferentWordForms.run();
 //
+//        SearchForSpecialCharacters.run();
+//
 //        SearchReports.run();
 //
 //        SearchResults.run();
