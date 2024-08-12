@@ -12,7 +12,8 @@ import java.util.ArrayList;
 public class HighlightingResultsInNetwork {
     public static void run() {
         String basePath = "./output/AdvancedUsage/Scaling/HighlightingResultsInNetwork/";
-        int basePort = 49100;
+        // If an error occurs about using a busy network port, you need to change the value of the base port
+        int basePort = 49116;
 
         Configuration configuration = ConfiguringSearchNetwork.configure(basePath, basePort);
 

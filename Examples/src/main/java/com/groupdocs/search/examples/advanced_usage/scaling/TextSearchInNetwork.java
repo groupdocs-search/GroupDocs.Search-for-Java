@@ -11,7 +11,8 @@ import java.util.ArrayList;
 public class TextSearchInNetwork {
     public static void run() {
         String basePath = "./output/AdvancedUsage/Scaling/TextSearchInNetwork/";
-        int basePort = 49100;
+        // If an error occurs about using a busy network port, you need to change the value of the base port
+        int basePort = 49148;
 
         Configuration configuration = ConfiguringSearchNetwork.configure(basePath, basePort);
 

@@ -12,7 +12,8 @@ import java.util.Arrays;
 public class GettingDocumentTextInNetwork {
     public static void run() {
         String basePath = "./output/AdvancedUsage/Scaling/GettingDocumentText/";
-        int basePort = 49100;
+        // If an error occurs about using a busy network port, you need to change the value of the base port
+        int basePort = 49108;
 
         Configuration configuration = ConfiguringSearchNetwork.configure(basePath, basePort);
 

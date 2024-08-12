@@ -8,7 +8,8 @@ import com.groupdocs.search.scaling.results.*;
 public class GettingDocumentsInNetwork {
     public static void run() {
         String basePath = "./output/AdvancedUsage/Scaling/GettingDocumentsInNetwork/";
-        int basePort = 49100;
+        // If an error occurs about using a busy network port, you need to change the value of the base port
+        int basePort = 49112;
 
         Configuration configuration = ConfiguringSearchNetwork.configure(basePath, basePort);
 

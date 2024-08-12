@@ -8,7 +8,8 @@ import com.groupdocs.search.scaling.configuring.*;
 public class SearchNetworkNodeEvents {
     public static void run() {
         String basePath = "./output/AdvancedUsage/Scaling/SearchNetworkNodeEvents/";
-        int basePort = 49100;
+        // If an error occurs about using a busy network port, you need to change the value of the base port
+        int basePort = 49140;
 
         Configuration configuration = ConfiguringSearchNetwork.configure(basePath, basePort);
 

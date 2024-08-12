@@ -16,7 +16,8 @@ import org.apache.commons.io.FilenameUtils;
 public class IndexingDocuments {
     public static void run() {
         String basePath = "./output/AdvancedUsage/Scaling/IndexingDocuments/";
-        int basePort = 49100;
+        // If an error occurs about using a busy network port, you need to change the value of the base port
+        int basePort = 49124;
 
         Configuration configuration = ConfiguringSearchNetwork.configure(basePath, basePort);
 

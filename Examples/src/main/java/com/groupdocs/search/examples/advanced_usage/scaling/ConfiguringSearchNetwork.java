@@ -6,6 +6,7 @@ import com.groupdocs.search.scaling.configuring.*;
 public class ConfiguringSearchNetwork {
     public static void run() {
         String basePath = "./output/AdvancedUsage/Scaling/ConfiguringSearchNetwork/";
+        // If an error occurs about using a busy network port, you need to change the value of the base port
         int basePort = 49100;
 
         Configuration configuration = configure(basePath, basePort);
