@@ -29,7 +29,14 @@ public class Utils {
     public static final String DocumentsUtf32Path = System.getProperty("user.dir") + "\\Resources\\SampleFiles\\DocumentsUtf32\\";
     public static final String ArchivesPath = System.getProperty("user.dir") + "\\Resources\\SampleFiles\\Archives\\";
 
-    public static final String OldIndexPath = System.getProperty("user.dir") + "\\Resources\\SampleFiles\\Index_19_4\\";
+    // An index in the 22.7 format, which is what GroupDocs.Search 24.4 wrote. Updating
+    // that format copies the index and rewrites its metadata, so the upgraded index keeps
+    // its documents whether or not the originals are still on this machine. The sample
+    // that used to sit here was in the 19.4 format; formats older than 22.7 are updated by
+    // re-indexing the folders the old index recorded, and those folders were on the
+    // machine it was built on in 2019, so the update produced an empty index everywhere
+    // else while still reporting Updated.
+    public static final String OldIndexPath = System.getProperty("user.dir") + "\\Resources\\SampleFiles\\Index_24_4\\";
 
     public static void traceResult(String query, SearchResult result) {
         System.out.println();
