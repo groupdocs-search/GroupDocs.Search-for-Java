@@ -14,12 +14,12 @@
         <dependency>
             <groupId>com.groupdocs</groupId>
             <artifactId>groupdocs-search</artifactId>
-            <version>24.4</version>
+            <version>26.9</version>
         </dependency>
         <dependency>
             <groupId>com.aspose</groupId>
             <artifactId>aspose-ocr</artifactId>
-            <version>21.9</version>
+            <version>26.9.0</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>

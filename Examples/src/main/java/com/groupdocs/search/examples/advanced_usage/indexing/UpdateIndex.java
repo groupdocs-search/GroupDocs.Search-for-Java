@@ -58,7 +58,12 @@ public class UpdateIndex {
         if (updater.canUpdateVersion(sourceIndexFolder)) {
             // The index of old version does not change
             VersionUpdateResult result = updater.updateVersion(sourceIndexFolder, targetIndexFolder);
+            System.out.println("Update result: " + result);
         }
+
+        // An index older than the 22.7 format is updated by indexing again the folders the
+        // old index recorded, so for those the documents have to still be where they were.
+        // From 22.7 on the index itself is migrated and the documents are not needed.
 
         // Loading index from target folder
         Index index = new Index(targetIndexFolder);
