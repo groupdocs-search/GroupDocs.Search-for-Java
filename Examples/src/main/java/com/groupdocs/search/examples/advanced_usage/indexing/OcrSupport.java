@@ -55,10 +55,16 @@ public class OcrSupport {
         private String recognizePrivate(OcrContext context) {
             try {
                 java.awt.image.BufferedImage image = javax.imageio.ImageIO.read(context.getImageStream());
+                com.aspose.ocr.OcrInput input = new com.aspose.ocr.OcrInput(com.aspose.ocr.InputType.SingleImage);
+                input.add(image);
                 com.aspose.ocr.AsposeOCR asposeOcr = new com.aspose.ocr.AsposeOCR();
-                String result = asposeOcr.RecognizePage(image);
-                return result;
-            } catch (java.io.IOException ex) {
+                com.aspose.ocr.OcrOutput output = asposeOcr.Recognize(input);
+                StringBuilder result = new StringBuilder();
+                for (com.aspose.ocr.RecognitionResult page : output) {
+                    result.append(page.recognitionText);
+                }
+                return result.toString();
+            } catch (java.io.IOException | com.aspose.ocr.AsposeOCRException ex) {
                 throw new RuntimeException(ex);
             }
         }
