@@ -86,6 +86,8 @@ public class MainClass {
 //        IndexingFromDifferentSources.indexingFromStructure();
 //        IndexingFromDifferentSources.indexingFromUrl();
 //        IndexingFromDifferentSources.indexingFromFtp();
+//        IndexingFromDifferentSources.indexingFromAmazon();
+//        IndexingFromDifferentSources.indexingFromAzure();
 //
 //        IndexingMetadataOfDocuments.run();
 //
@@ -106,7 +108,8 @@ public class MainClass {
 //
 //        MergeIndexes.run();
 //
-//        OcrSupport.run();
+//        OcrSupport.useAsposeOcrConnector();
+//        OcrSupport.useTesseractOcrConnector();
 //
 //        OptimizeIndex.run();
 //
@@ -114,7 +117,8 @@ public class MainClass {
 //
 //        StoringTextOfIndexedDocuments.run();
 //
-//        TextFileEncodingDetection.run();
+//        TextFileEncodingDetection.setEncoding();
+//        TextFileEncodingDetection.externalEncodingDetection();
 //
 //        UpdateIndex.updateIndexedDocuments();
 //        UpdateIndex.updateIndexVersion();
@@ -140,6 +144,7 @@ public class MainClass {
 //
 //        FacetedSearch.simpleFacetedSearch();
 //        FacetedSearch.complexQuery();
+//        FacetedSearch.usingStandardFieldNames();
 //
 //        FuzzySearch.settingFuzzySearchAlgorithm();
 //        FuzzySearch.settingStepFunction();

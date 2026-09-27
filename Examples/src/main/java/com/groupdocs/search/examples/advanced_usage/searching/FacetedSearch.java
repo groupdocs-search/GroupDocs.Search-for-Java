@@ -66,4 +66,27 @@ public class FacetedSearch {
         Utils.traceResult(query1, result1);
         Utils.traceResult(rootQuery.toString(), result2);
     }
+
+    public static void usingStandardFieldNames() {
+        String indexFolder = ".\\output\\AdvancedUsage\\Searching\\FacetedSearch\\UsingStandardFieldNames";
+        String documentsFolder = Utils.DocumentsPath;
+
+        // Creating an index in the specified folder
+        Index index = new Index(indexFolder);
+
+        // Indexing documents from the specified folder
+        index.add(documentsFolder);
+
+        // Search in the company field with text query
+        String query1 = WordsFieldNames.Company + ": Dycum";
+        SearchResult result1 = index.search(query1);
+
+        // Search in the company field with object query
+        SearchQuery wordQuery = SearchQuery.createWordQuery("Dycum");
+        SearchQuery fieldQuery = SearchQuery.createFieldQuery(WordsFieldNames.Company, wordQuery);
+        SearchResult result2 = index.search(fieldQuery);
+
+        Utils.traceResult(query1, result1);
+        Utils.traceResult(fieldQuery.toString(), result2);
+    }
 }

@@ -178,6 +178,149 @@ public class IndexingFromDifferentSources {
         Utils.traceResult(query, result);
     }
 
+    public static void indexingFromAmazon() {
+        String indexFolder = ".\\output\\AdvancedUsage\\Indexing\\IndexingFromDifferentSources\\IndexingFromAmazon";
+        String key = "example.pdf";
+
+        // Creating an index
+        Index index = new Index(indexFolder);
+
+        index.getEvents().ErrorOccurred.add(new EventHandler<IndexErrorEventArgs>() {
+            @Override
+            public void invoke(Object s, IndexErrorEventArgs a) {
+                System.out.println(a.getMessage());
+            }
+        });
+
+        // Creating a document object
+        String documentKey = "documentKey";
+        IDocumentLoader documentLoader = new DocumentLoaderFromAmazon(documentKey, ".pdf", key);
+        Document document = Document.createLazy(DocumentSourceKind.Stream, documentKey, documentLoader);
+        Document[] documents = new Document[] {
+            document,
+        };
+
+        // Indexing the lazy-loaded document
+        IndexingOptions options = new IndexingOptions();
+        index.add(documents, options);
+
+        // Searching in the index
+        String query = "some";
+        SearchResult result = index.search(query);
+
+        Utils.traceResult(query, result);
+    }
+
+    // Loading a document from Amazon S3 using the software.amazon.awssdk:s3 library
+    // The credentials and region are taken from the default AWS provider chain (environment variables, ~/.aws/credentials, etc.)
+    private static class DocumentLoaderFromAmazon implements IDocumentLoader {
+        private final String documentKey;
+        private final String extension;
+        private final String storageKey;
+
+        public DocumentLoaderFromAmazon(String documentKey, String extension, String storageKey) {
+            this.documentKey = documentKey;
+            this.extension = extension;
+            this.storageKey = storageKey;
+        }
+
+        @Override
+        public final Document loadDocument() {
+            String bucketName = "my-bucket";
+            software.amazon.awssdk.services.s3.S3Client client = software.amazon.awssdk.services.s3.S3Client.create();
+            try {
+                software.amazon.awssdk.services.s3.model.GetObjectRequest request = software.amazon.awssdk.services.s3.model.GetObjectRequest.builder()
+                        .bucket(bucketName)
+                        .key(storageKey)
+                        .build();
+                byte[] data = client.getObjectAsBytes(request).asByteArray();
+                java.io.ByteArrayInputStream stream = new java.io.ByteArrayInputStream(data);
+                Document document = Document.createFromStream(documentKey, new Date(), extension, stream);
+                return document;
+            } finally {
+                client.close();
+            }
+        }
+
+        @Override
+        public final void closeDocument() {
+        }
+    }
+
+    public static void indexingFromAzure() {
+        String indexFolder = ".\\output\\AdvancedUsage\\Indexing\\IndexingFromDifferentSources\\IndexingFromAzure";
+        String blobName = "example.pdf";
+
+        // Creating an index
+        Index index = new Index(indexFolder);
+
+        index.getEvents().ErrorOccurred.add(new EventHandler<IndexErrorEventArgs>() {
+            @Override
+            public void invoke(Object s, IndexErrorEventArgs a) {
+                System.out.println(a.getMessage());
+            }
+        });
+
+        // Creating a document object
+        String documentKey = "documentKey";
+        IDocumentLoader documentLoader = new DocumentLoaderFromAzure(documentKey, ".pdf", blobName);
+        Document document = Document.createLazy(DocumentSourceKind.Stream, documentKey, documentLoader);
+        Document[] documents = new Document[] {
+            document,
+        };
+
+        // Indexing the lazy-loaded document
+        IndexingOptions options = new IndexingOptions();
+        index.add(documents, options);
+
+        // Searching in the index
+        String query = "some";
+        SearchResult result = index.search(query);
+
+        Utils.traceResult(query, result);
+    }
+
+    // Loading a document from Azure Blob Storage using the com.azure:azure-storage-blob library
+    private static class DocumentLoaderFromAzure implements IDocumentLoader {
+        private final String documentKey;
+        private final String extension;
+        private final String blobName;
+
+        public DocumentLoaderFromAzure(String documentKey, String extension, String blobName) {
+            this.documentKey = documentKey;
+            this.extension = extension;
+            this.blobName = blobName;
+        }
+
+        @Override
+        public final Document loadDocument() {
+            String accountName = "***";
+            String accountKey = "***";
+            String endpoint = "https://" + accountName + ".blob.core.windows.net/";
+            String containerName = "***";
+            com.azure.storage.common.StorageSharedKeyCredential credential =
+                    new com.azure.storage.common.StorageSharedKeyCredential(accountName, accountKey);
+            com.azure.storage.blob.BlobServiceClient blobServiceClient = new com.azure.storage.blob.BlobServiceClientBuilder()
+                    .endpoint(endpoint)
+                    .credential(credential)
+                    .buildClient();
+            com.azure.storage.blob.BlobContainerClient container = blobServiceClient.getBlobContainerClient(containerName);
+            container.createIfNotExists();
+
+            com.azure.storage.blob.BlobClient blob = container.getBlobClient(blobName);
+            java.io.ByteArrayOutputStream outputStream = new java.io.ByteArrayOutputStream();
+            blob.downloadStream(outputStream);
+            java.io.ByteArrayInputStream stream = new java.io.ByteArrayInputStream(outputStream.toByteArray());
+
+            Document document = Document.createFromStream(documentKey, new Date(), extension, stream);
+            return document;
+        }
+
+        @Override
+        public final void closeDocument() {
+        }
+    }
+
     private static class DocumentLoaderFromUrl implements IDocumentLoader {
         private final String documentKey;
         private final String url;
